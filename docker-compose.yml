@@ -1,0 +1,39 @@
+web:
+  image: devgeniem/alpine-wordpress
+  ports:
+    - 80
+  links:
+    - db
+  volumes:
+    - .:/data/code
+    - ./.docker/log:/data/log
+    # In production uploads will be in /data/uploads/
+    # This way let the container see them like in production
+    - ./.docker/uploads:/data/uploads
+  environment:
+    # Small variable to tell if we are in production,testing or development
+    # Don't use this in your code unless this is only option
+    # We want to nearly identical codebase in production and development
+    WP_ENV: development
+
+    # These will be mapped automatically in development to jwilder/nginx-proxy
+    VIRTUAL_HOST:  wordpress.g.test, wordpress.test
+    HTTPS_DOMAIN_ALIAS: wordpress.g.test
+    DB_NAME: wordpress
+    DB_USER: wordpress
+    DB_PASSWORD: wordpress
+    MAIL_DOMAIN: wordpress.test
+  dns:
+    # We need to add this static ip here until we can add --dns flag in nlf/dlite
+    # Related issue: https://github.com/nlf/dlite/issues/90
+    - 172.17.0.1
+db:
+  image: mariadb
+  volumes:
+    # Make database persistent
+    - /var/lib/mysql
+  environment:
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpress
+    MYSQL_ROOT_PASSWORD: root

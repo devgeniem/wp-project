@@ -1,0 +1,70 @@
+{
+  "name": "geniem/wp-project",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress instance template",
+  "authors": [
+    {
+      "name": "Onni Hakala",
+      "email": "onni.hakala@geniem.com",
+      "homepage": "https://github.com/onnimonni"
+    }
+  ],
+  "keywords": [
+    "wordpress", "composer", "wp"
+  ],
+  "config": {
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-0": {"Wordpress\\Installer": "scripts"}
+  },
+  "scripts": {
+    "post-install-cmd": [
+    "Wordpress\\Installer::symlinkWPContent"
+    ],
+    "post-update-cmd": [
+    "Wordpress\\Installer::symlinkWPContent"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "johnpbloch/wordpress": "*",
+    "composer/installers": "v1.0.12",
+    "koodimonni/composer-dropin-installer": ">=1.0",
+    "vlucas/phpdotenv": "1.0.9",
+
+    "koodimonni-language/core-fi": "*",
+
+    "wpackagist-plugin/https-domain-alias": ">=1.4.2",
+    "devgeniem/wp-sanitize-accented-uploads": ">=1.0.0",
+
+    "wpackagist-plugin/wordpress-seo": "*",
+
+    "wpackagist-theme/twentysixteen": "*"
+
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/https-domain-alias"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}": ["type:wordpress-theme"]
+    },
+    "dropin-paths": {
+      "web/app/languages/": ["vendor:koodimonni-language"],
+      "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+    },
+    "wordpress-install-dir": "web/wp"
+  }
+}

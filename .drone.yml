@@ -1,0 +1,47 @@
+build:
+  image: devgeniem/alpine-wordpress
+  pull: true
+  commands:
+    - ./scripts/test.sh
+  environment:
+    HTTPS_DOMAIN_ALIAS: wordpress.g.test
+    DB_NAME: wordpress
+    DB_USER: wordpress
+    DB_PASSWORD: wordpress
+    MAIL_DOMAIN: wordpress.test
+  services:
+    db:
+      image: mariadb
+      environment:
+        MYSQL_DATABASE: wordpress
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: wordpress
+        MYSQL_RANDOM_ROOT_PASSWORD: 1
+##
+# Change your slack url here
+##
+
+#notify:
+#  slack:
+#    webhook_url: YOUR_SLACK_URL_HERE
+#    channel: drone
+#    username: Drone CI
+#    template: |
+#      {{#success build.status}}
+#        <{{ repo.link_url }}|{{ repo.full_name }}>: {{ build.author }} pushed succesfully to {{ build.branch }} branch.
+#      {{else}}
+#        <{{ repo.link_url }}|{{ repo.full_name }}>: {{ build.author }} broke {{ build.branch }} branch :(. <{{ build.link_url }}|See results>
+#      {{/success}}
+
+##
+# Deploy to Geniem cluster
+##
+
+#deploy:
+#  webhook:
+#    debug: true
+#    method: PUT
+#    urls:
+#      - http://172.17.0.1/geniem-api/v1/deploy/
+#    content_type: application/json
+#    template: '{"name": "{{repo.name}}", "git_branch": "{{ build.branch }}", "commit": "{{build.commit}}", "status": "{{build.status}}" }'
