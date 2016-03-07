@@ -6,6 +6,7 @@ Use this with our docker-image: [devgeniem/alpine-wordpress](https://github.com/
 - This resembles [roots/bedrock](https://github.com/roots/bedrock) project layout.
 - Uploads directory has been moved into /data/uploads (locally mapped into .docker/uploads)
 - Uses composer for installing plugins
+- Rspec/Capybara tests are based on [Seravo/wordpress](https://github.com/Seravo/wordpress)
 
 ## Start local development
 This project includes example `docker-compose.yml` which you can use to develop locally.
