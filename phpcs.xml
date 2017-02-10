@@ -51,7 +51,7 @@
 
   <!-- Use 4 spaces for indentation -->
   <arg name="tab-width" value="4"/>
-  <rule ref="PEAR.WhiteSpace.ScopeIndent">
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
       <property name="indent" value="4"/>
     </properties>
