@@ -10,12 +10,6 @@
   <exclude-pattern>/wp/xmlrpc.php</exclude-pattern>
   <exclude-pattern>/wp/</exclude-pattern>
 
-  <!-- Exclude twig files always -->
-  <exclude-pattern>*.twig</exclude-pattern>
-
-  <!-- Exclude dust files always -->
-  <exclude-pattern>*.dust</exclude-pattern>
-
   <!-- This is from roots/bedrock and keep it as is -->
   <exclude-pattern>/mu-plugins/bedrock-autoloader.php</exclude-pattern>
 
