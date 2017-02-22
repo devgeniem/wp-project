@@ -192,4 +192,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Remove temporary variables from the global context
  */
-unset($root_dir, $webroot_dir, $env_config);
+unset( $root_dir, $webroot_dir, $env_config );
