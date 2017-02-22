@@ -38,8 +38,6 @@ COPY web/wp /var/www/project/web/wp
 COPY web/*.* /var/www/project/web/
 ## Install scripts
 COPY scripts /var/www/project/scripts
-# Install database migration config
-COPY phinx.yml /var/www/project/phinx.yml
 ## Install nginx configs
 COPY nginx /var/www/project/nginx
 ## Install application config
