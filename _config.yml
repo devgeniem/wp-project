@@ -35,7 +35,8 @@ sections: [
   ['nginx', 'Nginx'],
   ['examples', 'Examples'],
   ['troubleshooting', 'Troubleshooting'],
-  ['info', 'Info']
+  ['info', 'Info'],
+  ['scheduled-jobs', 'Scheduled jobs']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific
