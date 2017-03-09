@@ -6,7 +6,7 @@ date: 2016-11-29 13:05:18
 order: 2
 ---
 
-Our docker container has custom [startup script](https://github.com/devgeniem/docker-wordpress/blob/master/debian-php7.0/rootfs/etc/cont-init.d/00-render-templates) which renders all `${ENV}` blocks from `*.tpml` files inside `nginx` folder.
+Nginx doesn't support environmental variables easily in the configs. To use envs in nginx configuration files our docker container has custom [startup script](https://github.com/devgeniem/docker-wordpress/blob/master/debian-php7.0/rootfs/etc/cont-init.d/00-render-templates) which renders all `${ENV}` blocks from `*.tpml` files inside `nginx` folder.
 
 Templating engine uses `envsubst` command and replaces the result in filename without `.tmpl` extension.
 
