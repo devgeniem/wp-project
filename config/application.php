@@ -23,16 +23,10 @@ if ( file_exists( $root_dir . '/.env' ) ) {
 }
 
 /**
- * Set up our global environment constant and load its config first
+ * Set up our global environment constant
  * Default: development
  */
 define( 'WP_ENV', strtolower( env( 'WP_ENV' ) ) ?: 'development' );
-
-$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
-
-if ( file_exists( $env_config ) ) {
-    include_once $env_config;
-}
 
 /**
  * Set URLs for WP
@@ -181,6 +175,15 @@ define( 'PLL_LINGOTEK_AD', false );
  * Define memory limit so that wp-cli can use more memory than the default 40M
  */
 define( 'WP_MEMORY_LIMIT', env( 'PHP_MEMORY_LIMIT' ) ?: '128M' );
+
+/**
+ * Load custom configs according to WP_ENV environment variable
+ */
+$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
+
+if ( file_exists( $env_config ) ) {
+    include_once $env_config;
+}
 
 /**
  * Bootstrap WordPress
