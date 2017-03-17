@@ -19,7 +19,7 @@ body {
 // Nginx syntax highlighter doesn't understand our .tmpl hack so remove errors in syntax highlighting
 .language-nginx .highlight .err {
     color: inherit;
-    background-color: none;
+    background-color: inherit;
 }
 
 a {
