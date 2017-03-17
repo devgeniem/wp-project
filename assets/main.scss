@@ -16,6 +16,12 @@ body {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
+// Nginx syntax highlighter doesn't understand our .tmpl hack so remove errors in syntax highlighting
+.language-nginx .highlight .err {
+    color: inherit;
+    background-color: none;
+}
+
 a {
     color: $highlight;
 }
