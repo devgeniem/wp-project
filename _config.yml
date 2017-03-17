@@ -33,6 +33,7 @@ navigation: 1
 # Default categories (in order) to appear in the navigation
 sections: [
   ['nginx', 'Nginx'],
+  ['uploads', 'Uploads'],
   ['examples', 'Examples'],
   ['troubleshooting', 'Troubleshooting'],
   ['info', 'Info'],
