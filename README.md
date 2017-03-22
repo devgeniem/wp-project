@@ -70,3 +70,4 @@ Open the url you provided in step 2 for example: `client-name.test` and start de
 
 ## Changelog
 http://devgeniem.github.io/wp-project/info/changelog/
+
