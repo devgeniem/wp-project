@@ -1,5 +1,6 @@
 # This is for production docker image with new relic php daemon
 FROM devgeniem/wordpress-newrelic-server:debian-php7.0
+
 # Same image without new relic:
 #FROM devgeniem/wordpress-server:debian-php7.0
 
