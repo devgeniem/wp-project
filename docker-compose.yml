@@ -64,7 +64,7 @@ web:
   links:
     - db
     - redis
-    - elasticsearch
+    #- elasticsearch
   volumes:
     # Sync files into this path with sync container
     - /var/www/project
@@ -146,11 +146,11 @@ db:
 ##
 # Use elasticpress plugin and elasticsearch for quicker WP_Queries in WordPress
 ##
-elasticsearch:
-  image: elasticsearch
-  volumes:
+#elasticsearch:
+  #image: elasticsearch
+  #volumes:
     # Make elasticsearch persistent
-    - /usr/share/elasticsearch/data
+    #- /usr/share/elasticsearch/data
 
 ##
 # We use redis for wp object cache and php sessions
