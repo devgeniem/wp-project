@@ -35,5 +35,11 @@ And add username and password hash into `nginx/environments/staging/.htpasswd` l
 user:WjwOpfuB2pppo
 ```
 
+You might need to set the envs with flynn:
+
+```
+flynn -c stage -a PROJECT_NAME env set BASIC_AUTH_USER=user BASIC_AUTH_PASSWORD_HASH=WjwOpfuB2pppo
+```
+
 ## Links
 More info about [ngx_http_auth_basic_module in nginx docs](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html).
