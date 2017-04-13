@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Geniem Project">
+<ruleset name="Geniem">
   <description>A custom set of rules to check styles for a Geniem WP projects</description>
 
   <!-- Exclude wp core files -->
