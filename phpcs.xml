@@ -138,6 +138,9 @@
       But we don't want to discourage people from usen even a small comments
     -->
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+    
+    <!-- Welcome to the dark side -->
+    <exclude name="WordPress.PHP.YodaConditions" />
 
   </rule>
 
