@@ -71,3 +71,110 @@ Open the url you provided in step 2 for example: `client-name.test` and start de
 ## Changelog
 http://devgeniem.github.io/wp-project/info/changelog/
 
+## Composer dependencies' descriptions
+
+```
+
+# List of used repositories:
+
+  ## WPACKAGIST - the main repo for WordPress plugins.
+
+    "type": "composer",
+    "url": "https://wpackagist.org"
+
+  ## Koodimonni's repo for ḱeeping WP language packets up-to-date through composer
+
+    "type": "composer",
+    "url": "https://wp-languages.github.io"
+
+
+------------------------------------------------
+------------------------------------------------
+
+
+# List of used plugins / vendor packets
+
+  ## Minimun php version
+    
+    "php": ">=7.0"
+
+  ## WordPress as a composer dependency
+
+    "johnpbloch/wordpress": ">=4.5.0"
+
+  ## Loads environment variables from .env to getenv() to be used in project configs.
+    
+    "vlucas/phpdotenv": "^2.0.1"
+
+  ## Also loads the environment variables. Why is this needed?
+
+    "oscarotero/env": "^1.0"
+
+  ## We're able to specify different paths for packages with this. WP plugins, for example, are installed to web/app/plugins with the help of this package.
+
+    "composer/installers": "v1.0.12"
+
+  ## We use this to be able to install Koodimonni's language packets via composer. With this installer we can install multiple packets to one folder. We can also install our object-cache-dropin to its needed path with this.
+
+    "koodimonni/composer-dropin-installer": ">=1.0"
+
+  ## Finnish language for WordPress via Composer
+
+    "koodimonni-language/core-fi": "*"
+
+  ## A collection of plugins and dropins that simplify the wp and add security to it. The list can be seen here: https://github.com/devgeniem/wp-safe-fast-and-clean-collection/blob/master/composer.json
+
+    "devgeniem/wp-safe-fast-and-clean-collection": ">=1.0"
+
+  ## Adds a prettier database connection error page.
+
+    "devgeniem/better-wp-db-error": ">=0.1"
+
+  ## Sets robots.txt according to given envinronment variables from the config.
+
+    "devgeniem/wp-noindex-testing-staging-robots": "^1.0"
+
+  ## This is used for creating seeds for projects with many developers. The seed is also used for CI tests.
+
+    "robmorgan/phinx": "^0.5.3"
+
+  ## This is used to monitor actions made by different users of the WP admin.
+
+    "wpackagist-plugin/stream": ">=3.2.0",
+
+  ## This is used to enhance the capabilities of the WP default media library. With this we can for example categorize the added media items.
+    
+    "wpackagist-plugin/enhanced-media-library": ">=2.4.4",
+
+  ## The geniem redis object cache dropin package. This is installed under /app so that WP uses it instead of its own object cache file.
+    
+    "devgeniem/wp-redis-object-cache-dropin": ">=1.3.4"
+
+  ## Whoops debugging for WordPress
+
+    "rarst/wps": ">=1.0.0"
+
+# List of plugin and dropin paths
+
+  ## Custom paths for packages of certain types, e.g. wordpress plugins.
+
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin","rarst/wps"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}": ["type:wordpress-theme"]
+    }
+
+  ## Custom paths for Koodimonni's dropin-installer
+
+    "dropin-paths": {
+      "web/app/": ["type:wordpress-dropin"],
+      "web/app/languages/": ["vendor:koodimonni-language"],
+      "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+    }
+
+  ## WP itself goes here
+
+    "wordpress-install-dir": "web/wp"
+```
+
