@@ -44,7 +44,6 @@
     "koodimonni-language/core-fi": "*",
 
     "devgeniem/wp-safe-fast-and-clean-collection": ">=1.0",
-    "devgeniem/wp-security-collection": ">=1.0",
 
     "devgeniem/better-wp-db-error": ">=0.1",
     "devgeniem/wp-noindex-testing-staging-robots": "^1.0",
