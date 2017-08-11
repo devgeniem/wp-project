@@ -23,14 +23,14 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - THEMENAME-sync:/var/www/project
+      - THEMENAME-sync:/var/www/project:nocopy
 
       # Use volume for xdebug trace and profiling so we can use analysing in other containers
       - /tmp/xdebug
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - THEMENAME-uploads-sync:/var/www/uploads
+      - THEMENAME-uploads-sync:/var/www/uploads:nocopy
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
@@ -126,7 +126,7 @@ services:
     ports:
       - 80
     volumes:
-      - THEMENAME-sync:/var/www/project
+      - THEMENAME-sync:/var/www/project:nocopy
     environment:
       VIRTUAL_HOST: webgrind.wordpress.test
     network_mode: bridge
