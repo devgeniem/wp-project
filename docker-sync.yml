@@ -1,0 +1,11 @@
+version: "2"
+
+options:
+  verbose: true
+syncs:
+  THEMENAME-sync:
+    src: '.'
+    host_disk_mount_mode: 'cached'
+  THEMENAME-uploads-sync:
+    src: './.docker/uploads'
+    host_disk_mount_mode: 'cached'
