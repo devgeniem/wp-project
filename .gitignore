@@ -110,3 +110,6 @@ nginx/environments/testing/http/https-server.conf
 ## If switching branches locally from gh-pages branch
 _site
 .sass-cache
+
+## Ignore Docker Sync logs and files
+.docker-sync

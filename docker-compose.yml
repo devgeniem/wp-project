@@ -1,15 +1,6 @@
 version: '3'
 
 services:
-  ##
-  # nodejs container which installs and builds all frontend assets in all all themes with package.json
-  ##
-  webpack-builder:
-    image: devgeniem/node-assets-builder
-    volumes:
-      - THEMENAME-sync:/var/www/project
-    command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
-    network_mode: bridge
 
   ##
   # Web Server which runs nginx+php
@@ -102,37 +93,57 @@ services:
     network_mode: bridge
 
   ##
-  # Use elasticpress plugin and elasticsearch for quicker WP_Queries in WordPress
-  ##
-  #elasticsearch:
-    #image: elasticsearch
-    #volumes:
-      # Make elasticsearch persistent
-      #- /usr/share/elasticsearch/data
-
-  ##
   # We use redis for wp object cache and php sessions
   ##
   redis:
     image: redis
     network_mode: bridge
-
-  ##
-  # Container for analyzing xdebug profiling
-  # For Example: use yoursite.test/?XDEBUG_PROFILE to profile the front page
-  ##
-  webgrind:
-    image: devgeniem/webgrind
-    ports:
-      - 80
-    volumes:
-      - THEMENAME-sync:/var/www/project:nocopy
-    environment:
-      VIRTUAL_HOST: webgrind.wordpress.test
-    network_mode: bridge
-
+##
+# Use the Docker Sync to sync files on Mac
+##
 volumes:
   THEMENAME-sync:
     external: true
   THEMENAME-uploads-sync:
     external: true
+
+  # --------------------------------------------
+  # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
+  # --------------------------------------------
+
+  ##
+  # Use elasticpress plugin and elasticsearch for quicker WP_Queries in WordPress
+  ##
+
+  # elasticsearch:
+  #   image: elasticsearch
+  #   volumes:
+  #      Make elasticsearch persistent
+  #     - /usr/share/elasticsearch/data
+
+  ##
+  # nodejs container which installs and builds all frontend assets in all all themes with package.json
+  ##
+  
+  # webpack-builder:
+  #   image: devgeniem/node-assets-builder
+  #   volumes:
+  #     - THEMENAME-sync:/var/www/project
+  #   command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
+  #   network_mode: bridge
+
+  ##
+  # Container for analyzing xdebug profiling
+  # For Example: use yoursite.test/?XDEBUG_PROFILE to profile the front page
+  ##
+
+  # webgrind:
+  #   image: devgeniem/webgrind
+  #   ports:
+  #     - 80
+  #   volumes:
+  #     - THEMENAME-sync:/var/www/project:nocopy
+  #   environment:
+  #     VIRTUAL_HOST: webgrind.wordpress.test
+  #   network_mode: bridge
+
