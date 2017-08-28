@@ -14,14 +14,14 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - THEMENAME-sync:/var/www/project:nocopy
+      - .:/var/www/project
 
       # Use volume for xdebug trace and profiling so we can use analysing in other containers
       - /tmp/xdebug
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - THEMENAME-uploads-sync:/var/www/uploads:nocopy
+      - ./.docker/uploads:/var/www/uploads
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
@@ -98,14 +98,6 @@ services:
   redis:
     image: redis
     network_mode: bridge
-##
-# Use the Docker Sync to sync files on Mac
-##
-volumes:
-  THEMENAME-sync:
-    external: true
-  THEMENAME-uploads-sync:
-    external: true
 
   # --------------------------------------------
   # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
@@ -128,7 +120,7 @@ volumes:
   # webpack-builder:
   #   image: devgeniem/node-assets-builder
   #   volumes:
-  #     - THEMENAME-sync:/var/www/project
+  #     - .:/var/www/project
   #   command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
   #   network_mode: bridge
 
@@ -142,8 +134,7 @@ volumes:
   #   ports:
   #     - 80
   #   volumes:
-  #     - THEMENAME-sync:/var/www/project:nocopy
+  #     - .:/var/www/project
   #   environment:
   #     VIRTUAL_HOST: webgrind.wordpress.test
   #   network_mode: bridge
-

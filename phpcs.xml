@@ -40,24 +40,13 @@
 
   <!-- There MUST NOT be more than one statement per line. -->
 
-  <!-- Disallow tabs altogether -->
-  <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
-
-  <!-- Use 4 spaces for indentation -->
-  <arg name="tab-width" value="4"/>
-  <rule ref="Generic.WhiteSpace.ScopeIndent">
-    <properties>
-      <property name="indent" value="4"/>
-    </properties>
-  </rule>
-
   <!--
     The soft limit on line length MUST be 100 characters
     automated style checkers MUST warn but MUST NOT error at the soft limit.
   -->
   <rule ref="Generic.Files.LineLength">
     <properties>
-      <property name="lineLimit" value="100"/>
+      <property name="lineLimit" value="120"/>
       <property name="absoluteLineLimit" value="0"/>
     </properties>
   </rule>
@@ -120,27 +109,27 @@
     <exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
     <exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized" />
 
-    <!-- This project doesnt use wordpress.com functions -->
-    <exclude name="WordPress.VIP.RestrictedFunctions.get_term_link" />
-
-    <!-- Exclude indentation rules and use PEAR.WhiteSpace.ScopeIndent instead -->
-    <exclude name="Generic.WhiteSpace.ScopeIndent" />
+    <!-- Disabled the function restrictions of WP VIP because we need them. -->
+    <exclude name="WordPress.VIP.RestrictedFunctions" />
 
     <!-- Use spaces instead of tabs -->
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
 
-    <!-- Package Tag seems unimportant in wordpress plugins? -->
+    <!-- When writing file comments, e.g. template comments, don't require a package tag -->
     <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
 
     <!--
       This forces you to put '.' in oneline comments.
       Maybe full sentences are better than comments with 1-2 words
-      But we don't want to discourage people from usen even a small comments
+      But we don't want to make people stop using even small comments.
     -->
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-    
+
     <!-- Welcome to the dark side -->
     <exclude name="WordPress.PHP.YodaConditions" />
+
+    <!-- Does not comply with DustPress class naming conventions. -->
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
   </rule>
 
