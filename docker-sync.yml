@@ -3,9 +3,9 @@ version: "2"
 options:
   verbose: true
 syncs:
-  THEMENAME-sync:
+  PROJECTNAME-sync:
     src: '.'
     host_disk_mount_mode: 'cached'
-  THEMENAME-uploads-sync:
+  PROJECTNAME-uploads-sync:
     src: './.docker/uploads'
     host_disk_mount_mode: 'cached'
