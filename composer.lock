@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f87ee7ab4b73df207226e456730b9ae2",
+    "content-hash": "c15161d0e5ca02ce0dad7c36aced738b",
     "packages": [
         {
             "name": "aucor/dynamic-mo-loader",
@@ -431,6 +431,48 @@
                 "wp"
             ],
             "time": "2016-09-19T16:47:08+00:00"
+        },
+        {
+            "name": "devgeniem/wp-redis-group-cache",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/wp-redis-group-cache.git",
+                "reference": "ba550ff5dc925e52a2cb36a08b2b150f6bf0ac3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/wp-redis-group-cache/zipball/ba550ff5dc925e52a2cb36a08b2b150f6bf0ac3e",
+                "reference": "ba550ff5dc925e52a2cb36a08b2b150f6bf0ac3e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=1.0.12",
+                "devgeniem/wp-redis-object-cache-dropin": ">=1.3.4",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A plugin extending the Redis Object Cache for WordPress with a group cache functionality",
+            "keywords": [
+                "Object Cache",
+                "cache",
+                "plugin",
+                "redis",
+                "wordpress"
+            ],
+            "time": "2017-06-06T13:53:29+00:00"
         },
         {
             "name": "devgeniem/wp-redis-object-cache-dropin",
