@@ -69,7 +69,8 @@ $ make test
 Open the url you provided in step 2 for example: `client-name.test` and start developing the site.
 
 ## Changelog
-http://devgeniem.github.io/wp-project/info/changelog/
+
+[CHANGELOG.md](/CHANGELOG.md)
 
 ## Composer dependencies' descriptions
 
