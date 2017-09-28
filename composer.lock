@@ -4,69 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e7f76e060d2194f1edd54ea4619dba04",
-    "content-hash": "200201853fdb5c19c73c18be06e02e9c",
+    "content-hash": "f87ee7ab4b73df207226e456730b9ae2",
     "packages": [
-        {
-            "name": "10up/elasticpress",
-            "version": "2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/10up/ElasticPress.git",
-                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/10up/ElasticPress/zipball/4bd2850ab79ef02a06d168ad0102ade8e0da520d",
-                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*@stable",
-                "wp-cli/wp-cli": "*@stable",
-                "wpackagist-plugin/woocommerce": "dev-trunk"
-            },
-            "type": "wordpress-plugin",
-            "extra": {
-                "installer-paths": {
-                    "vendor/{$name}/": [
-                        "type:wordpress-plugin",
-                        "type:wordpress-theme"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv2"
-            ],
-            "authors": [
-                {
-                    "name": "Aaron Holbrook",
-                    "email": "aaron@10up.com",
-                    "homepage": "http://aaronjholbrook.com"
-                },
-                {
-                    "name": "10up",
-                    "homepage": "http://10up.com"
-                },
-                {
-                    "name": "Taylor Lovett",
-                    "email": "taylorl@get10up.com"
-                }
-            ],
-            "description": "Supercharge WordPress with Elasticsearch.",
-            "keywords": [
-                "elasticpress",
-                "elasticsearch",
-                "plugin",
-                "search",
-                "wordpress"
-            ],
-            "time": "2017-02-28 20:09:06"
-        },
         {
             "name": "aucor/dynamic-mo-loader",
             "version": "1.1.1",
@@ -98,7 +37,7 @@
             ],
             "description": "Better text domain loading with object cache support for WordPress",
             "homepage": "https://github.com/aucor/dynamic-mo-loader",
-            "time": "2016-10-31 07:05:24"
+            "time": "2016-10-31T07:05:24+00:00"
         },
         {
             "name": "composer/installers",
@@ -182,7 +121,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-02-24 04:21:34"
+            "time": "2014-02-24T04:21:34+00:00"
         },
         {
             "name": "devgeniem/better-wp-db-error",
@@ -225,7 +164,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-07-11 09:18:14"
+            "time": "2016-07-11T09:18:14+00:00"
         },
         {
             "name": "devgeniem/better-wp-install-dropin",
@@ -255,7 +194,7 @@
                     "name": "Onni Hakala",
                     "email": "onni.hakala@geniem.com",
                     "homepage": "https://github.com/onnimonni",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Better WordPress installer.php dropin.",
@@ -267,7 +206,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-10-25 09:02:05"
+            "time": "2016-10-25T09:02:05+00:00"
         },
         {
             "name": "devgeniem/wp-core-blocker",
@@ -299,7 +238,7 @@
                 }
             ],
             "description": "Disables WP from contacting wp.org servers and disables users from installing anything in wp-admin.",
-            "time": "2016-12-28 22:55:20"
+            "time": "2016-12-28T22:55:20+00:00"
         },
         {
             "name": "devgeniem/wp-core-fixes",
@@ -330,7 +269,7 @@
             ],
             "description": "Small fixes for bugs in certain versions of WordPress Core.",
             "homepage": "http://github.com/devgeniem/wp-core-fixes",
-            "time": "2017-01-02 09:29:35"
+            "time": "2017-01-02T09:29:35+00:00"
         },
         {
             "name": "devgeniem/wp-define-more",
@@ -360,7 +299,7 @@
                     "name": "Onni Hakala",
                     "email": "onni.hakala@geniem.com",
                     "homepage": "https://github.com/onnimonni",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Adds useful definable constants which are missing from the WP Core.",
@@ -374,7 +313,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-10-01 07:58:43"
+            "time": "2016-10-01T07:58:43+00:00"
         },
         {
             "name": "devgeniem/wp-no-admin-ajax",
@@ -407,7 +346,7 @@
                 }
             ],
             "description": "A WordPress plugin that lightens the WP AJAX routine and directs the requests to front-end rather than admin back-end.",
-            "time": "2016-10-30 20:02:02"
+            "time": "2016-10-30T20:02:02+00:00"
         },
         {
             "name": "devgeniem/wp-noindex-testing-staging-robots",
@@ -449,7 +388,7 @@
                 "staging",
                 "wordpress"
             ],
-            "time": "2016-10-30 19:02:22"
+            "time": "2016-10-30T19:02:22+00:00"
         },
         {
             "name": "devgeniem/wp-readonly-options",
@@ -491,7 +430,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-09-19 16:47:08"
+            "time": "2016-09-19T16:47:08+00:00"
         },
         {
             "name": "devgeniem/wp-redis-object-cache-dropin",
@@ -525,7 +464,7 @@
             ],
             "description": "A persistent object cache backend for WordPress powered by Redis. Supports Predis, PhpRedis, HHVM, replication and clustering.",
             "homepage": "https://github.com/devgeniem/wp-redis-object-cache-dropin",
-            "time": "2016-10-30 19:28:29"
+            "time": "2016-10-30T19:28:29+00:00"
         },
         {
             "name": "devgeniem/wp-safe-fast-and-clean-collection",
@@ -575,7 +514,7 @@
                 "safe",
                 "wordpress"
             ],
-            "time": "2017-01-02 09:36:54"
+            "time": "2017-01-02T09:36:54+00:00"
         },
         {
             "name": "devgeniem/wp-sanitize-accented-uploads",
@@ -618,26 +557,25 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-04-20 15:10:05"
+            "time": "2016-04-20T15:10:05+00:00"
         },
         {
-            "name": "devgeniem/wp-security-collection",
+            "name": "devgeniem/wp-seo-collection",
             "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/devgeniem/wp-security-collection.git",
-                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a"
+                "url": "https://github.com/devgeniem/wp-seo-collection.git",
+                "reference": "a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-security-collection/zipball/84e37e4a540f5032dd6e5c08a90066830a4e246a",
-                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a",
+                "url": "https://api.github.com/repos/devgeniem/wp-seo-collection/zipball/a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2",
+                "reference": "a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress": ">=4.6.0",
-                "roots/wp-password-bcrypt": "^1.0",
-                "wpackagist-plugin/stream": ">=3.1.1"
+                "johnpbloch/wordpress": ">=4.7.0",
+                "wpackagist-plugin/autodescription": "*"
             },
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
@@ -652,16 +590,14 @@
                     "role": "maintainer"
                 }
             ],
-            "description": "This is a composer metapackage which includes WordPress plugins for security.",
-            "homepage": "https://github.com/devgeniem/wp-safe-fast-and-clean-collection",
+            "description": "This is a composer metapackage which includes WordPress plugins to help search engine optimizations.",
+            "homepage": "https://github.com/devgeniem/wp-seo-collection",
             "keywords": [
-                "Audit",
-                "collection",
                 "library",
-                "security",
+                "seo",
                 "wordpress"
             ],
-            "time": "2016-11-07 15:18:02"
+            "time": "2016-12-28T20:32:20+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -700,7 +636,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-03-18 04:47:24"
+            "time": "2017-03-18T04:47:24+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -737,7 +673,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-03-06 18:43:41"
+            "time": "2017-03-06T18:43:41+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -785,7 +721,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "koodimonni-language/core-fi",
@@ -849,7 +785,7 @@
                 }
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
-            "time": "2017-01-11 19:10:05"
+            "time": "2017-01-11T19:10:05+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -891,7 +827,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08 17:14:32"
+            "time": "2016-05-08T17:14:32+00:00"
         },
         {
             "name": "psr/log",
@@ -938,19 +874,19 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "robmorgan/phinx",
             "version": "v0.5.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/robmorgan/phinx.git",
+                "url": "https://github.com/cakephp/phinx.git",
                 "reference": "da9950a5e5b9314ebf72ddc6317ed587ce9ba8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/da9950a5e5b9314ebf72ddc6317ed587ce9ba8dc",
+                "url": "https://api.github.com/repos/cakephp/phinx/zipball/da9950a5e5b9314ebf72ddc6317ed587ce9ba8dc",
                 "reference": "da9950a5e5b9314ebf72ddc6317ed587ce9ba8dc",
                 "shasum": ""
             },
@@ -999,7 +935,7 @@
                 "migrations",
                 "phinx"
             ],
-            "time": "2016-06-17 15:29:02"
+            "time": "2016-06-17T15:29:02+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -1056,7 +992,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "symfony/config",
@@ -1112,7 +1048,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-01 18:18:25"
+            "time": "2017-03-01T18:18:25+00:00"
         },
         {
             "name": "symfony/console",
@@ -1175,7 +1111,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06 19:30:27"
+            "time": "2017-03-06T19:30:27+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1232,7 +1168,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-18 17:28:00"
+            "time": "2017-02-18T17:28:00+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1281,7 +1217,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06 19:30:27"
+            "time": "2017-03-06T19:30:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1340,7 +1276,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1395,7 +1331,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-07 16:47:02"
+            "time": "2017-03-07T16:47:02+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1445,7 +1381,47 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/autodescription",
+            "version": "2.9.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autodescription/",
+                "reference": "tags/2.9.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.2.9.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autodescription/"
+        },
+        {
+            "name": "wpackagist-plugin/enhanced-media-library",
+            "version": "2.4.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/enhanced-media-library/",
+                "reference": "tags/2.4.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/enhanced-media-library.2.4.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/enhanced-media-library/"
         },
         {
             "name": "wpackagist-plugin/stream",
@@ -1469,6 +1445,109 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "10up/elasticpress",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/ElasticPress.git",
+                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/ElasticPress/zipball/4bd2850ab79ef02a06d168ad0102ade8e0da520d",
+                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*@stable",
+                "wp-cli/wp-cli": "*@stable",
+                "wpackagist-plugin/woocommerce": "dev-trunk"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "vendor/{$name}/": [
+                        "type:wordpress-plugin",
+                        "type:wordpress-theme"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@10up.com",
+                    "homepage": "http://aaronjholbrook.com"
+                },
+                {
+                    "name": "10up",
+                    "homepage": "http://10up.com"
+                },
+                {
+                    "name": "Taylor Lovett",
+                    "email": "taylorl@get10up.com"
+                }
+            ],
+            "description": "Supercharge WordPress with Elasticsearch.",
+            "keywords": [
+                "elasticpress",
+                "elasticsearch",
+                "plugin",
+                "search",
+                "wordpress"
+            ],
+            "time": "2017-02-28T20:09:06+00:00"
+        },
+        {
+            "name": "devgeniem/wp-security-collection",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/wp-security-collection.git",
+                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/wp-security-collection/zipball/84e37e4a540f5032dd6e5c08a90066830a4e246a",
+                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a",
+                "shasum": ""
+            },
+            "require": {
+                "johnpbloch/wordpress": ">=4.6.0",
+                "roots/wp-password-bcrypt": "^1.0",
+                "wpackagist-plugin/stream": ">=3.1.1"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Onni Hakala",
+                    "email": "onni.hakala@geniem.com",
+                    "homepage": "https://github.com/onnimonni",
+                    "role": "maintainer"
+                }
+            ],
+            "description": "This is a composer metapackage which includes WordPress plugins for security.",
+            "homepage": "https://github.com/devgeniem/wp-safe-fast-and-clean-collection",
+            "keywords": [
+                "Audit",
+                "collection",
+                "library",
+                "security",
+                "wordpress"
+            ],
+            "time": "2016-11-07T15:18:02+00:00"
+        },
         {
             "name": "filp/whoops",
             "version": "2.1.8",
@@ -1528,7 +1607,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2017-03-07 09:04:45"
+            "time": "2017-03-07T09:04:45+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -1574,7 +1653,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2015-09-11 15:10:35"
+            "time": "2015-09-11T15:10:35+00:00"
         },
         {
             "name": "rarst/wps",
@@ -1619,7 +1698,7 @@
                 "whoops",
                 "wordpress"
             ],
-            "time": "2016-05-08 17:45:56"
+            "time": "2016-05-08T17:45:56+00:00"
         }
     ],
     "aliases": [],
