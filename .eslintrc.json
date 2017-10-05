@@ -1,0 +1,11 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "wordpress",
+    "rules": {
+        "yoda": [2, "never"]
+    }
+}
