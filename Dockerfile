@@ -37,6 +37,8 @@ RUN addgroup --system --gid $WEB_GID $WEB_GROUP && \
 COPY web/wp /var/www/project/web/wp
 ## Install all web root files with extension
 COPY web/*.* /var/www/project/web/
+## Copy certificate verification file
+COPY web/.well-known /var/www/project/web/.well-known
 ## Install scripts
 COPY scripts /var/www/project/scripts
 ## Install nginx configs
