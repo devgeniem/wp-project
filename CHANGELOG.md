@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fix the eslint config file to extend the proper standard and rename it according to current naming conventions of eslint.
 
+## Unreleased
+
+### Added
+
+- Dockerfile and nginx -modifications to allow certificate varification by URL
+
 ## [20170928] - 2017-09-28
 
 ### Changed
