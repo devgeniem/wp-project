@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [20171005] - 2017-10-05
+
+### Added
+
+- Add csscomb config for automatic style formatting.
+
+### Changed
+
+- Cross check the rules in sass-lint.yml and csscomb.json and modify the linting sort order to a better one.
+
 ## [20171004] - 2017-10-04
 
 ### Changed
