@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [20171004] - 2017-10-04
+
+### Changed
+
+- Fix the eslint config file to extend the proper standard and rename it according to current naming conventions of eslint.
+
 ## Unreleased
 
 ### Added
