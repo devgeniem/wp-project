@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Added
 
-- Added a default `WP_READ_ONLY_OPTION` constant and set it to replace the `blog_public` option.
+- Added a default `WP_READONLY_OPTIONS` constant and set it to replace the `blog_public` option.
 
 ## [20171005] - 2017-10-05
 
