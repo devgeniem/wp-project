@@ -72,6 +72,19 @@ Open the url you provided in step 2 for example: `client-name.test` and start de
 
 [CHANGELOG.md](/CHANGELOG.md)
 
+## Environment variables
+
+The project uses environment variables to define settings for WordPress. *This is not a complete list and will be completed in the future!*
+
+### WP_BLOG_PUBLIC
+
+This environment variable controls the WordPress `blog_public` [option](https://codex.wordpress.org/Option_Reference#Privacy) via the [WP Readonly Options](https://github.com/devgeniem/wp-readonly-options) plugin.
+
+**Values**
+
+- `1` *(integer) (default)* I would like my blog to be visible to everyone, including search engines.
+- `0` *(integer)* I would like to block search engines, but allow normal visitors.
+
 ## Composer dependencies' descriptions
 
 ```
