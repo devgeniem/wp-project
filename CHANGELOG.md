@@ -5,9 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.0.0] - 2017-10-26
+
 ### Added
 
 - Added a default `WP_READONLY_OPTIONS` constant and set it to replace the `blog_public` option.
+
+### Changed
+
+- Tags now adhere to Semantic Versioning.
 
 ## [20171005] - 2017-10-05
 
