@@ -191,7 +191,7 @@ if ( file_exists( $env_config ) ) {
 define( 'WP_READONLY_OPTIONS', [
     // 1 : I would like my blog to be visible to everyone, including search engines.
     // 0 : I would like to block search engines, but allow normal visitors.
-    'blog_public' => env( 'WP_BLOG_PUBLIC' ) ?: 0,
+    'blog_public' => env( 'WP_BLOG_PUBLIC' ) ?? 1,
 ] );
 
 /**
