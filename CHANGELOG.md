@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## Changed
+
+- Change WP cron-script execution time from every minute to every 15 minutes.
+
 ## [0.0.0] - 2017-10-26
 
 ### Added

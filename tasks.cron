@@ -5,6 +5,8 @@
 ##
 
 # Use this if you want to use real cron instead of wp-cron
-# You need to have define('DISABLE_WP_CRON', false); in  your wp-config.php
+# You need to have define('DISABLE_WP_CRON', false); in your wp-config.php
 # This is the default way of bedrock
-* * * * * /usr/local/bin/wp-run-cron
+# Runs all scheduled jobs via WP CLI every fifteen minutes.
+# Script file is at: https://github.com/devgeniem/docker-wordpress/blob/master/debian-php7.0/rootfs/usr/local/bin/wp-run-cron
+*/15 * * * * /usr/local/bin/wp-run-cron
