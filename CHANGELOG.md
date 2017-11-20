@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.0.1] - 2017-11-20
+
+### Added
+- Added a PHP CS rule to allow dynamic indentation with rows that start with an object assignation arrow.
+
 ## [0.0.0] - 2017-10-26
 
 ### Added

@@ -133,4 +133,10 @@
 
   </rule>
 
+  <!-- Allow dynamic indentation amounts when row starts with an object assignation arrow -->
+  <rule ref="WordPress.WhiteSpace.PrecisionAlignment">
+    <properties>
+      <property name="ignoreAlignmentTokens" type="array" value="T_OBJECT_OPERATOR"/>
+    </properties>
+  </rule>
 </ruleset>
