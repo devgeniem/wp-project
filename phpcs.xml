@@ -131,6 +131,8 @@
     <!-- Does not comply with DustPress class naming conventions. -->
     <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
+    <!-- There are numerous cases where we want to override WP globals -->
+    <exclude name="WordPress.Variables.GlobalVariables" />
   </rule>
 
   <!-- Allow dynamic indentation amounts when row starts with an object assignation arrow -->
