@@ -168,8 +168,10 @@ if ( defined( 'WP_CLI' ) and WP_CLI and ! defined( 'PLL_ADMIN' ) ) {
     define( 'PLL_ADMIN', true );
 }
 
-// Disable Lingotek notice and menu item from Polylang
-define( 'PLL_LINGOTEK_AD', false );
+// Disable Lingotek notice and menu item from Polylang free version.
+if ( ! defined( 'PLL_LINGOTEK_AD' ) )  { 
+    define( 'PLL_LINGOTEK_AD', false );
+}
 
 /**
  * Define memory limit so that wp-cli can use more memory than the default 40M
