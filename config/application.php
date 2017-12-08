@@ -177,7 +177,6 @@ function hide_polylang_ads() {
     }
 }
 
-
 /**
  * Define memory limit so that wp-cli can use more memory than the default 40M
  */
