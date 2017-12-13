@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.1.0] - 2017-12-13
+
+### Changed
+
+- Update tasks.cron's comment about WP cron.
+
+### Fixed
+
+- Remove the `PLL_LINGOTEK_AD` constant since it causes problems with the pro version of Polylang.
+
 ## [0.0.1] - 2017-11-20
 
 ### Added
