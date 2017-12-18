@@ -133,6 +133,12 @@
 
     <!-- There are numerous cases where we want to override WP globals -->
     <exclude name="WordPress.Variables.GlobalVariables" />
+    
+    <!-- Make else and catch blocks to start from new line -->
+    <rule ref="WordPress.ControlStructures.ElseCatchNewline" />
+
+    <!-- Exclude the rule that overrides the previously declared rule -->
+	  <exclude name="Squiz.ControlStructures.ControlSignature" />
   </rule>
 
   <!-- Allow dynamic indentation amounts when row starts with an object assignation arrow -->
