@@ -7,5 +7,5 @@ syncs:
     src: '.'
     host_disk_mount_mode: 'cached'
   PROJECTNAME-uploads-sync:
-    src: './.docker/uploads'
+    src: './.docker-sync/uploads'
     host_disk_mount_mode: 'cached'
