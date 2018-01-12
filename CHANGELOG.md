@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.1.1] - 2018-01-12
+
+### Fixed
+
+- Fixed the uploads dir path in `docker-sync.yml` configuration.
+
 ## [0.1.0] - 2017-12-13
 
 ### Changed
