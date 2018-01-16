@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.1.2] - 2018-01-16
+
+### Added
+- Added an exception to the PHP CS rules so that CamelCased filenames are allowed.
+
 ## [0.1.1] - 2018-01-12
 
 ### Fixed
