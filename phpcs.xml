@@ -130,6 +130,7 @@
 
     <!-- Does not comply with DustPress class naming conventions. -->
     <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 
     <!-- There are numerous cases where we want to override WP globals -->
     <exclude name="WordPress.Variables.GlobalVariables" />
