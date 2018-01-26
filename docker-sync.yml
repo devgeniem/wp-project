@@ -3,9 +3,9 @@ version: "2"
 options:
   verbose: true
 syncs:
-  PROJECTNAME-sync:
+  thedustpresstheme-sync:
     src: '.'
     host_disk_mount_mode: 'cached'
-  PROJECTNAME-uploads-sync:
+  thedustpresstheme-uploads-sync:
     src: './.docker-sync/uploads'
     host_disk_mount_mode: 'cached'

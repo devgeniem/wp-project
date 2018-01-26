@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c15161d0e5ca02ce0dad7c36aced738b",
+    "content-hash": "00bbc999bc73d6f4e13568529a1d732f",
     "packages": [
         {
             "name": "aucor/dynamic-mo-loader",
@@ -124,21 +124,63 @@
             "time": "2014-02-24T04:21:34+00:00"
         },
         {
-            "name": "devgeniem/better-wp-db-error",
-            "version": "0.1.1",
+            "name": "devgeniem/acf-codifier",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/devgeniem/better-wp-db-error.git",
-                "reference": "ca609b23285afca4b131b171fc89d019a6fe78af"
+                "url": "https://github.com/devgeniem/acf-codifier.git",
+                "reference": "d543cae07b8af1a607b3ea35b6ff878a7cc38f03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/better-wp-db-error/zipball/ca609b23285afca4b131b171fc89d019a6fe78af",
-                "reference": "ca609b23285afca4b131b171fc89d019a6fe78af",
+                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/d543cae07b8af1a607b3ea35b6ff878a7cc38f03",
+                "reference": "d543cae07b8af1a607b3ea35b6ff878a7cc38f03",
+                "shasum": ""
+            },
+            "require-dev": {
+                "victorjonsson/markdowndocs": "^1.3"
+            },
+            "type": "wordpress-muplugin",
+            "autoload": {
+                "psr-4": {
+                    "Geniem\\ACF\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Miika Arponen",
+                    "email": "miika@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ACF Codifier",
+            "keywords": [
+                "acf",
+                "wordpress"
+            ],
+            "time": "2018-01-16T07:54:59+00:00"
+        },
+        {
+            "name": "devgeniem/better-wp-db-error",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/better-wp-db-error.git",
+                "reference": "b812d0e488b7ce8d2b7f3b57f6021d90047c2594"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/better-wp-db-error/zipball/b812d0e488b7ce8d2b7f3b57f6021d90047c2594",
+                "reference": "b812d0e488b7ce8d2b7f3b57f6021d90047c2594",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "v1.0.12",
+                "composer/installers": ">=v1.0.12",
                 "koodimonni/composer-dropin-installer": "^1.0",
                 "php": ">=5.6"
             },
@@ -164,7 +206,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-07-11T09:18:14+00:00"
+            "time": "2017-01-24T08:10:42+00:00"
         },
         {
             "name": "devgeniem/better-wp-install-dropin",
@@ -207,6 +249,343 @@
                 "wp"
             ],
             "time": "2016-10-25T09:02:05+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/dustpress.git",
+                "reference": "8d262937633101abcb0d6eb8571bfa8c69e1344e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/8d262937633101abcb0d6eb8571bfa8c69e1344e",
+                "reference": "8d262937633101abcb0d6eb8571bfa8c69e1344e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "dustpress.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Miika Arponen",
+                    "email": "miika.arponen@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress Theme Framework.",
+            "keywords": [
+                "dustjs",
+                "dustpress",
+                "framework",
+                "javascript",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2018-01-17T12:02:13+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress-component-link-list",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:devgeniem/dustpress-component-link-list.git",
+                "reference": "53c392794d9fd167170d705e72ffe3616c40a121"
+            },
+            "require": {
+                "devgeniem/dustpress-components": "^1.1.1",
+                "devgeniem/dustpress-js": "^1.1.2"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DustPress\\Components\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Timi-Artturi Mäkelä",
+                    "email": "timi.makela@geniem.com",
+                    "homepage": "http://geniem.fi/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Otto Rautamaa",
+                    "email": "otto.rautamaa@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dustpress link list component",
+            "keywords": [
+                "acf",
+                "components",
+                "dustpress",
+                "wordpress"
+            ],
+            "time": "2018-01-26T08:57:45+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress-component-post-list",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:devgeniem/dustpress-component-post-list.git",
+                "reference": "f5194c1043013d39ff1ca0bc4ffb0f3306ceb7c2"
+            },
+            "require": {
+                "devgeniem/dustpress-component-link-list": "^1.0.0",
+                "devgeniem/dustpress-components": "^1.1.1",
+                "devgeniem/dustpress-js": "^1.1.2"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DustPress\\Components\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Timi-Artturi Mäkelä",
+                    "email": "timi.makela@geniem.com",
+                    "homepage": "http://geniem.fi/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Otto Rautamaa",
+                    "email": "otto.rautamaa@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dustpress post list component",
+            "keywords": [
+                "acf",
+                "components",
+                "dustpress",
+                "wordpress"
+            ],
+            "time": "2018-01-26T08:31:39+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress-components",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:devgeniem/dustpress-components.git",
+                "reference": "34deda615c592f36ef25312ced04f3d41528ed08"
+            },
+            "require": {
+                "devgeniem/acf-codifier": "^1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Miika Arponen",
+                    "homepage": "http://geniem.fi",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DustPress component library",
+            "keywords": [
+                "dustpress",
+                "geniem",
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "time": "2017-12-19T13:01:06+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress-debugger",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/dustpress-debugger.git",
+                "reference": "69fb6256704df659a9c7d5f2f354fafa78e45aa7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/dustpress-debugger/zipball/69fb6256704df659a9c7d5f2f354fafa78e45aa7",
+                "reference": "69fb6256704df659a9c7d5f2f354fafa78e45aa7",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0.12",
+                "devgeniem/dustpress": ">=0.4.0.2",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Miika Arponen",
+                    "email": "miika.arponen@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides handy ajaxified debugger tool for DustPress based themes.",
+            "keywords": [
+                "debugger",
+                "dustjs",
+                "dustpress",
+                "framework",
+                "javascript",
+                "plugin",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2017-06-02T14:37:56+00:00"
+        },
+        {
+            "name": "devgeniem/dustpress-js",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/dustpress-js.git",
+                "reference": "5cea474d02ec082daef8f32b4ccbad1b94321cf9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/dustpress-js/zipball/5cea474d02ec082daef8f32b4ccbad1b94321cf9",
+                "reference": "5cea474d02ec082daef8f32b4ccbad1b94321cf9",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0.12",
+                "devgeniem/dustpress": ">=0.4.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Miika Arponen",
+                    "email": "miika.arponen@geniem.com",
+                    "homepage": "https://github.com/Nomafin"
+                }
+            ],
+            "description": "A DustPress plugin that provides a handy JavaScript library for using your DustPress Model methods on the front end.",
+            "keywords": [
+                "debugger",
+                "dustjs",
+                "dustpress",
+                "framework",
+                "javascript",
+                "plugin",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2017-10-04T12:10:25+00:00"
+        },
+        {
+            "name": "devgeniem/ext-advanced-custom-fields-pro",
+            "version": "5.6.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:devgeniem/ext-advanced-custom-fields-pro.git",
+                "reference": "a2028674ab2c7b13c3896488d6d3304fd7d0733f"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "advanced-custom-fields-pro"
+            },
+            "license": [
+                "GPLv2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "elliotcondon"
+                }
+            ],
+            "description": "Customise WordPress with powerful, professional and intuitive fields",
+            "time": "2017-09-17T08:05:06+00:00"
+        },
+        {
+            "name": "devgeniem/ext-polylang-pro",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/ext-polylang-pro.git",
+                "reference": "6b35c4a7d085499504af2628f6ed86c6ab7c6f83"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "polylang-pro"
+            },
+            "license": [
+                "GPLv2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "Frédéric Demarle",
+                    "homepage": "https://polylang.pro",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds multilingual capability to WordPress.",
+            "keywords": [
+                "plugin",
+                "polylang",
+                "wordpress",
+                "wp"
+            ],
+            "time": "2017-03-28T06:54:14+00:00"
         },
         {
             "name": "devgeniem/wp-core-blocker",
@@ -273,20 +652,20 @@
         },
         {
             "name": "devgeniem/wp-define-more",
-            "version": "1.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-define-more.git",
-                "reference": "d73f26bd4da05121e380aae930676184fa784664"
+                "reference": "f00722ed262c73f388c0440aaea4aab554645830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-define-more/zipball/d73f26bd4da05121e380aae930676184fa784664",
-                "reference": "d73f26bd4da05121e380aae930676184fa784664",
+                "url": "https://api.github.com/repos/devgeniem/wp-define-more/zipball/f00722ed262c73f388c0440aaea4aab554645830",
+                "reference": "f00722ed262c73f388c0440aaea4aab554645830",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "v1.0.12",
+                "composer/installers": "^v1.0.12",
                 "php": ">=5.3"
             },
             "type": "wordpress-muplugin",
@@ -313,24 +692,24 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-10-01T07:58:43+00:00"
+            "time": "2017-07-17T11:04:33+00:00"
         },
         {
             "name": "devgeniem/wp-no-admin-ajax",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-no-admin-ajax.git",
-                "reference": "11142dab8b6c76d71e3982066382c4867a2c192e"
+                "reference": "ebee2d29870e03dc7db0b584acbaa891c08c48b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-no-admin-ajax/zipball/11142dab8b6c76d71e3982066382c4867a2c192e",
-                "reference": "11142dab8b6c76d71e3982066382c4867a2c192e",
+                "url": "https://api.github.com/repos/devgeniem/wp-no-admin-ajax/zipball/ebee2d29870e03dc7db0b584acbaa891c08c48b0",
+                "reference": "ebee2d29870e03dc7db0b584acbaa891c08c48b0",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "v1.0.12",
+                "composer/installers": "^v1.0.12",
                 "php": ">=5.6"
             },
             "type": "wordpress-plugin",
@@ -346,7 +725,7 @@
                 }
             ],
             "description": "A WordPress plugin that lightens the WP AJAX routine and directs the requests to front-end rather than admin back-end.",
-            "time": "2016-10-30T20:02:02+00:00"
+            "time": "2017-07-17T11:15:39+00:00"
         },
         {
             "name": "devgeniem/wp-noindex-testing-staging-robots",
@@ -392,20 +771,20 @@
         },
         {
             "name": "devgeniem/wp-readonly-options",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-readonly-options.git",
-                "reference": "c09586f980248252b51c5959cf3810cb077b59d7"
+                "reference": "df1d6ffe3354b8799717dbcfd5668acaf37b57dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-readonly-options/zipball/c09586f980248252b51c5959cf3810cb077b59d7",
-                "reference": "c09586f980248252b51c5959cf3810cb077b59d7",
+                "url": "https://api.github.com/repos/devgeniem/wp-readonly-options/zipball/df1d6ffe3354b8799717dbcfd5668acaf37b57dc",
+                "reference": "df1d6ffe3354b8799717dbcfd5668acaf37b57dc",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "v1.0.12",
+                "composer/installers": ">=v1.0.12",
                 "php": ">=7.0"
             },
             "type": "wordpress-muplugin",
@@ -430,7 +809,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-09-19T16:47:08+00:00"
+            "time": "2017-01-22T22:07:28+00:00"
         },
         {
             "name": "devgeniem/wp-redis-group-cache",
@@ -510,16 +889,16 @@
         },
         {
             "name": "devgeniem/wp-safe-fast-and-clean-collection",
-            "version": "1.0.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-safe-fast-and-clean-collection.git",
-                "reference": "5318a47b7823b43a061dc0b274e77b2c5a30ac18"
+                "reference": "15819abaeb941da7481f4265c04ea5d89a734a42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-safe-fast-and-clean-collection/zipball/5318a47b7823b43a061dc0b274e77b2c5a30ac18",
-                "reference": "5318a47b7823b43a061dc0b274e77b2c5a30ac18",
+                "url": "https://api.github.com/repos/devgeniem/wp-safe-fast-and-clean-collection/zipball/15819abaeb941da7481f4265c04ea5d89a734a42",
+                "reference": "15819abaeb941da7481f4265c04ea5d89a734a42",
                 "shasum": ""
             },
             "require": {
@@ -556,24 +935,24 @@
                 "safe",
                 "wordpress"
             ],
-            "time": "2017-01-02T09:36:54+00:00"
+            "time": "2018-01-12T13:40:41+00:00"
         },
         {
             "name": "devgeniem/wp-sanitize-accented-uploads",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-sanitize-accented-uploads.git",
-                "reference": "b954f19cc669994feb9b8cfe6247ab8820fd162d"
+                "reference": "58c4f7a1adb568a37f98834c3eacb6d2c73b275e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-sanitize-accented-uploads/zipball/b954f19cc669994feb9b8cfe6247ab8820fd162d",
-                "reference": "b954f19cc669994feb9b8cfe6247ab8820fd162d",
+                "url": "https://api.github.com/repos/devgeniem/wp-sanitize-accented-uploads/zipball/58c4f7a1adb568a37f98834c3eacb6d2c73b275e",
+                "reference": "58c4f7a1adb568a37f98834c3eacb6d2c73b275e",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "v1.0.12",
+                "composer/installers": ">=v1.0.12",
                 "php": ">=5.6"
             },
             "type": "wordpress-muplugin",
@@ -599,25 +978,25 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-04-20T15:10:05+00:00"
+            "time": "2017-01-14T18:15:09+00:00"
         },
         {
             "name": "devgeniem/wp-seo-collection",
-            "version": "1.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-seo-collection.git",
-                "reference": "a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2"
+                "reference": "c0aedcd4b8faa5d35b04c27682cd7c55e7fcbd08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-seo-collection/zipball/a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2",
-                "reference": "a6f67aec5a7a1e7b44778be11e8a6dcebe6149e2",
+                "url": "https://api.github.com/repos/devgeniem/wp-seo-collection/zipball/c0aedcd4b8faa5d35b04c27682cd7c55e7fcbd08",
+                "reference": "c0aedcd4b8faa5d35b04c27682cd7c55e7fcbd08",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress": ">=4.7.0",
-                "wpackagist-plugin/autodescription": "*"
+                "johnpbloch/wordpress": "^4.7.0",
+                "wpackagist-plugin/autodescription": "^2.9.4"
             },
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
@@ -639,25 +1018,25 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2016-12-28T20:32:20+00:00"
+            "time": "2017-11-09T08:18:15+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.7.3",
+            "version": "4.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a"
+                "reference": "34627d0b992bbe9ed909c73b27307297fb21f2a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a",
-                "reference": "9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/34627d0b992bbe9ed909c73b27307297fb21f2a4",
+                "reference": "34627d0b992bbe9ed909c73b27307297fb21f2a4",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.7.3",
-                "johnpbloch/wordpress-core-installer": "~0.2",
+                "johnpbloch/wordpress-core": "4.9.2",
+                "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
             "type": "package",
@@ -678,24 +1057,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-03-18T04:47:24+00:00"
+            "time": "2018-01-16T23:12:18+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.7.3",
+            "version": "4.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "21255f593ac7db93892724321f468c276b15aa65"
+                "reference": "59292fac30315323ce99e1a1d362015581e5d8e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/21255f593ac7db93892724321f468c276b15aa65",
-                "reference": "21255f593ac7db93892724321f468c276b15aa65",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/59292fac30315323ce99e1a1d362015581e5d8e6",
+                "reference": "59292fac30315323ce99e1a1d362015581e5d8e6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "provide": {
+                "wordpress/core-implementation": "4.9.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -715,20 +1097,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-03-06T18:43:41+00:00"
+            "time": "2018-01-16T23:12:12+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.2.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
+                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
-                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/e9e767f2d9f994f358c34b41def2c410ad8717f2",
+                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2",
                 "shasum": ""
             },
             "require": {
@@ -738,7 +1120,8 @@
                 "composer/installers": "<1.0.6"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev"
+                "composer/composer": "^1.0",
+                "phpunit/phpunit": ">=4.8.35"
             },
             "type": "composer-plugin",
             "extra": {
@@ -763,14 +1146,14 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11T15:15:30+00:00"
+            "time": "2017-05-31T18:42:33+00:00"
         },
         {
             "name": "koodimonni-language/core-fi",
-            "version": "4.7.3",
+            "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.7.3/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.9.2/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -831,16 +1214,16 @@
         },
         {
             "name": "oscarotero/env",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/env.git",
-                "reference": "0819fd764ca19ab880b8d9ed7a95ae4910f98f20"
+                "reference": "0f676e41d758fa984806c32e27f0cf7afa63d8db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/env/zipball/0819fd764ca19ab880b8d9ed7a95ae4910f98f20",
-                "reference": "0819fd764ca19ab880b8d9ed7a95ae4910f98f20",
+                "url": "https://api.github.com/repos/oscarotero/env/zipball/0f676e41d758fa984806c32e27f0cf7afa63d8db",
+                "reference": "0f676e41d758fa984806c32e27f0cf7afa63d8db",
                 "shasum": ""
             },
             "require": {
@@ -869,7 +1252,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08T17:14:32+00:00"
+            "time": "2017-07-17T20:41:59+00:00"
         },
         {
             "name": "psr/log",
@@ -1038,24 +1421,30 @@
         },
         {
             "name": "symfony/config",
-            "version": "v3.2.6",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "741d6d4cd1414d67d48eb71aba6072b46ba740c2"
+                "reference": "cfd5c972f7b4992a5df41673d25d980ab077aa5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/741d6d4cd1414d67d48eb71aba6072b46ba740c2",
-                "reference": "741d6d4cd1414d67d48eb71aba6072b46ba740c2",
+                "url": "https://api.github.com/repos/symfony/config/zipball/cfd5c972f7b4992a5df41673d25d980ab077aa5b",
+                "reference": "cfd5c972f7b4992a5df41673d25d980ab077aa5b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
-                "symfony/filesystem": "~2.8|~3.0"
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/filesystem": "~2.8|~3.0|~4.0"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.3",
+                "symfony/finder": "<3.3"
             },
             "require-dev": {
-                "symfony/yaml": "~3.0"
+                "symfony/dependency-injection": "~3.3|~4.0",
+                "symfony/finder": "~3.3|~4.0",
+                "symfony/yaml": "~3.0|~4.0"
             },
             "suggest": {
                 "symfony/yaml": "To use the yaml reference dumper"
@@ -1063,7 +1452,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1090,43 +1479,49 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-01T18:18:25+00:00"
+            "time": "2018-01-03T07:37:34+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v3.2.6",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "28fb243a2b5727774ca309ec2d92da240f1af0dd"
+                "reference": "8394c8ef121949e8f858f13bc1e34f05169e4e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/28fb243a2b5727774ca309ec2d92da240f1af0dd",
-                "reference": "28fb243a2b5727774ca309ec2d92da240f1af0dd",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8394c8ef121949e8f858f13bc1e34f05169e4e7d",
+                "reference": "8394c8ef121949e8f858f13bc1e34f05169e4e7d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
-                "symfony/debug": "~2.8|~3.0",
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/debug": "~2.8|~3.0|~4.0",
                 "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4",
+                "symfony/process": "<3.3"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/filesystem": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
+                "symfony/config": "~3.3|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
+                "symfony/lock": "~3.4|~4.0",
+                "symfony/process": "~3.3|~4.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": "",
-                "symfony/filesystem": "",
+                "symfony/lock": "",
                 "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1153,37 +1548,36 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06T19:30:27+00:00"
+            "time": "2018-01-03T07:37:34+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.2.6",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "b90c9f91ad8ac37d9f114e369042d3226b34dc1a"
+                "reference": "603b95dda8b00020e4e6e60dc906e7b715b1c245"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/b90c9f91ad8ac37d9f114e369042d3226b34dc1a",
-                "reference": "b90c9f91ad8ac37d9f114e369042d3226b34dc1a",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/603b95dda8b00020e4e6e60dc906e7b715b1c245",
+                "reference": "603b95dda8b00020e4e6e60dc906e7b715b1c245",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": "^5.5.9|>=7.0.8",
                 "psr/log": "~1.0"
             },
             "conflict": {
                 "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
             },
             "require-dev": {
-                "symfony/class-loader": "~2.8|~3.0",
-                "symfony/http-kernel": "~2.8|~3.0"
+                "symfony/http-kernel": "~2.8|~3.0|~4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1210,29 +1604,29 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-18T17:28:00+00:00"
+            "time": "2018-01-03T17:14:19+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.6",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a"
+                "reference": "e078773ad6354af38169faf31c21df0f18ace03d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/bc0f17bed914df2cceb989972c3b996043c4da4a",
-                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/e078773ad6354af38169faf31c21df0f18ace03d",
+                "reference": "e078773ad6354af38169faf31c21df0f18ace03d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "^5.5.9|>=7.0.8"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1259,20 +1653,20 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06T19:30:27+00:00"
+            "time": "2018-01-03T07:37:34+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.3.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
                 "shasum": ""
             },
             "require": {
@@ -1284,7 +1678,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -1318,27 +1712,30 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.2.6",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "093e416ad096355149e265ea2e4cc1f9ee40ab1a"
+                "reference": "25c192f25721a74084272671f658797d9e0e0146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/093e416ad096355149e265ea2e4cc1f9ee40ab1a",
-                "reference": "093e416ad096355149e265ea2e4cc1f9ee40ab1a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/25c192f25721a74084272671f658797d9e0e0146",
+                "reference": "25c192f25721a74084272671f658797d9e0e0146",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "conflict": {
+                "symfony/console": "<3.4"
             },
             "require-dev": {
-                "symfony/console": "~2.8|~3.0"
+                "symfony/console": "~3.4|~4.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -1346,7 +1743,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1373,7 +1770,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-07T16:47:02+00:00"
+            "time": "2018-01-03T07:37:34+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1467,15 +1864,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.2.0",
+            "version": "3.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.2.0"
+                "reference": "tags/3.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/stream.3.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1488,120 +1885,17 @@
     ],
     "packages-dev": [
         {
-            "name": "10up/elasticpress",
-            "version": "2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/10up/ElasticPress.git",
-                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/10up/ElasticPress/zipball/4bd2850ab79ef02a06d168ad0102ade8e0da520d",
-                "reference": "4bd2850ab79ef02a06d168ad0102ade8e0da520d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*@stable",
-                "wp-cli/wp-cli": "*@stable",
-                "wpackagist-plugin/woocommerce": "dev-trunk"
-            },
-            "type": "wordpress-plugin",
-            "extra": {
-                "installer-paths": {
-                    "vendor/{$name}/": [
-                        "type:wordpress-plugin",
-                        "type:wordpress-theme"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv2"
-            ],
-            "authors": [
-                {
-                    "name": "Aaron Holbrook",
-                    "email": "aaron@10up.com",
-                    "homepage": "http://aaronjholbrook.com"
-                },
-                {
-                    "name": "10up",
-                    "homepage": "http://10up.com"
-                },
-                {
-                    "name": "Taylor Lovett",
-                    "email": "taylorl@get10up.com"
-                }
-            ],
-            "description": "Supercharge WordPress with Elasticsearch.",
-            "keywords": [
-                "elasticpress",
-                "elasticsearch",
-                "plugin",
-                "search",
-                "wordpress"
-            ],
-            "time": "2017-02-28T20:09:06+00:00"
-        },
-        {
-            "name": "devgeniem/wp-security-collection",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/devgeniem/wp-security-collection.git",
-                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-security-collection/zipball/84e37e4a540f5032dd6e5c08a90066830a4e246a",
-                "reference": "84e37e4a540f5032dd6e5c08a90066830a4e246a",
-                "shasum": ""
-            },
-            "require": {
-                "johnpbloch/wordpress": ">=4.6.0",
-                "roots/wp-password-bcrypt": "^1.0",
-                "wpackagist-plugin/stream": ">=3.1.1"
-            },
-            "type": "metapackage",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Onni Hakala",
-                    "email": "onni.hakala@geniem.com",
-                    "homepage": "https://github.com/onnimonni",
-                    "role": "maintainer"
-                }
-            ],
-            "description": "This is a composer metapackage which includes WordPress plugins for security.",
-            "homepage": "https://github.com/devgeniem/wp-safe-fast-and-clean-collection",
-            "keywords": [
-                "Audit",
-                "collection",
-                "library",
-                "security",
-                "wordpress"
-            ],
-            "time": "2016-11-07T15:18:02+00:00"
-        },
-        {
             "name": "filp/whoops",
-            "version": "2.1.8",
+            "version": "2.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "f2950be7da8b8d6c4e77821b6c9d486e36cdc4f3"
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/f2950be7da8b8d6c4e77821b6c9d486e36cdc4f3",
-                "reference": "f2950be7da8b8d6c4e77821b6c9d486e36cdc4f3",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1904,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "^4.8 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
                 "symfony/var-dumper": "^2.6 || ^3.0"
             },
             "suggest": {
@@ -1646,32 +1940,36 @@
                 "exception",
                 "handling",
                 "library",
-                "whoops",
-                "zf2"
+                "throwable",
+                "whoops"
             ],
-            "time": "2017-03-07T09:04:45+00:00"
+            "time": "2017-11-23T18:22:44+00:00"
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.0.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "a30f7d6e57565a2e1a316e1baf2a483f788b258a"
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/a30f7d6e57565a2e1a316e1baf2a483f788b258a",
-                "reference": "a30f7d6e57565a2e1a316e1baf2a483f788b258a",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -1695,20 +1993,69 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2015-09-11T15:10:35+00:00"
+            "time": "2018-01-21T07:42:36+00:00"
         },
         {
-            "name": "rarst/wps",
-            "version": "1.0",
+            "name": "psr/container",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Rarst/wps.git",
-                "reference": "bc06f4162ef0c55b39f94854e52c012ddae0def7"
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rarst/wps/zipball/bc06f4162ef0c55b39f94854e52c012ddae0def7",
-                "reference": "bc06f4162ef0c55b39f94854e52c012ddae0def7",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "rarst/wps",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rarst/wps.git",
+                "reference": "a4188139eaab8011373ce9e200a2ba52d094ea40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rarst/wps/zipball/a4188139eaab8011373ce9e200a2ba52d094ea40",
+                "reference": "a4188139eaab8011373ce9e200a2ba52d094ea40",
                 "shasum": ""
             },
             "require": {
@@ -1740,12 +2087,22 @@
                 "whoops",
                 "wordpress"
             ],
-            "time": "2016-05-08T17:45:56+00:00"
+            "time": "2017-10-27T09:44:01+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.1.0",
+            "alias_normalized": "1.1.0.0",
+            "version": "9999999-dev",
+            "package": "devgeniem/dustpress-component-link-list"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "devgeniem/dustpress-component-link-list": 20,
+        "devgeniem/dustpress-component-post-list": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

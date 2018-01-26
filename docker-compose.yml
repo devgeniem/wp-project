@@ -14,14 +14,14 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - PROJECTNAME-sync:/var/www/project:nocopy
+      - thedustpresstheme-sync:/var/www/project:nocopy
 
       # Use volume for xdebug trace and profiling so we can use analysing in other containers
       - /tmp/xdebug
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - PROJECTNAME-uploads-sync:/var/www/uploads:nocopy
+      - thedustpresstheme-uploads-sync:/var/www/uploads:nocopy
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
@@ -36,7 +36,7 @@ services:
       PHP_SESSION_REDIS_DB: 0
 
       # This is the default theme name WordPress will use
-      WP_DEFAULT_THEME: THEMENAME
+      WP_DEFAULT_THEME: thedustpresstheme
 
       # Use same caching solution as in production but only for a really small time
       # Default value is 1 second
@@ -102,9 +102,9 @@ services:
 # Use the Docker Sync to sync files on Mac
 ##
 volumes:
-  PROJECTNAME-sync:
+  thedustpresstheme-sync:
     external: true
-  PROJECTNAME-uploads-sync:
+  thedustpresstheme-uploads-sync:
     external: true
 
   # --------------------------------------------
@@ -128,7 +128,7 @@ volumes:
   # webpack-builder:
   #   image: devgeniem/node-assets-builder
   #   volumes:
-  #     - PROJECTNAME-sync:/var/www/project
+  #     - thedustpresstheme-sync:/var/www/project
   #   command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
   #   network_mode: bridge
 
@@ -142,7 +142,7 @@ volumes:
   #   ports:
   #     - 80
   #   volumes:
-  #     - PROJECTNAME-sync:/var/www/project:nocopy
+  #     - thedustpresstheme-sync:/var/www/project:nocopy
   #   environment:
   #     VIRTUAL_HOST: webgrind.wordpress.test
   #   network_mode: bridge

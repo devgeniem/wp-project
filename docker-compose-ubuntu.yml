@@ -36,7 +36,7 @@ services:
       PHP_SESSION_REDIS_DB: 0
 
       # This is the default theme name WordPress will use
-      WP_DEFAULT_THEME: THEMENAME
+      WP_DEFAULT_THEME: thedustpresstheme
 
       # Use same caching solution as in production but only for a really small time
       # Default value is 1 second
