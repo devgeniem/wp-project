@@ -5,10 +5,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
-## [0.1.0] - 2018-01-29
+## [0.2.0] - 2018-01-29
 
 ### Changed
 - Moved back to the native mount instead of Docker-Sync.
+## [0.1.2] - 2018-01-16
+
+### Added
+- Added an exception to the PHP CS rules so that CamelCased filenames are allowed.
+
+## [0.1.1] - 2018-01-12
+
+### Fixed
+
+- Fixed the uploads dir path in `docker-sync.yml` configuration.
+
+## [0.1.0] - 2017-12-13
+
+### Changed
+
+- Update tasks.cron's comment about WP cron.
+
+### Fixed
+
+- Remove the `PLL_LINGOTEK_AD` constant since it causes problems with the pro version of Polylang.
 
 ## [0.0.1] - 2017-11-20
 
