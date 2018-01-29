@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.1.0] - 2018-01-29
+
+### Changed
+- Moved back to the native mount instead of Docker-Sync.
+
 ## [0.0.1] - 2017-11-20
 
 ### Added
