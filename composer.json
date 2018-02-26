@@ -5,16 +5,16 @@
   "description": "Bedrock inspired WordPress template",
   "authors": [
     {
-      "name": "Onni Hakala",
-      "email": "onni.hakala@geniem.com",
-      "homepage": "https://github.com/onnimonni",
+      "name": "Ville Pietarinen",
+      "email": "ville.pietarinen@geniem.com",
+      "homepage": "https://github.com/villepietarinen",
       "role": "Project Lead Developer"
     },
     {
       "name": "Ville Siltala",
       "email": "ville.siltala@geniem.com",
       "homepage": "https://github.com/villesiltala",
-      "role": "WordPress Team Lead"
+      "role": "Project Developer"
     }
   ],
   "keywords": [
