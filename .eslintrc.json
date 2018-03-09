@@ -7,5 +7,9 @@
     "extends": "wordpress",
     "rules": {
         "yoda": [2, "never"]
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
     }
 }
