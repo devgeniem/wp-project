@@ -6,6 +6,10 @@
     },
     "extends": "wordpress",
     "rules": {
-        "yoda": [2, "never"]
+        "yoda": [2, "never"],
+        "prefer-const": ["error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }]
     }
 }
