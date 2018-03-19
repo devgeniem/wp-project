@@ -2,7 +2,7 @@
 # Geniem WordPress Project template.
 [![Build Status](https://travis-ci.org/devgeniem/wp-project.svg?branch=master)](https://travis-ci.org/devgeniem/wp-project)
 
-Use this with our docker-image: [devgeniem/wordpress-server](https://github.com/devgeniem/wordpress-server).
+Use this as a local development environment with our docker-image: [devgeniem/ubuntu-docker-wordpress-development](https://github.com/devgeniem/ubuntu-docker-wordpress-development).
 
 And our development tools: [gdev](https://github.com/devgeniem/gdev).
 
