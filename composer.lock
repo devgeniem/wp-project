@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae351041c46be388dad651a9a2a5d471",
+    "content-hash": "b83dbf6e542fcfcf988e600516f76f56",
     "packages": [
         {
             "name": "aucor/dynamic-mo-loader",
@@ -252,16 +252,16 @@
         },
         {
             "name": "devgeniem/dustpress",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/dustpress.git",
-                "reference": "a2c21a1f03b0f65bcfdb957bae57bc54d3fd55b3"
+                "reference": "580de9c2687207509cb78869e412e3d3c7567d26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/a2c21a1f03b0f65bcfdb957bae57bc54d3fd55b3",
-                "reference": "a2c21a1f03b0f65bcfdb957bae57bc54d3fd55b3",
+                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/580de9c2687207509cb78869e412e3d3c7567d26",
+                "reference": "580de9c2687207509cb78869e412e3d3c7567d26",
                 "shasum": ""
             },
             "type": "library",
@@ -297,7 +297,7 @@
                 "theme",
                 "wordpress"
             ],
-            "time": "2018-03-15T12:45:33+00:00"
+            "time": "2018-03-19T13:07:23+00:00"
         },
         {
             "name": "devgeniem/dustpress-debugger",
@@ -832,6 +832,37 @@
                 "wordpress"
             ],
             "time": "2017-11-09T08:18:15+00:00"
+        },
+        {
+            "name": "devgeniem/wp-stateless-bucket-link-filter",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/wp-stateless-bucket-link-filter.git",
+                "reference": "bd2254e98970552b54bc0951c3126386ac45b456"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/wp-stateless-bucket-link-filter/zipball/bd2254e98970552b54bc0951c3126386ac45b456",
+                "reference": "bd2254e98970552b54bc0951c3126386ac45b456",
+                "shasum": ""
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://github.com/villesiltala",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Enables filtering WP Stateless bucket link via a PHP constant.",
+            "homepage": "http://github.com/devgeniem/wp-stateless-bucket-link-filter",
+            "time": "2017-10-13T06:21:49+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
