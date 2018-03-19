@@ -183,7 +183,23 @@ if ( file_exists( $env_config ) ) {
 }
 
 /**
- * Define read only options to override WordPress database options.
+ * Setup WP Stateless to upload all the files into the Google Bucket.
+ */
+define( 'WP_STATELESS_MEDIA_BUCKET', env( 'GOOGLE_CLOUD_STORAGE_BUCKET_NAME' ) );
+define( 'WP_STATELESS_MEDIA_MODE', 'stateless' );
+// The correct one is this with the typo.
+define( 'WP_STATELESS_MEDIA_BODY_REWTITE', 'false' );
+// Define this one too in case they notice the typo and fix it.
+define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
+define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
+define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
+// Replace the default bucket link and use the current domain. We serve uploads through a Nginx proxy cache.
+$scheme      = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';
+$server_name = filter_input( INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL );
+define( 'WP_STATELESS_BUCKET_LINK_REPLACE', $scheme . '://' . $server_name . '/uploads/' );
+
+/**
+ * Define read only options to override WordPress options.
  */
 define( 'WP_READONLY_OPTIONS', [
     // 1 : I would like my blog to be visible to everyone, including search engines.

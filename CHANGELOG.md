@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- Nginx proxy cache settings for image caching.
+- WP Stateless and its settings into `application.php`.
+- DustPress, DustPress.js, DusPress Debugger.
+- ACF Codifier.
+
+### Removed
+
+- Rspec tests. We use Codeception now.
+
 ## [0.2.0] - 2018-01-29
 
 ### Changed
