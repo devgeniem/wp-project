@@ -16,7 +16,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Rspec tests. We use Codeception now.
 
-
 ## [0.2.0] - 2018-01-29
 
 ### Changed
