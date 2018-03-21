@@ -6,7 +6,7 @@ services:
   # Web Server which runs nginx+php
   ##
   web:
-    image: devgeniem/wordpress-development-server:debian-php7.0
+    image: devgeniem/ubuntu-docker-wordpress-development:latest
     ports:
       - 8080
     links:
@@ -75,6 +75,11 @@ services:
       SMTP_FROM: no-reply@wordpress.test
       # This will use local mail.test server
       SMTP_HOST: 172.17.0.1
+
+      # Google Bucket dev settings
+      GOOGLE_SERVICE_ACCOUNT_EMAIL: wordpress-dev@insert-account-email.com
+      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: wordpress-dev
+      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
     network_mode: bridge
 
   ##

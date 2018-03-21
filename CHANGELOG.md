@@ -3,7 +3,42 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.2] - 2018-03-21
+
+### Added
+
+- New Eslint rules: yoda (never), prefer-const (warn) and no-unused-vars (warn).
+
+## [0.5.1] - 2018-03-19
+
+### Removed
+
+- The uploads redirect that is not needed anymore in `nginx/server/additions.conf`.
+
+## [0.5.0] - 2018-03-19
+
+### Added
+
+- `devgeniem/wp-stateless-bucket-link-filter` mu-plugin to make image proxy work with WP Stateless.
+
+## [0.4.0] - 2018-03-19
+
+### Added
+
+- Google Bucket environment variable templates into docker-compose files.
+
+## [0.3.0] - 2018-03-19
+
+### Added
+
+- Nginx proxy cache settings for image caching.
+- WP Stateless and its settings into `application.php`.
+- DustPress, DustPress.js, DusPress Debugger.
+- ACF Codifier.
+
+### Removed
+
+- Rspec tests. We use Codeception now.
 
 ## [0.2.0] - 2018-01-29
 
