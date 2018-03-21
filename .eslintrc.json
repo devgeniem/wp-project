@@ -6,6 +6,15 @@
     },
     "extends": "wordpress",
     "rules": {
-        "yoda": [2, "never"]
+        "yoda": [2, "never"],
+        "prefer-const": ["warn", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }],
+        "no-unused-vars": ["warn", {
+            "vars": "all",
+            "args": "after-used",
+            "ignoreRestSiblings": false
+        }]
     }
 }
