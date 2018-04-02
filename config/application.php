@@ -144,11 +144,11 @@ if ( env( 'WP_DEFAULT_THEME' ) && env( 'WP_DEFAULT_THEME' ) !== 'THEME' . 'NAME'
 define( 'WP_NO_ADMIN_AJAX_URL', '/ajax/' );
 
 /**
- * Only keep the last 30 revisions of a post. Having hundreds of revisions of
+ * Only keep the last 5 revisions of a post. Having hundreds of revisions of
  * each post might cause sites to slow down, sometimes significantly due to a
  * massive, and usually unecessary bloating the wp_posts and wp_postmeta tables.
  */
-define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 30 );
+define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 5 );
 
 /**
  * Define newsletter plugin logging into php logging directory
@@ -194,8 +194,10 @@ define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
 // Replace the default bucket link and use the current domain. We serve uploads through a Nginx proxy cache.
-$scheme      = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';
-$server_name = filter_input( INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL );
+$scheme = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';
+// @codingStandardsIgnoreStart - a safer way to access server variables on PHP7.x
+$server_name = filter_var( $_SERVER['SERVER_NAME'], FILTER_SANITIZE_URL );
+// @codingStandardsIgnoreEnd
 define( 'WP_STATELESS_BUCKET_LINK_REPLACE', $scheme . '://' . $server_name . '/uploads/' );
 
 /**
