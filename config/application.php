@@ -193,6 +193,8 @@ define( 'WP_STATELESS_MEDIA_BODY_REWTITE', 'false' );
 define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
+define( 'WP_STATELESS_MEDIA_HASH_FILENAME', 'true' );
+
 // Replace the default bucket link and use the current domain. We serve uploads through a Nginx proxy cache.
 $scheme = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';
 // @codingStandardsIgnoreStart - a safer way to access server variables on PHP7.x
