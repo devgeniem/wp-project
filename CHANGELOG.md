@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 - Add hashes by default to filenames so we can upload files with the same name
 - cors headers
+- removed 5 min browser cache
 
 ## [0.6.0] - 2018-04-02
 
