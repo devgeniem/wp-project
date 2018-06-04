@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+- Removed Flynn stuff from Dockerfile
+- Added cron runner priviledges to Dockerfile
+- Added optional beta image commented out to Dockerfile
+- Added kontena ymls
+- added index folders to nginx folder to enable project spesific config to index block eg. basic auth
+- deleted skip_cache.conf
+- Added skipcache folder and skip-cache.conf
 
 ## [0.6.2] - 2018-06-04
 - Changed pagespeed config: InPlaceResourceOptimization on; -> off
