@@ -84,6 +84,11 @@ define( 'DB_COLLATE', env( 'DB_COLLATE' ) ?: 'utf8mb4_swedish_ci' );
 $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 
 /**
+ * Define Nginx fullpage cache folder
+ */
+define('RT_WP_NGINX_HELPER_CACHE_PATH','/dev/cache/'); 
+
+/**
  * Use redis for object cache
  */
 define( 'WP_REDIS_CLIENT', env( 'WP_REDIS_CLIENT' ) );

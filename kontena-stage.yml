@@ -1,5 +1,5 @@
-stack: devgeniem/client-valo
-description: Valo
+stack: devgeniem/client-asiakas
+description: Asiakas
 version: 0.0.10
 
 variables:
@@ -95,7 +95,7 @@ services:
       file: vendor/devgeniem/kontena-cluster-configs/stage/wp-kontena.yml
       service: redis
   web:
-    image: devgeniem/client-valo:latest
+    image: devgeniem/client-asiakas:stage
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/stage/wp-kontena.yml
       service: web
