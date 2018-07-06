@@ -39,7 +39,7 @@ services:
       PHP_SESSION_REDIS_DB: 0
 
       # This is the default theme name WordPress will use
-      WP_DEFAULT_THEME: THEMENAME
+      # WP_DEFAULT_THEME: THEMENAME
 
       # Use same caching solution as in production but only for a really small time
       # Default value is 1 second
@@ -69,7 +69,7 @@ services:
       # If you want to profile this site turn it on and use ?XDEBUG_PROFILE get parameter or cookie
       XDEBUG_ENABLE_PROFILE: 0
       # Connect to host machine for remote xdebug. The IP address is alias for host machine 127.0.0.1 by gdev
-      XDEBUG_REMOTE_HOST: 10.254.254.254
+      XDEBUG_REMOTE_HOST: 127.0.0.1
       # Raise the Nginx fastcgi timeout so that we can have longer debug sessions
       # This also raises php_execution_time
       NGINX_FASTCGI_TIMEOUT: 600
@@ -77,7 +77,7 @@ services:
       # Mail settings
       SMTP_FROM: no-reply@wordpress.test
       # This will use local mail.test server
-      SMTP_HOST: 172.17.0.1
+      SMTP_HOST: 127.0.0.1
 
       # Google Bucket dev settings
       GOOGLE_SERVICE_ACCOUNT_EMAIL: wordpress-dev@insert-account-email.com
@@ -85,6 +85,8 @@ services:
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
 
     network_mode: bridge
+    extra_hosts:
+    - 'wordpress.test:127.0.0.1'
 
   ##
   # Use basic Mariadb container for database
@@ -107,46 +109,3 @@ services:
   redis:
     image: redis
     network_mode: bridge
-
-  # --------------------------------------------
-  # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
-  # --------------------------------------------
-
-  ##
-  # Use elasticpress plugin and elasticsearch for quicker WP_Queries in WordPress
-  ##
-
-  # elasticsearch:
-  #   image: elasticsearch
-  #   volumes:
-  #      Make elasticsearch persistent
-  #     - /usr/share/elasticsearch/data
-
-  ##
-  # nodejs container which installs and builds all frontend assets in all all themes with package.json
-  ##
-  
-  # webpack-builder:
-  #   image: devgeniem/node-assets-builder
-  #   volumes:
-  #     - .:/var/www/project
-  #     - /var/www/project/web/app/themes/THEMENAME/node_modules/
-  #   command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
-  #   network_mode: bridge
-
-  ##
-  # Container for analyzing xdebug profiling
-  # For Example: use yoursite.test/?XDEBUG_PROFILE to profile the front page
-  ##
-
-  # webgrind:
-  #   image: devgeniem/webgrind
-  #   ports:
-  #     - 80
-  #   volumes:
-  #     - .:/var/www/project
-  #     - /var/www/project/web/app/themes/THEMENAME/node_modules/
-  #   environment:
-  #     VIRTUAL_HOST: webgrind.wordpress.test
-  #   network_mode: bridge
-
