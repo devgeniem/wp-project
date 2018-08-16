@@ -31,6 +31,10 @@
     {
       "type": "composer",
       "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:devgeniem/wp-cron-runner.git"
     }
   ],
   "require": {
