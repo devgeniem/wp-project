@@ -187,9 +187,6 @@ if ( file_exists( $env_config ) ) {
  */
 define( 'WP_STATELESS_MEDIA_BUCKET', env( 'GOOGLE_CLOUD_STORAGE_BUCKET_NAME' ) );
 define( 'WP_STATELESS_MEDIA_MODE', 'stateless' );
-// The correct one is this with the typo.
-define( 'WP_STATELESS_MEDIA_BODY_REWTITE', 'false' );
-// Define this one too in case they notice the typo and fix it.
 define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
