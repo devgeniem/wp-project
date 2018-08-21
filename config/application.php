@@ -198,7 +198,7 @@ define( 'WP_STATELESS_MEDIA_BODY_REWTITE', 'false' );
 define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
-define( 'WP_STATELESS_MEDIA_HASH_FILENAME', 'true' );
+define( 'WP_STATELESS_MEDIA_CACHE_BUSTING', 'true' );
 
 // Replace the default bucket link and use the current domain. We serve uploads through a Nginx proxy cache.
 $scheme = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';
@@ -215,6 +215,11 @@ define( 'WP_READONLY_OPTIONS', [
     // 0 : I would like to block search engines, but allow normal visitors.
     'blog_public' => env( 'WP_BLOG_PUBLIC' ) ?? 1,
 ] );
+
+/**
+ * Define Google API-Key
+ */
+define( 'GOOGLE_MAPS_APIKEY', env( 'GOOGLE_MAPS_APIKEY' ) );
 
 /**
  * Bootstrap WordPress
