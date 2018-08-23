@@ -1,14 +1,10 @@
 # This is for production docker image with new relic php daemon
-FROM devgeniem/wordpress-newrelic-server:debian-php7.0
+FROM devgeniem/ubuntu-docker-wordpress-newrelic:latest
+# Use following beta image for PHP 7.2
+#FROM devgeniem/ubuntu-docker-wordpress-newrelic:beta
 
-# Same image without new relic:
-#FROM devgeniem/wordpress-server:debian-php7.0
-
-# Use port 8080 for flynn/router
-ENV PORT=8080 \
-    FLYNN_PROCESS_TYPE='WEB' \
-    # Use these uid/gid in production by default and change them when needed
-    WEB_UID=10000 \
+# Use these uid/gid in production by default and change them when needed
+ENV WEB_UID=10000 \
     WEB_GID=10001 \
     WEB_USER=wordpress \
     WEB_GROUP=web \
@@ -58,3 +54,6 @@ COPY web/app/languages /var/www/project/web/app/languages
 COPY web/app/mu-plugins /var/www/project/web/app/mu-plugins
 COPY web/app/plugins /var/www/project/web/app/plugins
 COPY web/app/themes /var/www/project/web/app/themes
+
+## To run cron with php-fpm we need to set permissions to cron runner script
+RUN chmod +x /var/www/project/scripts/run-cron.sh

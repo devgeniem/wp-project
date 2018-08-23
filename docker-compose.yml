@@ -84,6 +84,9 @@ services:
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: wordpress-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
 
+      # Google Maps API-Key
+      GOOGLE_MAPS_APIKEY: ''      
+
     network_mode: bridge
 
   ##

@@ -1,0 +1,125 @@
+stack: devgeniem/client-asiakas
+description: Asiakas
+version: 0.0.10
+
+variables:
+  redis_password:
+    type: string
+    min_length: 40
+    from:
+      vault: ${STACK}-redis-password
+      random_string: 40
+    to:
+      vault: ${STACK}-redis-password
+  mysql_password:
+    type: string
+    min_length: 40
+    from:
+      vault: ${STACK}-mysql-password
+      random_string: 40
+    to:
+      vault: ${STACK}-mysql-password
+  nginx_port:
+    type: integer
+    from:
+      random_number:
+        min: 8100
+        max: 8200
+  auth_key:
+    type: string
+    from:
+      vault: ${STACK}-wp-auth_key
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-auth_key
+  secure_auth_key:
+    type: string
+    from:
+      vault: ${STACK}-wp-secure_auth_key
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-secure_auth_key
+  logged_in_key:
+    type: string
+    from:
+      vault: ${STACK}-wp-logged_in_key
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-logged_in_key
+  nonce_key:
+    type: string
+    from:
+      vault: ${STACK}-wp-nonce_key
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-nonce_key
+  auth_salt:
+    type: string
+    from:
+      vault: ${STACK}-wp-auth_salt
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-auth_salt
+  secure_auth_salt:
+    type: string
+    from:
+      vault: ${STACK}-wp-secure_auth_salt
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-secure_auth_salt
+  logged_in_salt:
+    type: string
+    from:
+      vault: ${STACK}-wp-logged_in_salt
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-logged_in_salt
+  nonce_salt:
+    type: string
+    from:
+      vault: ${STACK}-wp-nonce_salt
+      random_string: 30
+    to:
+      vault: ${STACK}-wp-nonce_salt
+  smtp_password:
+    type: string
+    from:
+      vault: ${STACK}-smtp_password
+      random_string: 30
+    to:
+      vault: ${STACK}-smtp_password
+
+services:
+  redis:
+    extends:
+      file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
+      service: redis
+
+ web:
+    image: devgeniem/client-asiakas:latest
+    extends:
+      file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
+      service: web
+    environment:
+      SMTP_TLS: "on"
+      SMTP_AUTH: "on"
+      SMTP_FROM: no-reply@asiakas.fi
+      SMTP_HOST: smtp.mandrillapp.com
+      SMTP_PASSWORD: ${smtp_password}
+      SMTP_PORT: 587
+      SMTP_USER: hannu.kumpula@geniem.com
+      PHP_SESSION_REDIS_DB: 0
+      NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 15m
+      SERVER_NAME: asiakas.production.geniem.io
+      CRON_URL: https://asiakas.production.geniem.io
+      WP_HOME: https://asiakas.production.geniem.io
+      WP_SITEURL: https://asiakas.production.geniem.io
+      KONTENA_LB_VIRTUAL_HOSTS: asiakas.production.geniem.io,*.asiakas.production.geniem.io
+      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-production
+      NR_APP_NAME: Kontena - Production - asiakas - WPMS
+      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: |
+        Insert json here
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://graylog.graylog.${GRID}.kontena.local:12201

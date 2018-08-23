@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+- Removed Flynn stuff from Dockerfile
+- Added cron runner priviledges to Dockerfile
+- Added optional beta image commented out to Dockerfile
+- Added kontena ymls
+- Added index folders to nginx folder to enable project spesific config to index block eg. basic auth
+- Deleted skip_cache.conf
+- Added skip_cache.conf back to original location to prevent crash
+- Added skipcache folder and skip-cache.conf
+- Added Kontena related configs
+- Removed composer lock
+- Added redirect templates
+- Added run cron
+- Added nginx helper
+- Added google api key to docker-compose
 
 ## [0.6.2] - 2018-06-04
 - Changed pagespeed config: InPlaceResourceOptimization on; -> off

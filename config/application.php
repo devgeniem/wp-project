@@ -84,6 +84,11 @@ define( 'DB_COLLATE', env( 'DB_COLLATE' ) ?: 'utf8mb4_swedish_ci' );
 $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 
 /**
+ * Define Nginx fullpage cache folder
+ */
+define('RT_WP_NGINX_HELPER_CACHE_PATH','/dev/cache/'); 
+
+/**
  * Use redis for object cache
  */
 define( 'WP_REDIS_CLIENT', env( 'WP_REDIS_CLIENT' ) );
@@ -207,6 +212,11 @@ define( 'WP_READONLY_OPTIONS', [
     // 0 : I would like to block search engines, but allow normal visitors.
     'blog_public' => env( 'WP_BLOG_PUBLIC' ) ?? 1,
 ] );
+
+/**
+ * Define Google API-Key
+ */
+define( 'GOOGLE_MAPS_APIKEY', env( 'GOOGLE_MAPS_APIKEY' ) );
 
 /**
  * Bootstrap WordPress
