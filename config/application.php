@@ -78,6 +78,7 @@ define( 'MUPLUGINDIR', CONTENT_DIR . '/mu-plugins' );
 define( 'DB_NAME', env( 'MYSQL_DATABASE' ) ?: env( 'DB_ENV_MYSQL_PASSWORD' ) );
 define( 'DB_USER', env( 'MYSQL_USER' ) ?: env( 'DB_ENV_MYSQL_USER' ) );
 define( 'DB_HOST', env( 'MYSQL_HOST' ) ?: env( 'DB_PORT_3306_TCP_ADDR' ) );
+define( 'DB_READ_HOST', env( 'MYSQL_READ_HOST' ) );
 define( 'DB_PASSWORD', env( 'MYSQL_PWD' ) ?: env( 'DB_ENV_MYSQL_PASSWORD' ) );
 define( 'DB_CHARSET', env( 'DB_CHARSET' ) ?: 'utf8mb4' );
 define( 'DB_COLLATE', env( 'DB_COLLATE' ) ?: 'utf8mb4_swedish_ci' );
