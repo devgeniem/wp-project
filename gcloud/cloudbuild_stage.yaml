@@ -54,7 +54,7 @@ steps:
 #  args:
 #  - '-c'
 #  - |
-#    cd ./web/app/themes/{{ TEEMA }}
+#    cd ./web/app/themes/{{ THEME }}
 #    npm install
 #    ./node_modules/webpack/bin/webpack.js
 
@@ -74,7 +74,7 @@ steps:
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
-  args: [ 'stack', 'upgrade', '{{ KONTENA STACKIN NIMI }}', 'kontena-stage.yml' ]
+  args: [ 'stack', 'upgrade', '{{ KONTENA STACK NAME }}', 'kontena-stage.yml' ]
   env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://misty-moon-7545.platforms.eu-west-1.kontena.cloud' ]
   secretEnv: [ 'KONTENA_TOKEN' ]
 

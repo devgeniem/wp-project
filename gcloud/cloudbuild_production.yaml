@@ -54,7 +54,7 @@ steps:
 #  args:
 #  - '-c'
 #  - |
-#    cd ./web/app/themes/{{ TEEMA }}
+#    cd ./web/app/themes/{{ THEME }}
 #    npm install
 #    ./node_modules/webpack/bin/webpack.js
 
@@ -74,7 +74,7 @@ steps:
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
-  args: [ 'stack', 'upgrade', '{{ KONTENA STACKIN NIMI }}', 'kontena-production.yml' ]
+  args: [ 'stack', 'upgrade', '{{ KONTENA STACK NAME }}', 'kontena-production.yml' ]
   env: [ 'KONTENA_GRID=production', 'KONTENA_URL=https://muddy-night-2438.platforms.eu-west-1.kontena.cloud' ]
   secretEnv: [ 'KONTENA_TOKEN' ]
 

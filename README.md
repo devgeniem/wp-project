@@ -68,6 +68,19 @@ $ make test
 
 Open the url you provided in step 2 for example: `client-name.test` and start developing the site.
 
+## Google cloud build
+The project base provides templates to build/test/deploy the project via Google Cloud Build (GCB) to Kontena.
+Google cloud CI/CD is configured by the yaml files in `gcloud/`. There are separate config files to configure staging and production enviroments.
+(This assumes it's a Geniem project. For other projects you need to also replace all the secrets as documented by Google)
+
+To enable a build pipeline, do following:
+1. Replace Kontena stack name in the yaml files
+2. Uncomment webpack/phpcs/integration test steps as needed
+3. Create build triggers to GCB
+  - Trigger from push to branch or tag in Github
+  - Build configuration type: cloudbuild.yaml.
+  - Set location as `gcloud/cloudbuild_stage.yaml` or `gcloud/cloudbuild_production.yaml`
+
 ## Changelog
 
 [CHANGELOG.md](/CHANGELOG.md)
