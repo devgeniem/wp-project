@@ -5,7 +5,7 @@ steps:
   args:
   - kms
   - decrypt
-  - --ciphertext-file=gcloud/id_rsa_stage.enc
+  - --ciphertext-file=gcloud/id_rsa_production.enc
   - --plaintext-file=/root/.ssh/id_rsa
   - --location=global
   - --keyring=infra
@@ -68,19 +68,19 @@ steps:
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:stage', '.' ]
+  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/$REPO_NAME:stage' ]
+  args: [ 'push', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest' ]
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
-  args: [ 'stack', 'upgrade', '{{ KONTENA STACKIN NIMI }}', 'kontena-stage.yml' ]
-  env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://misty-moon-7545.platforms.eu-west-1.kontena.cloud' ]
+  args: [ 'stack', 'upgrade', '{{ KONTENA STACKIN NIMI }}', 'kontena-production.yml' ]
+  env: [ 'KONTENA_GRID=production', 'KONTENA_URL=https://muddy-night-2438.platforms.eu-west-1.kontena.cloud' ]
   secretEnv: [ 'KONTENA_TOKEN' ]
 
 secrets:
-- kmsKeyName: 'projects/geniem-stage/locations/global/keyRings/infra/cryptoKeys/kontena-key'
+- kmsKeyName: 'projects/geniem-production/locations/global/keyRings/infra/cryptoKeys/kontena-key'
   secretEnv:
     # encryted access token to kontena
-    KONTENA_TOKEN: CiQA4j4haRTCAuU1Klk0GBbPucq2JjVzH1CMMUH+WluMy5N93XkSaQDqV+JInB3iIVhb/6L1fuX4MNzyZehyotAHrYQZHqykjDW5kdM7ndH70WdnjhlPMuPUczlP1qQ7K2s5A1gaPXfQnqC1/ILiu2DO0w0WTrGfjzXabAMxNTEoX1Q252vU7PdSsvUmvziyzg==
+    KONTENA_TOKEN: CiQArTuEBFQL27xdUYYv1Tk1+MkhwcP42AjFMBZmNZSLP3QqyhMSaQBs20RHtZQo1O0Q7AHHPpnulqDQvnpijWk8nJQUvU7nX4coNldeQV+9T/VnwzyOWZdEfdd4AxW/ZXttze1yHYP0jYDFcu6j5tJ3DdwwGMX83z3fsqXTZEEN/c7zwEZdul4SODqUW2IiJQ==
 
