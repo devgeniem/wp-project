@@ -88,6 +88,8 @@ services:
       GOOGLE_MAPS_APIKEY: ''      
 
     network_mode: bridge
+    extra_hosts:
+      - 'wordpress.test:172.17.0.1'
 
   ##
   # Use basic Mariadb container for database
@@ -110,7 +112,16 @@ services:
   redis:
     image: redis
     network_mode: bridge
+    
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+    network_mode: "bridge"
+    extra_hosts:
+      - 'tre3.test:172.17.0.1'
 
+    
   # --------------------------------------------
   # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
   # --------------------------------------------
