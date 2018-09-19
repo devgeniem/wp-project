@@ -76,6 +76,8 @@ Google cloud CI/CD is configured by the yaml files in `gcloud/`. There are separ
 To enable a build pipeline, do following:
 1. Replace Kontena stack name in the yaml files
 2. Uncomment webpack/phpcs/integration test steps as needed
+  - Integration tests is still work in progress
+  - Configure them in `tests/` if enabling
 3. Create build triggers to GCB
   - Trigger from push to branch or tag in Github
   - Build configuration type: cloudbuild.yaml.
