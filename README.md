@@ -74,7 +74,7 @@ Google cloud CI/CD is configured by the yaml files in `gcloud/`. There are separ
 (This assumes it's a Geniem project. For other projects you need to also replace all the secrets as documented by Google)
 
 To enable a build pipeline, do following:
-1. Replace Kontena stack name in the yaml files
+1. Replace KONTENA_STACK_NAME and IMAGE_NAME in the yaml files
 2. Uncomment webpack/phpcs/integration test steps as needed
   - Integration tests is still work in progress
   - Configure them in `tests/` if enabling

@@ -68,9 +68,9 @@ steps:
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest', '.' ]
+  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:latest', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest' ]
+  args: [ 'push', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:latest' ]
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
