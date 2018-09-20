@@ -88,7 +88,13 @@ variables:
       random_string: 30
     to:
       vault: ${STACK}-smtp_password      
-
+  google-cloud-storage-access-key:
+    type: string
+    from:
+      vault: ${STACK}-google-cloud-storage-access-key
+      random_string: 30
+    to:
+      vault: ${STACK}-google-cloud-storage-access-key
 services:
   redis:
     extends:
@@ -117,6 +123,5 @@ services:
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.stage.geniem.io
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-stage
       NR_APP_NAME: Kontena - Stage - asiakas - WPMS
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: |
-        Insert json here
+      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google-cloud-storage-access-key}
 
