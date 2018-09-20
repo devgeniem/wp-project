@@ -30,6 +30,7 @@ services:
       # Don't use this in your code unless this is only option
       # We want to nearly identical codebase in production and development
       WP_ENV: development
+      WP_BLOG_PUBLIC: 0
 
       WEB_UID: 1000
       WEB_GID: 1001
@@ -51,14 +52,14 @@ services:
       BASIC_AUTH_PASSWORD_HASH: world
 
       # These will be mapped automatically in development to jwilder/nginx-proxy
-      VIRTUAL_HOST: wordpress.test
+      VIRTUAL_HOST: asiakas.test
       VIRTUAL_PORT: 8080
 
       # This creates https certificate automatically when using gdev
-      HTTPS_HOST: wordpress.test
+      HTTPS_HOST: asiakas.test
 
       # Set project WP_SITEURL & WP_HOME from SERVER_NAME too
-      SERVER_NAME: wordpress.test
+      SERVER_NAME: asiakas.test
 
       # Mysql details
       MYSQL_DATABASE: wordpress
@@ -75,21 +76,20 @@ services:
       NGINX_FASTCGI_TIMEOUT: 600
 
       # Mail settings
-      SMTP_FROM: no-reply@wordpress.test
+      SMTP_FROM: no-reply@asiakas.test
       # This will use local mail.test server
       SMTP_HOST: 172.17.0.1
 
       # Google Bucket dev settings
-      GOOGLE_SERVICE_ACCOUNT_EMAIL: wordpress-dev@insert-account-email.com
-      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: wordpress-dev
+      GOOGLE_SERVICE_ACCOUNT_EMAIL: asiakas-dev@insert-account-email.com
+      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
-
       # Google Maps API-Key
       GOOGLE_MAPS_APIKEY: ''      
 
     network_mode: bridge
     extra_hosts:
-      - 'wordpress.test:172.17.0.1'
+      - 'asiakas.test:172.17.0.1'
 
   ##
   # Use basic Mariadb container for database
@@ -119,7 +119,7 @@ services:
       - 4444:4444
     network_mode: "bridge"
     extra_hosts:
-      - 'wordpress.test:172.17.0.1'
+      - 'asiakas.test:172.17.0.1'
 
     
   # --------------------------------------------
