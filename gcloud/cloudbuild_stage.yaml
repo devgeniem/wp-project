@@ -54,7 +54,7 @@ steps:
 #  args:
 #  - '-c'
 #  - |
-#    cd ./web/app/themes/{{ THEME }}
+#    cd ./web/app/themes/THEMENAME
 #    npm install
 #    ./node_modules/webpack/bin/webpack.js
 
@@ -68,13 +68,13 @@ steps:
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage', '.' ]
+  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/PROJECTNAME:stage', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage' ]
+  args: [ 'push', 'gcr.io/$PROJECT_ID/PROJECTNAME:stage' ]
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
-  args: [ 'stack', 'upgrade', '{{ KONTENA STACK NAME }}', 'kontena-stage.yml' ]
+  args: [ 'stack', 'upgrade', 'PROJECTNAME', 'kontena-stage.yml' ]
   env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://misty-moon-7545.platforms.eu-west-1.kontena.cloud' ]
   secretEnv: [ 'KONTENA_TOKEN' ]
 

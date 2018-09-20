@@ -74,14 +74,14 @@ Google cloud CI/CD is configured by the yaml files in `gcloud/`. There are separ
 (This assumes it's a Geniem project. For other projects you need to also replace all the secrets as documented by Google)
 
 To enable a build pipeline, do following:
-1. Replace KONTENA_STACK_NAME and IMAGE_NAME in the yaml files
+1. Replace PROJECTNAME and THEMENAME in the yaml files (gdev does this)
 2. Uncomment webpack/phpcs/integration test steps as needed
-  - Integration tests is still work in progress
-  - Configure them in `tests/` if enabling
+  -- Integration tests is still work in progress
+  -- Configure them in `tests/` if enabling
 3. Create build triggers to GCB
-  - Trigger from push to branch or tag in Github
-  - Build configuration type: cloudbuild.yaml.
-  - Set location as `gcloud/cloudbuild_stage.yaml` or `gcloud/cloudbuild_production.yaml`
+  -- Trigger from push to branch or tag in Github
+  -- Build configuration type: cloudbuild.yaml.
+  -- Set location as `gcloud/cloudbuild_stage.yaml` or `gcloud/cloudbuild_production.yaml`
 
 ## Changelog
 
@@ -124,7 +124,7 @@ This environment variable controls the WordPress `blog_public` [option](https://
 # List of used plugins / vendor packets
 
   ## Minimun php version
-    
+
     "php": ">=7.0"
 
   ## WordPress as a composer dependency
@@ -132,7 +132,7 @@ This environment variable controls the WordPress `blog_public` [option](https://
     "johnpbloch/wordpress": ">=4.5.0"
 
   ## Loads environment variables from .env to getenv() to be used in project configs.
-    
+
     "vlucas/phpdotenv": "^2.0.1"
 
   ## Also loads the environment variables. Why is this needed?
@@ -172,11 +172,11 @@ This environment variable controls the WordPress `blog_public` [option](https://
     "wpackagist-plugin/stream": ">=3.2.0",
 
   ## This is used to enhance the capabilities of the WP default media library. With this we can for example categorize the added media items.
-    
+
     "wpackagist-plugin/enhanced-media-library": ">=2.4.4",
 
   ## The geniem redis object cache dropin package. This is installed under /app so that WP uses it instead of its own object cache file.
-    
+
     "devgeniem/wp-redis-object-cache-dropin": ">=1.3.4"
 
   ## Whoops debugging for WordPress
