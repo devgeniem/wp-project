@@ -88,7 +88,7 @@ variables:
       random_string: 30
     to:
       vault: ${STACK}-smtp_password
-  google-cloud-storage-access-key:
+  google_cloud_storage_access_key:
     type: string
     from:
       vault: ${STACK}-google-cloud-storage-access-key
@@ -123,7 +123,7 @@ services:
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.production.geniem.io,*.asiakas.production.geniem.io
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-production
       NR_APP_NAME: Kontena - Production - asiakas - WPMS
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google-cloud-storage-access-key}
+      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google_cloud_storage_access_key}
     logging:
       driver: gelf
       options:
