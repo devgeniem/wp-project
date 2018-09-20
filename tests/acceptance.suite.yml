@@ -8,8 +8,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'https://tre3.test'
-            host: 'tre3.test'
+            url: 'https://wordpress.test'
+            host: 'wordpress.test'
             headless: true
             browser: chrome
             window_size: 1600x900

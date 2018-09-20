@@ -119,7 +119,7 @@ services:
       - 4444:4444
     network_mode: "bridge"
     extra_hosts:
-      - 'tre3.test:172.17.0.1'
+      - 'wordpress.test:172.17.0.1'
 
     
   # --------------------------------------------
