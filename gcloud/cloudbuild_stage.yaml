@@ -54,7 +54,7 @@ steps:
 #  args:
 #  - '-c'
 #  - |
-#    cd ./web/app/themes/{{ THEME }}
+#    cd ./web/app/themes/THEMENAME
 #    npm install
 #    ./node_modules/webpack/bin/webpack.js
 
@@ -68,19 +68,20 @@ steps:
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage', '.' ]
+  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/PROJECTNAME:stage', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage' ]
+  args: [ 'push', 'gcr.io/$PROJECT_ID/PROJECTNAME:stage' ]
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
-  args: [ 'stack', 'upgrade', '{{ KONTENA STACK NAME }}', 'kontena-stage.yml' ]
-  env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://misty-moon-7545.platforms.eu-west-1.kontena.cloud' ]
-  secretEnv: [ 'KONTENA_TOKEN' ]
+  args: [ 'stack', 'upgrade', 'PROJECTNAME', 'kontena-stage.yml' ]
+  env: [ 'KONTENA_GRID=stage' ]
+  secretEnv: [ 'KONTENA_TOKEN', 'KONTENA_URL' ]
 
 secrets:
 - kmsKeyName: 'projects/geniem-stage/locations/global/keyRings/infra/cryptoKeys/kontena-key'
   secretEnv:
     # encryted access token to kontena
     KONTENA_TOKEN: CiQA4j4haRTCAuU1Klk0GBbPucq2JjVzH1CMMUH+WluMy5N93XkSaQDqV+JInB3iIVhb/6L1fuX4MNzyZehyotAHrYQZHqykjDW5kdM7ndH70WdnjhlPMuPUczlP1qQ7K2s5A1gaPXfQnqC1/ILiu2DO0w0WTrGfjzXabAMxNTEoX1Q252vU7PdSsvUmvziyzg==
+    KONTENA_URL: CiQA4j4hadIFI1NAvNM+WY40MXjI7FdOggdDB3dxHMeZ3WP7tzMSYgDqV+JIAdwM0byeCb/Ss49OFlBokrZ3vi7Uk/irXeHw/kyGzs4i1CiBZgAoXEMPURMHPzzr0o/OZwwA+aplK4rCS+8oKzHYPoaKOv/trTjt97sQ2OAWur6PvPPHHA9LvLn6
 
