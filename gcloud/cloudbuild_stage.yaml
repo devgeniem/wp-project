@@ -1,0 +1,86 @@
+steps:
+
+# GITHUB KEY (Bob The Builder Bot)
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=gcloud/id_rsa_stage.enc
+  - --plaintext-file=/root/.ssh/id_rsa
+  - --location=global
+  - --keyring=infra
+  - --key=github-key
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
+
+# GITHUB TO KNOWN_HOSTS
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    chmod 600 /root/.ssh/id_rsa
+    cat <<EOF >/root/.ssh/config
+    Hostname github.com
+    IdentityFile /root/.ssh/id_rsa
+    EOF
+    mv gcloud/known_hosts /root/.ssh/known_hosts
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
+
+# COMPOSER
+- name: 'composer'
+  args: [ 'install', '--no-interaction' ]
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
+
+# PHPCS
+- name: 'composer'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    composer create-project wp-coding-standards/wpcs --no-dev /opt/wpcs
+    composer global require phpunit/phpunit
+    /opt/wpcs/vendor/bin/phpcs --config-set installed_paths /opt/wpcs
+#    /opt/wpcs/vendor/bin/phpcs --extensions=php --standard=phpcs.xml --runtime-set ignore_warnings_on_exit true .
+
+# WEBPACK
+# - name: 'gcr.io/cloud-builders/npm'
+#  entrypoint: 'bash'
+#  args:
+#  - '-c'
+#  - |
+#    cd ./web/app/themes/{{ THEME }}
+#    npm install
+#    ./node_modules/webpack/bin/webpack.js
+
+# INTEGRATION TESTS
+#- name: 'docker/compose:1.15.0'
+#  args: ['up', '-d', 'redis', 'db', 'web', 'selenium']
+#- name: 'docker/compose:1.15.0'
+#  args: ['run', 'web', './scripts/seed.sh']
+#- name: 'docker/compose:1.15.0'
+#  args: ['run', 'web', './vendor/bin/codecept', 'run', '--steps']
+
+# BUILD AND PUSH IMAGE
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage', '.' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'push', 'gcr.io/$PROJECT_ID/{{ IMAGE_NAME }}:stage' ]
+
+# UPGRADE KONTENA STACK
+- name: 'kontena/cli'
+  args: [ 'stack', 'upgrade', '{{ KONTENA STACK NAME }}', 'kontena-stage.yml' ]
+  env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://misty-moon-7545.platforms.eu-west-1.kontena.cloud' ]
+  secretEnv: [ 'KONTENA_TOKEN' ]
+
+secrets:
+- kmsKeyName: 'projects/geniem-stage/locations/global/keyRings/infra/cryptoKeys/kontena-key'
+  secretEnv:
+    # encryted access token to kontena
+    KONTENA_TOKEN: CiQA4j4haRTCAuU1Klk0GBbPucq2JjVzH1CMMUH+WluMy5N93XkSaQDqV+JInB3iIVhb/6L1fuX4MNzyZehyotAHrYQZHqykjDW5kdM7ndH70WdnjhlPMuPUczlP1qQ7K2s5A1gaPXfQnqC1/ILiu2DO0w0WTrGfjzXabAMxNTEoX1Q252vU7PdSsvUmvziyzg==
+
