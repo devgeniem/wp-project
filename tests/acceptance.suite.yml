@@ -9,7 +9,7 @@ modules:
     enabled:
         - WebDriver:
             url: 'https://wordpress.test'
-            host: 'wordpress.test'
+            host: 'selenium'
             headless: true
             browser: chrome
             window_size: 1600x900

@@ -83,6 +83,8 @@ To enable a build pipeline, do following:
   -- Build configuration type: cloudbuild.yaml.
   -- Set location as `gcloud/cloudbuild_stage.yaml` or `gcloud/cloudbuild_production.yaml`
 
+Further description is located in `gcloud/README.md`
+
 ## Changelog
 
 [CHANGELOG.md](/CHANGELOG.md)
