@@ -27,6 +27,7 @@ services:
       # Don't use this in your code unless this is only option
       # We want to nearly identical codebase in production and development
       WP_ENV: development
+      WP_BLOG_PUBLIC: 0
 
       WEB_UID: 1000
       WEB_GID: 1001

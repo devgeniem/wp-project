@@ -124,4 +124,5 @@ services:
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-stage
       NR_APP_NAME: Kontena - Stage - asiakas - WPMS
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google_cloud_storage_access_key}
+      WP_BLOG_PUBLIC: 0
 

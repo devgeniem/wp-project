@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+- Add WP_BLOG_PUBLIC:0 to configuration files
 - Removed Flynn stuff from Dockerfile
 - Added cron runner priviledges to Dockerfile
 - Added optional beta image commented out to Dockerfile
