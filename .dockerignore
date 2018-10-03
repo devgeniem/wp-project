@@ -63,3 +63,11 @@ vendor/*/*/tests
 vendor/*/*/.travis.yml
 vendor/*/*/composer.json
 vendor/*/*/phpunit.xml*
+
+# ignore node modules
+web/app/themes/*/node_modules
+
+# Default webgrind profile folder
+xdebug
+# No cachegrind files from anywhere
+cachegrind.out*
