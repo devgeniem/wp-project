@@ -82,7 +82,7 @@ services:
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
       # Google Maps API-Key
-      GOOGLE_MAPS_APIKEY: ''   
+      GOOGLE_MAPS_APIKEY: ''
     network_mode: bridge
 
   ##
@@ -100,7 +100,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     network_mode: bridge
     extra_hosts:
-      - 'asiakas.test:172.17.0.1'    
+      - 'asiakas.test:172.17.0.1'
 
   ##
   # We use redis for wp object cache and php sessions
@@ -126,7 +126,7 @@ services:
   ##
   # nodejs container which installs and builds all frontend assets in all all themes with package.json
   ##
-  
+
   # webpack-builder:
   #   image: devgeniem/node-assets-builder
   #   volumes:
@@ -146,5 +146,5 @@ services:
   #   volumes:
   #     - .:/var/www/project
   #   environment:
-  #     VIRTUAL_HOST: webgrind.wordpress.test
+  #     VIRTUAL_HOST: webgrind.asiakas.test
   #   network_mode: bridge

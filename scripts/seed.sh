@@ -46,7 +46,7 @@ if [ "$SERVER_NAME" != "" ]; then
 elif [ "$SMTP_FROM" != "" ]; then
     export WP_ADMIN_EMAIL=$SMTP_FROM
 else
-    export WP_ADMIN_EMAIL=admin@wordpress.test
+    export WP_ADMIN_EMAIL=admin@asiakas.test
 fi
 
 export WP_SITEURL=${WP_SITEURL-http://$SERVER_NAME}

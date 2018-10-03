@@ -17,7 +17,7 @@ And our development tools: [gdev](https://github.com/devgeniem/gdev).
 ## Workflow for WP projects
 1. After you have cloned this repository in the new client project replace all `THEMENAME` and `PROJECTNAME` references from all files from this project to your project name.
     * These can be for example: `ClientName` and `client-name`
-2. Change project test address in `docker-compose.yml` for example `wordpress.test` -> `client-name.test`
+2. Change project test address in `docker-compose.yml` for example `asiakas.test` -> `client-name.test`
 3. Add all people working in the project into `authors` section of `composer.json` and rename the project `devgeniem/wp-project`->`devgeniem/client` in `composer.json`.
     * You can also add project managers, designers and other developers here.
     * This is important so that we always have accountable people to advise with the project later on when it eventually might turn to more legacy project.

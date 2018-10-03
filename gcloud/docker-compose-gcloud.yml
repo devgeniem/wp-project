@@ -56,14 +56,14 @@ services:
       BASIC_AUTH_PASSWORD_HASH: world
 
       # These will be mapped automatically in development to jwilder/nginx-proxy
-      VIRTUAL_HOST: 'wordpress.test, *.wordpress.test'
+      VIRTUAL_HOST: 'asiakas.test, *.asiakas.test'
       VIRTUAL_PORT: 8080
 
       # This creates https certificate automatically when using gdev
-      HTTPS_HOST: '*.wordpress.test'
+      HTTPS_HOST: '*.asiakas.test'
 
       # Set project WP_SITEURL & WP_HOME from SERVER_NAME too
-      SERVER_NAME: wordpress.test
+      SERVER_NAME: asiakas.test
 
       # Mysql details
       MYSQL_DATABASE: wordpress
@@ -82,13 +82,13 @@ services:
       NGINX_FASTCGI_TIMEOUT: 600
 
       # Mail settings
-      SMTP_FROM: no-reply@wordpress.test
+      SMTP_FROM: no-reply@asiakas.test
       # This will use local mail.test server
       SMTP_HOST: 172.17.0.1
 
       # Google Bucket dev settings
-      GOOGLE_SERVICE_ACCOUNT_EMAIL: wordpress-dev@insert-account-email.com
-      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: wordpress-dev
+      GOOGLE_SERVICE_ACCOUNT_EMAIL: asiakas-dev@insert-account-email.com
+      GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
 
       # Google Maps API-Key
@@ -97,11 +97,11 @@ services:
     networks:
       integrationtest:
         aliases:
-          - wordpress.test
+          - asiakas.test
           - web
 
     extra_hosts:
-      - 'wordpress.test:127.0.0.1'
+      - 'asiakas.test:127.0.0.1'
   ##
   # Use basic Mariadb container for database
   ##
@@ -139,4 +139,4 @@ services:
         aliases:
           - selenium
     extra_hosts:
-      - 'wordpress.test:172.18.0.5'
+      - 'asiakas.test:172.18.0.5'
