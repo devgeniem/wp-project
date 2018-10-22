@@ -20,6 +20,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Added nginx helper
 - Added google api key to docker-compose
 
+## [0.6.3] - 2018-10-22
+- Changed run-cron.sh to use basic authentication if envs BASIC_AUTH_USER and BASIC_AUTH_PASSWORD has been setted.
+
 ## [0.6.2] - 2018-06-04
 - Changed pagespeed config: InPlaceResourceOptimization on; -> off
 
