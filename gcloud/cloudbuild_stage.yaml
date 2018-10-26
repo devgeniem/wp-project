@@ -25,7 +25,7 @@ steps:
     IdentityFile /root/.ssh/id_rsa
     EOF
     mv gcloud/known_hosts /root/.ssh/known_hosts
-    openssl req -new -newkey rsa:1024 -sha256 -days 7300 -nodes -x509 -subj "/CN=tre3.test" -keyout nginx/environments/testing/http/default.key -out nginx/environments/testing/http/default.crt
+    openssl req -new -newkey rsa:1024 -sha256 -days 7300 -nodes -x509 -subj "/CN=asiakas.test" -keyout nginx/environments/testing/http/default.key -out nginx/environments/testing/http/default.crt
   volumes:
   - name: 'ssh'
     path: /root/.ssh
