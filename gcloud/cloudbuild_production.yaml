@@ -78,6 +78,5 @@ secrets:
 - kmsKeyName: 'projects/geniem-production/locations/global/keyRings/infra/cryptoKeys/kontena-key'
   secretEnv:
     # encryted access token to kontena
-    KONTENA_TOKEN: CiQArTuEBFQL27xdUYYv1Tk1+MkhwcP42AjFMBZmNZSLP3QqyhMSaQBs20RHtZQo1O0Q7AHHPpnulqDQvnpijWk8nJQUvU7nX4coNldeQV+9T/VnwzyOWZdEfdd4AxW/ZXttze1yHYP0jYDFcu6j5tJ3DdwwGMX83z3fsqXTZEEN/c7zwEZdul4SODqUW2IiJQ==
+    KONTENA_TOKEN: CiQArTuEBPB8p58oMikeTVwnuVkK9BM0Eflxaqc/k88ruNzG6YQSaQBs20RHsMS9ShQqi9J1KLmzl8CTruYVhLO1yqaouLozdGfPjXq0XfmIW2HdPg8s+3Dp7wTDLEFZ/gD0WoqdbEvp6G49P6OGeGgiDdKc3AGs5Qzb9VbyZatEorVhz6B0cKRCZ2Ro76Ob6Q==
     KONTENA_URL: CiQArTuEBMBfYArPS9M9VQbqDpKBMftThfpIw3mLTGaVWxeXSjESYwBs20RHSU7T02AW18ahXDtgGSMX4rmae5gdaiBJZtrsXL8Nw51aI4C3n4GFUnzsF/EZu6FoK1WdMw2IkEhIvkm6vV5+wZ76dM1Uw/n2EsjRrztGYURcLV4IOqAr9Un1Uv6NUA==
-
