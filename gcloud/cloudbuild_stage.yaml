@@ -59,7 +59,7 @@ steps:
 
 # INTEGRATION TESTS
 - name: 'docker/compose:1.15.0'
-  args: ['-f', 'gcloud/docker-compose-gcloud.yml', 'run', 'web', '/bin/bash', '-c', './scripts/seed.sh; ./vendor/bin/codecept run --steps']
+  args: ['-f', 'docker-compose-gcloud.yml', 'run', 'web', '/bin/bash', '-c', './scripts/seed.sh; ./vendor/bin/codecept run --steps']
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
