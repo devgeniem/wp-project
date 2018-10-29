@@ -16,8 +16,8 @@ services:
       # Sync files into this path with sync container
       - .:/var/www/project
 
-      # Use volume for xdebug trace and profiling so we can use analysing in other containers
-      - /tmp/xdebug
+      # Uncomment to enable Xdebug profiling
+      # - xdebug:/tmp/xdebug
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
@@ -139,12 +139,17 @@ services:
   # For Example: use yoursite.test/?XDEBUG_PROFILE to profile the front page
   ##
 
+    # Uncomment to enable Xdebug profiling
   # webgrind:
   #   image: devgeniem/webgrind
   #   ports:
   #     - 80
   #   volumes:
-  #     - .:/var/www/project
+  #     - xdebug:/tmp/xdebug
   #   environment:
   #     VIRTUAL_HOST: webgrind.wordpress.test
   #   network_mode: bridge
+
+# Uncomment to enable Xdebug profiling
+# volumes:
+#   xdebug:

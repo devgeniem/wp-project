@@ -3,8 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [Unreleased]
+
+### Changed
+- Xdebug profiling data is stored in a global volume and not synced to the local machine.
+
+## [0.6.4] - 2018-09-28
 - Add WP_BLOG_PUBLIC:0 to configuration files
+
+## [0.6.3] - 2018-06-04
 - Removed Flynn stuff from Dockerfile
 - Added cron runner priviledges to Dockerfile
 - Added optional beta image commented out to Dockerfile
