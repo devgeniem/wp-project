@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.7.0] - 2018-10-29
+
 ### Changed
 - Xdebug profiling data is stored in a global volume and not synced to the local machine.
 
