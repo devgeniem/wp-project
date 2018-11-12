@@ -16,9 +16,9 @@ define( 'FORCE_SSL_ADMIN', true );
 
 /**
  * Use object cache so that we don't have parity problems with production
- * but only cache values for 1 second so that developers can be more productive
+ * but only cache values for 60 seconds so that developers can be more productive
  */
-define( 'WP_REDIS_MAXTTL', 1 );
+define( 'WP_REDIS_MAXTTL', 60 );
 
 /**
  * Use elasticsearch from local linked docker container
