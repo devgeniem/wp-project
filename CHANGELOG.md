@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.8.0] - 2018-11-12
+
+### Added
+
+- `WP_REDIS_MAXTTL` constant set to 30 days for production environment and to 4 hours for staging environment.
+
+### Changed
+
+- `WP_REDIS_MAXTTL` constant set to 60 seconds for development environment.
+
+## [0.7.0] - 2018-10-29
+
 ### Changed
 - Xdebug profiling data is stored in a global volume and not synced to the local machine.
 
