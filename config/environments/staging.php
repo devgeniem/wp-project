@@ -19,4 +19,4 @@ define( 'FORCE_SSL_ADMIN', true );
 /**
  * Expiration time for WP object cache in seconds.
  */
-define( 'WP_REDIS_MAXTTL', 60 * 60 * 24 * 4 );
+define( 'WP_REDIS_MAXTTL', 60 * 60 * 4 );
