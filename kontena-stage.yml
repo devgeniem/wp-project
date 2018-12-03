@@ -116,7 +116,7 @@ services:
       PHP_SESSION_REDIS_DB: 2
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 15m
       SERVER_NAME: asiakas.stage.geniem.io
-      CRON_URL: https://asiakas.stage.geniem.io
+      CRON_URL: https://asiakas.stage.geniem.io/run-cron
       WP_HOME: https://asiakas.stage.geniem.io
       WP_SITEURL: https://asiakas.stage.geniem.io
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.stage.geniem.io,*.asiakas.stage.geniem.io
