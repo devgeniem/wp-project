@@ -31,6 +31,8 @@ services:
 
       WEB_UID: 1000
       WEB_GID: 1001
+      
+      CRON_URL: "https://asiakas.test/run-cron"
 
       # Set php to use redis for object cache & sessions
       PHP_SESSION_HANDLER: redis
