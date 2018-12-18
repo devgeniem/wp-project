@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.8.1] - 2018-11-18
+
 ### Added
 - An example of how to allow a single endpoint of the wp rest api
 
