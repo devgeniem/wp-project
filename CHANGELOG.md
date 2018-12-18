@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+- An example of how to allow a single endpoint of the wp rest api
+
+### Fixed
+- Fixed a problem where you could access /wp-json but not /wp-json/
+
 ## [0.8.0] - 2018-11-12
 
 ### Added
