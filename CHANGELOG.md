@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+- Change cron url from `tasks.cron` to match the correct path in `scripts`.
+- Add `web/core`to gitignore.
+- Add lines to sass-lint.
+- Change color shorthand rule from csscomb.json.
+- Change proper IP addresses to `docker-compose-ubuntu.yml`.
+- Change SEO collection version to ^2.0 in `composer.json`.
+- Add phpcs ignores to `db-config.php` and `db.php`.
+- Fix code style errors from `application.php`.
+
 ## [0.8.1] - 2018-11-18
 
 ### Added

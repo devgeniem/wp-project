@@ -113,3 +113,6 @@ _site
 
 ## Ignore Docker Sync logs and files
 .docker-sync
+
+## Ignore a generated core-file. It probably has something to do with xdebug.
+web/core
