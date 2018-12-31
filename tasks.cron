@@ -7,4 +7,4 @@
 # Use this if you want to use real cron instead of wp-cron
 # You need to have define('DISABLE_WP_CRON', true); in  your wp-config.php
 # This is the default way of bedrock
-* * * * * /usr/local/bin/wp-run-cron
+* * * * * /var/www/project/scripts/run-cron.sh
