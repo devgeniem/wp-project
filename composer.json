@@ -81,7 +81,8 @@
     "devgeniem/wp-cron-runner": "*"
   },
   "require-dev": {
-    "rarst/wps": ">=1.0.0"
+    "rarst/wps": ">=1.0.0",
+    "codeception/codeception": "^2.3"
   },
   "extra": {
     "installer-paths": {
