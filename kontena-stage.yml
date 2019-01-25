@@ -87,7 +87,7 @@ variables:
       vault: ${STACK}-smtp_password
       random_string: 30
     to:
-      vault: ${STACK}-smtp_password      
+      vault: ${STACK}-smtp_password
   google_cloud_storage_access_key:
     type: string
     from:
@@ -101,7 +101,7 @@ services:
       file: vendor/devgeniem/kontena-cluster-configs/stage/wp-kontena.yml
       service: redis
   web:
-    image: devgeniem/client-asiakas:stage
+    image: gcr.io/geniem-stage/client-asiakas:stage
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/stage/wp-kontena.yml
       service: web
@@ -112,7 +112,7 @@ services:
       SMTP_HOST: smtp.mandrillapp.com
       SMTP_PASSWORD: ${smtp_password}
       SMTP_PORT: 587
-      SMTP_USER: hannu.kumpula@geniem.com   
+      SMTP_USER: hannu.kumpula@geniem.com
       PHP_SESSION_REDIS_DB: 2
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 15m
       SERVER_NAME: asiakas.stage.geniem.io
