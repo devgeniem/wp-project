@@ -20,7 +20,6 @@ ENV WEB_UID=10000 \
 # this saves some time in the startup in production
 RUN addgroup --system --gid $WEB_GID $WEB_GROUP && \
     adduser --system --gid $WEB_GID --uid $WEB_UID $WEB_USER && \
-
     # Configure timezone for cron
     dpkg-reconfigure tzdata
 
