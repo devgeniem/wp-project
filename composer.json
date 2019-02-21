@@ -1,100 +1,100 @@
 {
-  "name": "devgeniem/wp-project",
-  "type": "project",
-  "license": "MIT",
-  "description": "Bedrock inspired WordPress template",
-  "authors": [
-    {
-      "name": "Ville Pietarinen",
-      "email": "ville.pietarinen@geniem.com",
-      "homepage": "https://github.com/villepietarinen",
-      "role": "Project Lead Developer"
+    "name": "devgeniem/wp-project",
+    "type": "project",
+    "license": "MIT",
+    "description": "Bedrock inspired WordPress template",
+    "authors": [
+        {
+            "name": "Ville Pietarinen",
+            "email": "ville.pietarinen@geniem.com",
+            "homepage": "https://github.com/villepietarinen",
+            "role": "Project Lead Developer"
+        },
+        {
+            "name": "Ville Siltala",
+            "email": "ville.siltala@geniem.com",
+            "homepage": "https://github.com/villesiltala",
+            "role": "Project Developer"
+        }
+    ],
+    "keywords": [
+        "wordpress", "composer", "wp"
+    ],
+    "config": {
+        "preferred-install": "dist"
     },
-    {
-      "name": "Ville Siltala",
-      "email": "ville.siltala@geniem.com",
-      "homepage": "https://github.com/villesiltala",
-      "role": "Project Developer"
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://wp-languages.github.io"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:devgeniem/wp-cron-runner.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:devgeniem/kontena-cluster-configs.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:devgeniem/nginx-helper.git"
+        }
+
+    ],
+    "require": {
+        "php": ">=7.0",
+        "johnpbloch/wordpress": "^4.5.0",
+        "vlucas/phpdotenv": "^2.0.1",
+        "oscarotero/env": "^1.0",
+        "composer/installers": "v1.0.12",
+
+        "koodimonni/composer-dropin-installer": "^1.0",
+        "koodimonni-language/core-fi": "*",
+
+        "devgeniem/wp-safe-fast-and-clean-collection": "^1.0",
+
+        "devgeniem/better-wp-db-error": "^0.1",
+        "devgeniem/wp-noindex-testing-staging-robots": "^1.0",
+        "devgeniem/wp-seo-collection": "^1.0",
+
+        "robmorgan/phinx": "^0.5.3",
+
+        "wpackagist-plugin/stream": "^3.2.0",
+        "wpackagist-plugin/enhanced-media-library": "^2.4.4",
+        "wpackagist-plugin/wp-stateless": "^2.0",
+        "rtcamp/nginx-helper": "^1.9",
+
+        "devgeniem/dustpress": "^1.9",
+        "devgeniem/dustpress-debugger": "^1.3.4",
+        "devgeniem/dustpress-js": "^2.0.2",
+
+        "devgeniem/acf-codifier": "^1.1",
+        "devgeniem/wp-redis-object-cache-dropin": "^1.3.4",
+        "devgeniem/wp-redis-group-cache": "^2.0",
+        "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
+        "devgeniem/kontena-cluster-configs": "^1.3",
+        "devgeniem/wp-cron-runner": "*"
+    },
+    "require-dev": {
+        "rarst/wps": ">=1.0.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin","rarst/wps"],
+            "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "web/app/themes/{$name}": ["type:wordpress-theme"]
+        },
+        "dropin-paths": {
+            "web/app/": ["type:wordpress-dropin"],
+            "web/app/languages/": ["vendor:koodimonni-language"],
+            "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+            "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+        },
+        "wordpress-install-dir": "web/wp"
     }
-  ],
-  "keywords": [
-    "wordpress", "composer", "wp"
-  ],
-  "config": {
-    "preferred-install": "dist"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://wp-languages.github.io"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:devgeniem/wp-cron-runner.git"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:devgeniem/kontena-cluster-configs.git"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:devgeniem/nginx-helper.git"
-    }    
-
-  ],
-  "require": {
-    "php": ">=7.0",
-    "johnpbloch/wordpress": "^4.5.0",
-    "vlucas/phpdotenv": "^2.0.1",
-    "oscarotero/env": "^1.0",
-    "composer/installers": "v1.0.12",
-
-    "koodimonni/composer-dropin-installer": "^1.0",
-    "koodimonni-language/core-fi": "*",
-
-    "devgeniem/wp-safe-fast-and-clean-collection": "^1.0",
-
-    "devgeniem/better-wp-db-error": "^0.1",
-    "devgeniem/wp-noindex-testing-staging-robots": "^1.0",
-    "devgeniem/wp-seo-collection": "^1.0",
-
-    "robmorgan/phinx": "^0.5.3",
-
-    "wpackagist-plugin/stream": "^3.2.0",
-    "wpackagist-plugin/enhanced-media-library": "^2.4.4",
-    "wpackagist-plugin/wp-stateless": "^2.0",
-    "rtcamp/nginx-helper": "^1.9",
-
-    "devgeniem/dustpress": "^1.9",
-    "devgeniem/dustpress-debugger": "^1.3.4",
-    "devgeniem/dustpress-js": "^2.0.2",
-
-    "devgeniem/acf-codifier": "^1.1",
-    "devgeniem/wp-redis-object-cache-dropin": "^1.3.4",
-    "devgeniem/wp-redis-group-cache": "^2.0",
-    "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
-    "devgeniem/kontena-cluster-configs": "^1.3",
-    "devgeniem/wp-cron-runner": "*"
-  },
-  "require-dev": {
-    "rarst/wps": ">=1.0.0"
-  },
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin","rarst/wps"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}": ["type:wordpress-theme"]
-    },
-    "dropin-paths": {
-      "web/app/": ["type:wordpress-dropin"],
-      "web/app/languages/": ["vendor:koodimonni-language"],
-      "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
-      "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
-    },
-    "wordpress-install-dir": "web/wp"
-  }
 }
