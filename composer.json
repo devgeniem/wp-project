@@ -48,10 +48,11 @@
     ],
     "require": {
         "php": ">=7.1",
-        "johnpbloch/wordpress": "^4.5.0",
-        "vlucas/phpdotenv": "^2.0.1",
-        "oscarotero/env": "^1.0",
-        "composer/installers": "v1.0.12",
+        "composer/installers": "^1.4",
+        "vlucas/phpdotenv": "^3.0.0",
+        "oscarotero/env": "^1.1.0",
+        "roots/wordpress": "5.0.3",
+        "roots/wp-config": "1.0.0",
 
         "koodimonni/composer-dropin-installer": "^1.0",
         "koodimonni-language/core-fi": "*",

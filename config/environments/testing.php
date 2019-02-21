@@ -6,4 +6,4 @@
  */
 
 // CI server doesn't have or use ssl.
-define( 'FORCE_SSL_ADMIN', false );
+Config::define( 'FORCE_SSL_ADMIN', false );
