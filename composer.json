@@ -47,7 +47,7 @@
 
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.1",
         "johnpbloch/wordpress": "^4.5.0",
         "vlucas/phpdotenv": "^2.0.1",
         "oscarotero/env": "^1.0",
