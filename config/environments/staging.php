@@ -5,6 +5,8 @@
  * @package devgeniem/wp-project
  */
 
+use Roots\WPConfig\Config;
+
 /**
  * Expiration time for WP object cache in seconds.
  */
