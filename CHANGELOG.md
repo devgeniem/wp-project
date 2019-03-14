@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.8.2] - 2019-03-14
+
+### Changed
+- cron to use PHP-FPM with run-cron.sh script
+
 ## [0.8.1] - 2018-11-18
 
 ### Added
