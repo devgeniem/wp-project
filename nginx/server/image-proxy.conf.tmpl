@@ -6,6 +6,10 @@
 # Proxy all uploads from Google bucket and allow ngx_pagespeed to optimize them
 ##
 location ~ ^/uploads/ {
+  # Disable basic auth for uploads.
+  auth_basic off;
+  allow all;
+
   rewrite ^/[^\/]+(/.*)$ $1 break;
   # The hostname contains the bucket name
   proxy_set_header        Host storage.googleapis.com;
@@ -28,6 +32,7 @@ location ~ ^/uploads/ {
   proxy_hide_header    x-goog-stored-content-encoding;
   proxy_hide_header    x-goog-stored-content-length;
   proxy_hide_header    x-guploader-uploadid;
+  proxy_hide_header    Authorization;
 
   proxy_buffering         off;
   proxy_intercept_errors  on;
