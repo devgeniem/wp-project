@@ -17,7 +17,7 @@ services:
       - .:/var/www/project
 
       # Exclude theme's node_modules from the sync for performance reasons
-      - /var/www/project/web/app/themes/mela/node_modules/
+      - /var/www/project/web/app/themes/THEMENAME/node_modules/
 
       # Uncomment to enable Xdebug profiling
       # - xdebug:/tmp/xdebug
