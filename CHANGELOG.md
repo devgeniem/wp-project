@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+- Database dump file extensions to .dockerignore to prevent them from bloating the images.
+
+### Changed
+- Disabled basic auth for uploads directory even if it was on for the rest of the project.
+
 ### Fixed
 - Make the deny rule for author urls to be more exact to prevent mismatching locations.
 
