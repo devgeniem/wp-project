@@ -3,8 +3,49 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [Unreleased]
+
+### Added
+- Database dump file extensions to .dockerignore to prevent them from bloating the images.
+
+### Changed
+- Disabled basic auth for uploads directory even if it was on for the rest of the project.
+
+### Fixed
+- Make the deny rule for author urls to be more exact to prevent mismatching locations.
+
+## [0.8.2] - 2019-03-14
+
+### Changed
+- cron to use PHP-FPM with run-cron.sh script
+
+## [0.8.1] - 2018-11-18
+
+### Added
+- An example of how to allow a single endpoint of the wp rest api
+
+### Fixed
+- Fixed a problem where you could access /wp-json but not /wp-json/
+
+## [0.8.0] - 2018-11-12
+
+### Added
+
+- `WP_REDIS_MAXTTL` constant set to 30 days for production environment and to 4 hours for staging environment.
+
+### Changed
+
+- `WP_REDIS_MAXTTL` constant set to 60 seconds for development environment.
+
+## [0.7.0] - 2018-10-29
+
+### Changed
+- Xdebug profiling data is stored in a global volume and not synced to the local machine.
+
+## [0.6.4] - 2018-09-28
 - Add WP_BLOG_PUBLIC:0 to configuration files
+
+## [0.6.3] - 2018-06-04
 - Removed Flynn stuff from Dockerfile
 - Added cron runner priviledges to Dockerfile
 - Added optional beta image commented out to Dockerfile
@@ -19,6 +60,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Added run cron
 - Added nginx helper
 - Added google api key to docker-compose
+
+## [0.6.3] - 2018-10-22
+- Changed run-cron.sh to use basic authentication if envs BASIC_AUTH_USER and BASIC_AUTH_PASSWORD has been setted.
 
 ## [0.6.2] - 2018-06-04
 - Changed pagespeed config: InPlaceResourceOptimization on; -> off

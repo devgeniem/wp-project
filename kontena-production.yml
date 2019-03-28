@@ -117,7 +117,7 @@ services:
       PHP_SESSION_REDIS_DB: 0
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 15m
       SERVER_NAME: asiakas.production.geniem.io
-      CRON_URL: https://asiakas.production.geniem.io
+      CRON_URL: https://asiakas.production.geniem.io/run-cron
       WP_HOME: https://asiakas.production.geniem.io
       WP_SITEURL: https://asiakas.production.geniem.io
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.production.geniem.io,*.asiakas.production.geniem.io

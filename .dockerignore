@@ -30,6 +30,10 @@ image.tar
 docker-compose.yml
 Dockerfile
 
+# Ignore MySQL dumps
+*.sql
+*.sql.tar.gz
+
 # Git is not needed after deploy
 .git
 .gitignore
