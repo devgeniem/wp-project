@@ -17,7 +17,7 @@ And our development tools: [gdev](https://github.com/devgeniem/gdev).
 ## Workflow for WP projects
 1. After you have cloned this repository in the new client project replace all `THEMENAME` and `PROJECTNAME` references from all files from this project to your project name.
     * These can be for example: `ClientName` and `client-name`
-2. Change project test address in `docker-compose.yml` for example `wordpress.test` -> `client-name.test`
+2. Change project test address in `docker-compose.yml` for example `asiakas.test` -> `client-name.test`
 3. Add all people working in the project into `authors` section of `composer.json` and rename the project `devgeniem/wp-project`->`devgeniem/client` in `composer.json`.
     * You can also add project managers, designers and other developers here.
     * This is important so that we always have accountable people to advise with the project later on when it eventually might turn to more legacy project.
@@ -74,14 +74,19 @@ Google cloud CI/CD is configured by the yaml files in `gcloud/`. There are separ
 (This assumes it's a Geniem project. For other projects you need to also replace all the secrets as documented by Google)
 
 To enable a build pipeline, do following:
-1. Replace PROJECTNAME and THEMENAME in the yaml files (gdev does this)
-2. Uncomment webpack/phpcs/integration test steps as needed
+1. Replace PROJECTNAME and THEMENAME in the yaml files (gdev does this in the future).
+2. Replace mentions of `asiakas` in the yaml files, including `tests/acceptance.suite.yml` and the Kontena files (gdev does this in the future).
+3. Uncomment webpack/phpcs/integration test steps as needed
   -- Integration tests is still work in progress
   -- Configure them in `tests/` if enabling
-3. Create build triggers to GCB
+4. Create build triggers to GCB
   -- Trigger from push to branch or tag in Github
   -- Build configuration type: cloudbuild.yaml.
   -- Set location as `gcloud/cloudbuild_stage.yaml` or `gcloud/cloudbuild_production.yaml`
+5. Run the build once to store image in gcr.io
+6. Install Kontena stack.
+
+Further description is located in `gcloud/README.md`
 
 ## Changelog
 

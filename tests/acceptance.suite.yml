@@ -8,8 +8,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'https://wordpress.test'
-            host: 'wordpress.test'
+            url: 'https://asiakas.test'
+            host: 'selenium'
             headless: true
             browser: chrome
             window_size: 1600x900

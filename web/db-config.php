@@ -82,7 +82,7 @@ $wpdb->check_tcp_responsiveness = true;
  *                          Also used to assign preference in multi-master mode.
  * dataset       (optional) Name of dataset. Default is 'global'.
  * timeout       (optional) Seconds to wait for TCP responsiveness. Default is 0.2
- * lag_threshold (optional) The minimum lag on a slave in seconds before we consider it lagged. 
+ * lag_threshold (optional) The minimum lag on a slave in seconds before we consider it lagged.
  *							Set null to disable. When not set, the value of $wpdb->default_lag_threshold is used.
  */
 
@@ -99,9 +99,9 @@ $wpdb->check_tcp_responsiveness = true;
  * group of callbacks, this $callback belongs to.
  *
  * Callbacks are executed in the order in which they are registered until one
- * of them returns something other than null. 
+ * of them returns something other than null.
  *
- * The default $callback_group is 'dataset'. Callback in this group 
+ * The default $callback_group is 'dataset'. Callback in this group
  * will be called with two arguments and expected to compute a dataset or return null.
  * $dataset = $callback($table, &$wpdb);
  *
@@ -134,9 +134,9 @@ $wpdb->check_tcp_responsiveness = true;
  * there are many slaves available and the master is very busy with writes.
  *   'write' => 1,
  *   'read'  => 0,
- * HyperDB tracks the tables that it has written since instantiation and sending 
- * subsequent read queries to the same server that received the write query. 
- * Thus a master set up this way will still receive read queries, but only 
+ * HyperDB tracks the tables that it has written since instantiation and sending
+ * subsequent read queries to the same server that received the write query.
+ * Thus a master set up this way will still receive read queries, but only
  * subsequent to writes.
  */
 
@@ -177,18 +177,18 @@ $wpdb->check_tcp_responsiveness = true;
  */
 
 /**
- * Slaves lag awareness 
+ * Slaves lag awareness
  *
- * HyperDB accommodates slave lag by making decisions, based on the defined lag 
+ * HyperDB accommodates slave lag by making decisions, based on the defined lag
  * threshold. If the lag threshold is not set, it will ignore the slave lag.
  * Otherwise, it will try to find a non-lagged slave, before connecting to a lagged one.
  *
  * A slave is considered lagged, if it's replication lag is bigger than the lag threshold
- * you have defined in $wpdb->$default_lag_threshold or in the per-database settings, using 
- * add_database(). You can also rewrite the lag threshold, by returning 
+ * you have defined in $wpdb->$default_lag_threshold or in the per-database settings, using
+ * add_database(). You can also rewrite the lag threshold, by returning
  * $server['lag_threshold'] variable with the 'dataset' group callbacks.
  *
- * HyperDB does not check the lag on the slaves. You have to define two callbacks 
+ * HyperDB does not check the lag on the slaves. You have to define two callbacks
  * callbacks to do that:
  *
  * $wpdb->add_callback( $callback, 'get_lag_cache' );
@@ -200,10 +200,10 @@ $wpdb->check_tcp_responsiveness = true;
  * The first one is called, before connecting to a slave and should return
  * the replication lag in seconds or false, if unknown, based on $wpdb->lag_cache_key.
  *
- * The second callback is called after a connection to a slave is established. 
- * It should return it's replication lag or false, if unknown, 
+ * The second callback is called after a connection to a slave is established.
+ * It should return it's replication lag or false, if unknown,
  * based on the connection in $wpdb->dbhs[ $wpdb->dbhname ].
- */ 
+ */
 
 /** Sample Configuration 1: Using the Default Server **/
 /** NOTE: THIS IS ACTIVE BY DEFAULT. COMMENT IT OUT. **/
@@ -226,7 +226,7 @@ $wpdb->check_tcp_responsiveness = true;
  * The last three parameters are set to the defaults but are shown for clarity.
  */
 // do not use hyperdb in local development
-if ( WP_ENV !== 'development' ) {
+if ( WP_ENV !== 'development' && WP_ENV !== 'testing') {
 	$wpdb->add_database(array(
 		'host'     => DB_HOST,     // If port is other than 3306, use host:port.
 		'user'     => DB_USER,
@@ -237,7 +237,7 @@ if ( WP_ENV !== 'development' ) {
 		'dataset'  => 'global',
 		'timeout'  => 0.2,
 	));
-	
+
 	$wpdb->add_database(array(
 			'host'     => DB_READ_HOST,     // If port is other than 3306, use host:port.
 			'user'     => DB_USER,
@@ -247,7 +247,7 @@ if ( WP_ENV !== 'development' ) {
 			'read'     => 1,
 			'dataset'  => 'global',
 			'timeout'  => 0.2,
-	));	
+	));
 }
 
 /** Sample Configuration 2: Partitioning **/
@@ -291,7 +291,7 @@ function my_db_callback($query, $wpdb) {
  * @param string $dc Datacenter: where the database server is located. Airport codes are convenient. Use whatever.
  * @param int $read Read group: tries all servers in lowest number group before trying higher number group. Typical: 1 for slaves, 2 for master. This will cause reads to go to slaves unless all slaves are unreachable. Zero for no reads.
  * @param bool $write Write flag: is this server writable? Works the same as $read. Typical: 1 for master, 0 for slaves.
- * @param string $host Internet address: host:port of server on internet. 
+ * @param string $host Internet address: host:port of server on internet.
  * @param string $lhost Local address: host:port of server for use when in same datacenter. Leave empty if no local address exists.
  * @param string $name Database name.
  * @param string $user Database user.
@@ -307,7 +307,7 @@ function add_db_server($dataset, $part, $dc, $read, $write, $host, $lhost, $name
 	if ( !empty($dc) && defined(DATACENTER) && $dc != DATACENTER ) {
 		if ( $read )
 			$read += 10000;
-		if ( $write ) 
+		if ( $write )
 			$write += 10000;
 		$timeout = 0.7;
 	}
@@ -337,10 +337,10 @@ function add_db_server($dataset, $part, $dc, $read, $write, $host, $lhost, $name
 /**
  * Sample replication lag detection configuration.
  *
- * We use mk-heartbeat (http://www.maatkit.org/doc/mk-heartbeat.html) 
+ * We use mk-heartbeat (http://www.maatkit.org/doc/mk-heartbeat.html)
  * to detect replication lag.
  *
- * This implementation requires the database user 
+ * This implementation requires the database user
  * to have read access to the heartbeat table.
  *
  * The cache uses shared memory for portability.
@@ -348,7 +348,7 @@ function add_db_server($dataset, $part, $dc, $read, $write, $host, $lhost, $name
  */
 
 /*
- 
+
 $wpdb->lag_cache_ttl = 30;
 $wpdb->shmem_key = ftok( __FILE__, "Y" );
 $wpdb->shmem_size = 128 * 1024;
@@ -381,12 +381,12 @@ function get_lag( $wpdb ) {
 	if ( !$result || false === $row = mysql_fetch_assoc( $result ) )
 		return false;
 
-	// Cache the result in shared memory with timestamp 
+	// Cache the result in shared memory with timestamp
 	$sem_id = sem_get( $wpdb->shmem_key, 1, 0600, 1 ) ;
 	sem_acquire( $sem_id );
 	$segment = shm_attach( $wpdb->shmem_key, $wpdb->shmem_size, 0600 );
 	$lag_data = @shm_get_var( $segment, 0 );
-	
+
 	if ( !is_array( $lag_data ) )
 		$lag_data = array();
 

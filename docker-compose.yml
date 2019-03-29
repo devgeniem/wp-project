@@ -15,7 +15,7 @@ services:
     volumes:
       # Sync files into this path with sync container
       - .:/var/www/project
-      
+
       # Exclude theme's node_modules from the sync for performance reasons
       - /var/www/project/web/app/themes/THEMENAME/node_modules/
 
@@ -87,7 +87,7 @@ services:
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
       # Google Maps API-Key
-      GOOGLE_MAPS_APIKEY: ''      
+      GOOGLE_MAPS_APIKEY: ''
 
     network_mode: bridge
     extra_hosts:
@@ -114,7 +114,7 @@ services:
   redis:
     image: redis
     network_mode: bridge
-    
+
   selenium:
     image: selenium/standalone-chrome
     ports:
@@ -123,7 +123,7 @@ services:
     extra_hosts:
       - 'asiakas.test:172.17.0.1'
 
-    
+
   # --------------------------------------------
   # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
   # --------------------------------------------
@@ -141,7 +141,7 @@ services:
   ##
   # nodejs container which installs and builds all frontend assets in all all themes with package.json
   ##
-  
+
   # webpack-builder:
   #   image: devgeniem/node-assets-builder
   #   volumes:
@@ -163,7 +163,7 @@ services:
   #   volumes:
   #     - xdebug:/tmp/xdebug
   #   environment:
-  #     VIRTUAL_HOST: webgrind.wordpress.test
+  #     VIRTUAL_HOST: webgrind.asiakas.test
   #   network_mode: bridge
 
 # Uncomment to enable Xdebug profiling
