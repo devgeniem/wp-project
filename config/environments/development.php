@@ -12,17 +12,16 @@ define( 'SCRIPT_DEBUG', true );
 /**
  * We use onnimonni/signaler for https in local development
  */
-define( 'FORCE_SSL_ADMIN', true );
+
+$disable_local_ssl = env( 'DISABLE_LOCAL_SSL' ) ?: 0;
+
+define( 'FORCE_SSL_ADMIN', ( $disable_local_ssl ) ? false : true );
 
 /**
  * Use object cache so that we don't have parity problems with production
- * but only cache values for 60 seconds so that developers can be more productive
+ * but only cache values for 300 seconds so that developers can be more productive
  */
-define( 'WP_REDIS_MAXTTL', 60 );
+define( 'WP_REDIS_MAXTTL', 300 );
 
-/**
- * Use elasticsearch from local linked docker container
- */
-if ( env( 'ELASTICSEARCH_1_PORT_9200_TCP' ) ) {
-    define( 'EP_HOST', str_replace( 'tcp://', 'http://', env( 'ELASTICSEARCH_1_PORT_9200_TCP' ) ) );
-}
+// This defines the nginx full page cache headers
+header( 'Cache-Control: max-age=60, stale-while-revalidate=180' );
