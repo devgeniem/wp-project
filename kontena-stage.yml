@@ -120,7 +120,6 @@ services:
       WP_HOME: https://asiakas.stage.geniem.io
       WP_SITEURL: https://asiakas.stage.geniem.io
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.stage.geniem.io,*.asiakas.stage.geniem.io
-      KONTENA_LB_VIRTUAL_HOSTS: asiakas.stage.geniem.io
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-stage
       NR_APP_NAME: Kontena - Stage - asiakas - WPMS
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google_cloud_storage_access_key}

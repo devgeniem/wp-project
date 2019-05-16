@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Fixed
 - Make the deny rule for author urls to be more exact to prevent mismatching locations.
+- Removed duplicate config from kontena-stage.yml
 
 ## [0.8.2] - 2019-03-14
 
