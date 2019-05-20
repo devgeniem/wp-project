@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.9.0] - 2019-05-20
+
 ### Added
 - Database dump file extensions to .dockerignore to prevent them from bloating the images.
+- Add `devgeniem/wp-disable-redis-object-cache-dropin` to disable Redis object caching on WP preview.
 
 ### Changed
 - Disabled basic auth for uploads directory even if it was on for the rest of the project.
