@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Change eslint configuration to extend the new [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) instead of the deprecated WordPress configuration package.
+
 ## [0.9.0] - 2019-05-20
 
 ### Added
