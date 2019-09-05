@@ -53,37 +53,42 @@ fi
 export WP_SITEURL=${WP_SITEURL-http://$SERVER_NAME}
 export WP_TITLE=${WP_TITLE-WordPress}
 
-# Install WordPress if not installed yet
-if wp core version > /dev/null && ! wp core is-installed; then
+if [ -f "seed.sql" ]; then
+    echo "Seeding database from seed.sql"
+    mysql -u$MYSQL_USER -p$MYSQL_PWD -h$MYSQL_HOST $MYSQL_DATABASE < seed.sql
+else
+    # Install WordPress if not installed yet
+    if wp core version > /dev/null && ! wp core is-installed; then
 
-    if wp site is-installed 2>&1 | grep 'Site' | grep 'not found' > /dev/null; then
-        echo "[INFO]: This is Multisite installation"
+        if wp site is-installed 2>&1 | grep 'Site' | grep 'not found' > /dev/null; then
+            echo "[INFO]: This is Multisite installation"
 
-        # Install Multisite
-        wp core multisite-install --title=$WP_TITLE --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL
+            # Install Multisite
+            wp core multisite-install --title=$WP_TITLE --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL
 
-        # Activate all plugins for all sites
-        wp plugin activate --all --network
+            # Activate all plugins for all sites
+            wp plugin activate --all --network
 
-        echo "[INFO]: WordPress Multisite: $WP_TITLE is now installed..."
-    else
-        # Install basic tables
-        wp core install --url=$WP_SITEURL --title=$WP_TITLE \
-                        --admin_user=$WP_ADMIN_USER --admin_email=$WP_ADMIN_EMAIL \
-                        --admin_password=$WP_ADMIN_PASSWORD
+            echo "[INFO]: WordPress Multisite: $WP_TITLE is now installed..."
+        else
+            # Install basic tables
+            wp core install --url=$WP_SITEURL --title=$WP_TITLE \
+                            --admin_user=$WP_ADMIN_USER --admin_email=$WP_ADMIN_EMAIL \
+                            --admin_password=$WP_ADMIN_PASSWORD
 
-        # Activate all plugins
-        wp plugin activate --all
+            # Activate all plugins
+            wp plugin activate --all
 
-        echo "[INFO]: WordPress: $WP_TITLE is now installed..."
+            echo "[INFO]: WordPress: $WP_TITLE is now installed..."
+        fi
+
+        echo "[INFO]: You can login to WordPress with credentials: $WP_ADMIN_USER / $WP_ADMIN_PASSWORD"
     fi
 
-    echo "[INFO]: You can login to WordPress with credentials: $WP_ADMIN_USER / $WP_ADMIN_PASSWORD"
+    # Install pages and navigation
+    echo "Continuing database seed with data/seed.php"
+    wp eval-file $(dirname $DIR)/data/seed.php --skip-plugins=stream
+
+    # Generate some dummy posts so that pagination on rss will work properly
+    wp post generate --count=11
 fi
-
-# Install pages and navigation
-echo "Continuing database seed with data/seed.php"
-wp eval-file $(dirname $DIR)/data/seed.php --skip-plugins=stream
-
-# Generate some dummy posts so that pagination on rss will work properly
-wp post generate --count=11
