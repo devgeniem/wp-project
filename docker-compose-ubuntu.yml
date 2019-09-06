@@ -6,7 +6,7 @@ services:
   # Web Server which runs nginx+php
   ##
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:latest
+    image: devgeniem/ubuntu-docker-wordpress-development:php73
     ports:
       - 8080
     links:
@@ -31,7 +31,7 @@ services:
 
       WEB_UID: 1000
       WEB_GID: 1001
-      
+
       CRON_URL: "https://asiakas.test/run-cron"
 
       # Set php to use redis for object cache & sessions
