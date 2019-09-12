@@ -10,7 +10,7 @@ services:
   # Web Server which runs nginx+php
   ##
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:latest
+    image: devgeniem/ubuntu-docker-wordpress-development:php73
     ports:
       - 8080
     links:
