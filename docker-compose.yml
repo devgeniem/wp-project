@@ -4,7 +4,7 @@ services:
 
   ##
   # Web Server which runs nginx+php
-  ##
+  ## temporarily modified image with tag php73xd2 which allows xdebug to function.
   web:
     image: devgeniem/ubuntu-docker-wordpress-development:php73xd2
     ports:
@@ -14,7 +14,7 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - .:/var/www/project
+      - .:/var/www/project:cached
 
       # Exclude theme's node_modules from the sync for performance reasons
       - /var/www/project/web/app/themes/THEMENAME/node_modules/
@@ -24,7 +24,7 @@ services:
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - ./.docker/uploads:/var/www/uploads
+      - ./.docker/uploads:/var/www/uploads:cached
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
