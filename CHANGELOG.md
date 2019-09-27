@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.9.2] - 2019-09-24
+- changed production image to use tag php73 and development to use php73xd2 (only build that is working with xdebug currently)
+
+## [0.9.1] - 2019-05-20
+
 ### Changed
 
 - Change eslint configuration to extend the new [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) instead of the deprecated WordPress configuration package.
