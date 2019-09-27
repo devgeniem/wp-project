@@ -101,7 +101,7 @@ services:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
       service: redis
 
- web:
+  web:
     image: gcr.io/geniem-production/client-asiakas:latest
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml

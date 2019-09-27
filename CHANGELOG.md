@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Change eslint configuration to extend the new [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) instead of the deprecated WordPress configuration package.
 
+### Fixed
+- Missing space in kontena-production.yml
+
 ## [0.9.0] - 2019-05-20
 
 ### Added
