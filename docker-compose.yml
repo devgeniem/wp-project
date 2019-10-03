@@ -40,6 +40,7 @@ services:
       # Set php to use redis for object cache & sessions
       PHP_SESSION_HANDLER: redis
       PHP_SESSION_REDIS_DB: 0
+      PHP_ERROR_LOG: /dev/stderr
 
       # This is the default theme name WordPress will use
       WP_DEFAULT_THEME: THEMENAME
