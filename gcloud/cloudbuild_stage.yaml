@@ -1,6 +1,5 @@
 steps:
-
-# GITHUB KEY (Bob The Builder Bot)
+# GITHUB KEY
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
   - kms
@@ -26,6 +25,7 @@ steps:
     IdentityFile /root/.ssh/id_rsa
     EOF
     mv gcloud/known_hosts /root/.ssh/known_hosts
+    openssl req -new -newkey rsa:1024 -sha256 -days 7300 -nodes -x509 -subj "/CN=asiakas.test" -keyout nginx/environments/testing/http/default.key -out nginx/environments/testing/http/default.crt
   volumes:
   - name: 'ssh'
     path: /root/.ssh
@@ -37,34 +37,38 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 
-# PHPCS
-- name: 'composer'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    composer create-project wp-coding-standards/wpcs --no-dev /opt/wpcs
-    composer global require phpunit/phpunit
-    /opt/wpcs/vendor/bin/phpcs --config-set installed_paths /opt/wpcs
-#    /opt/wpcs/vendor/bin/phpcs --extensions=php --standard=phpcs.xml --runtime-set ignore_warnings_on_exit true .
-
-# WEBPACK
-# - name: 'gcr.io/cloud-builders/npm'
+# PHPCS (uncomment if the tests should pass)
+#- name: 'composer'
 #  entrypoint: 'bash'
 #  args:
 #  - '-c'
 #  - |
-#    cd ./web/app/themes/THEMENAME
-#    npm install
-#    ./node_modules/webpack/bin/webpack.js
+#    composer create-project wp-coding-standards/wpcs --no-dev /opt/wpcs
+#    composer global require phpunit/phpunit
+#    /opt/wpcs/vendor/bin/phpcs --config-set installed_paths /opt/wpcs
+#    /opt/wpcs/vendor/bin/phpcs --extensions=php --standard=phpcs.xml --runtime-set ignore_warnings_on_exit true .
+
+# WEBPACK
+- name: 'gcr.io/cloud-builders/npm'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    cd ./web/app/themes/THEMENAME
+    npm install
+    ./node_modules/webpack/bin/webpack.js
+
+# OPTIONAL DB SEED
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gsutil cp gs://ci-build-stage/client-asiakas.sql seed.sql || exit 0
 
 # INTEGRATION TESTS
-#- name: 'docker/compose:1.15.0'
-#  args: ['up', '-d', 'redis', 'db', 'web', 'selenium']
-#- name: 'docker/compose:1.15.0'
-#  args: ['run', 'web', './scripts/seed.sh']
-#- name: 'docker/compose:1.15.0'
-#  args: ['run', 'web', './vendor/bin/codecept', 'run', '--steps']
+- name: 'docker/compose:1.15.0'
+  args: ['-f', 'docker-compose-gcloud.yml', 'run', 'web', '/bin/bash', '-c', './scripts/seed.sh; ./vendor/bin/codecept run --steps']
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
@@ -75,13 +79,14 @@ steps:
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
   args: [ 'stack', 'upgrade', 'PROJECTNAME', 'kontena-stage.yml' ]
-  env: [ 'KONTENA_GRID=stage' ]
-  secretEnv: [ 'KONTENA_TOKEN', 'KONTENA_URL' ]
+  env: [ 'KONTENA_GRID=stage', 'KONTENA_URL=https://kontena-master-stage.geniem.com' ]
+  secretEnv: [ 'KONTENA_TOKEN' ]
 
 secrets:
 - kmsKeyName: 'projects/geniem-stage/locations/global/keyRings/infra/cryptoKeys/kontena-key'
   secretEnv:
     # encryted access token to kontena
     KONTENA_TOKEN: CiQA4j4haRTCAuU1Klk0GBbPucq2JjVzH1CMMUH+WluMy5N93XkSaQDqV+JInB3iIVhb/6L1fuX4MNzyZehyotAHrYQZHqykjDW5kdM7ndH70WdnjhlPMuPUczlP1qQ7K2s5A1gaPXfQnqC1/ILiu2DO0w0WTrGfjzXabAMxNTEoX1Q252vU7PdSsvUmvziyzg==
-    KONTENA_URL: CiQA4j4hadIFI1NAvNM+WY40MXjI7FdOggdDB3dxHMeZ3WP7tzMSYgDqV+JIAdwM0byeCb/Ss49OFlBokrZ3vi7Uk/irXeHw/kyGzs4i1CiBZgAoXEMPURMHPzzr0o/OZwwA+aplK4rCS+8oKzHYPoaKOv/trTjt97sQ2OAWur6PvPPHHA9LvLn6
-
+options:
+  machineType: 'N1_HIGHCPU_8'
+timeout: 1200s

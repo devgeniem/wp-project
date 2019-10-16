@@ -4,9 +4,9 @@ services:
 
   ##
   # Web Server which runs nginx+php
-  ##
+  ## temporarily modified image with tag php73xd2 which allows xdebug to function.
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:latest
+    image: devgeniem/ubuntu-docker-wordpress-development:php73xd2
     ports:
       - 8080
     links:
@@ -14,8 +14,8 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - .:/var/www/project
-      
+      - .:/var/www/project:cached
+
       # Exclude theme's node_modules from the sync for performance reasons
       - /var/www/project/web/app/themes/THEMENAME/node_modules/
 
@@ -24,7 +24,7 @@ services:
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - ./.docker/uploads:/var/www/uploads
+      - ./.docker/uploads:/var/www/uploads:cached
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
@@ -40,6 +40,7 @@ services:
       # Set php to use redis for object cache & sessions
       PHP_SESSION_HANDLER: redis
       PHP_SESSION_REDIS_DB: 0
+      PHP_ERROR_LOG: /dev/stderr
 
       # This is the default theme name WordPress will use
       WP_DEFAULT_THEME: THEMENAME
@@ -87,7 +88,7 @@ services:
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
       # Google Maps API-Key
-      GOOGLE_MAPS_APIKEY: ''      
+      GOOGLE_MAPS_APIKEY: ''
 
     network_mode: bridge
     extra_hosts:
@@ -114,7 +115,7 @@ services:
   redis:
     image: redis
     network_mode: bridge
-    
+
   selenium:
     image: selenium/standalone-chrome
     ports:
@@ -123,7 +124,7 @@ services:
     extra_hosts:
       - 'asiakas.test:172.17.0.1'
 
-    
+
   # --------------------------------------------
   # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
   # --------------------------------------------
@@ -141,7 +142,7 @@ services:
   ##
   # nodejs container which installs and builds all frontend assets in all all themes with package.json
   ##
-  
+
   # webpack-builder:
   #   image: devgeniem/node-assets-builder
   #   volumes:
@@ -163,7 +164,7 @@ services:
   #   volumes:
   #     - xdebug:/tmp/xdebug
   #   environment:
-  #     VIRTUAL_HOST: webgrind.wordpress.test
+  #     VIRTUAL_HOST: webgrind.asiakas.test
   #   network_mode: bridge
 
 # Uncomment to enable Xdebug profiling

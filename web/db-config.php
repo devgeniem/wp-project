@@ -227,7 +227,7 @@ $wpdb->check_tcp_responsiveness = true;
  * The last three parameters are set to the defaults but are shown for clarity.
  */
 // do not use hyperdb in local development
-if ( WP_ENV !== 'development' ) {
+if ( WP_ENV !== 'development' && WP_ENV !== 'testing') {
 	$wpdb->add_database(array(
 		'host'     => DB_HOST,     // If port is other than 3306, use host:port.
 		'user'     => DB_USER,

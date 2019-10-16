@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  integrationtest:
+    driver: bridge
+
 services:
 
   ##
@@ -12,37 +16,34 @@ services:
     links:
       - db
       - redis
+      - selenium
     volumes:
       # Sync files into this path with sync container
-      - .:/var/www/project:cached
+      - .:/var/www/project
 
       # Exclude theme's node_modules from the sync for performance reasons
       - /var/www/project/web/app/themes/THEMENAME/node_modules/
 
-      # Uncomment to enable Xdebug profiling
-      # - xdebug:/tmp/xdebug
+      # Use volume for xdebug trace and profiling so we can use analysing in other containers
+      - /tmp/xdebug
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - ./.docker/uploads:/var/www/uploads:cached
+      - ./.docker/uploads:/var/www/uploads
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
       # We want to nearly identical codebase in production and development
-      WP_ENV: development
-      # Set blog visibility not public in development
-      WP_BLOG_PUBLIC: 0
+      WP_ENV: testing
 
       WEB_UID: 1000
       WEB_GID: 1001
-
-      CRON_URL: "https://asiakas.test/run-cron"
 
       # Set php to use redis for object cache & sessions
       PHP_SESSION_HANDLER: redis
       PHP_SESSION_REDIS_DB: 0
       PHP_ERROR_LOG: /dev/stderr
-
+      
       # This is the default theme name WordPress will use
       WP_DEFAULT_THEME: THEMENAME
 
@@ -69,12 +70,14 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PWD: wordpress
+      MYSQL_HOST: db
+      REDIS_HOST: redis
 
       # Xdebug profiling is disabled because it slows down development
       # If you want to profile this site turn it on and use ?XDEBUG_PROFILE get parameter or cookie
       XDEBUG_ENABLE_PROFILE: 0
       # Connect to host machine for remote xdebug. The IP address is alias for host machine 127.0.0.1 by gdev
-      XDEBUG_REMOTE_HOST: 172.17.0.1
+      XDEBUG_REMOTE_HOST: 10.254.254.254
       # Raise the Nginx fastcgi timeout so that we can have longer debug sessions
       # This also raises php_execution_time
       NGINX_FASTCGI_TIMEOUT: 600
@@ -88,12 +91,18 @@ services:
       GOOGLE_SERVICE_ACCOUNT_EMAIL: asiakas-dev@insert-account-email.com
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
       GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
+
       # Google Maps API-Key
       GOOGLE_MAPS_APIKEY: ''
-    network_mode: bridge
-    extra_hosts:
-        - 'asiakas.test:172.17.0.1'
 
+    networks:
+      integrationtest:
+        aliases:
+          - asiakas.test
+          - web
+
+    extra_hosts:
+      - 'asiakas.test:127.0.0.1'
   ##
   # Use basic Mariadb container for database
   ##
@@ -107,58 +116,28 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
       MYSQL_ROOT_PASSWORD: root
-    network_mode: bridge
-    extra_hosts:
-      - 'asiakas.test:172.17.0.1'
+    networks:
+      integrationtest:
+        aliases:
+          - db
 
   ##
   # We use redis for wp object cache and php sessions
   ##
   redis:
     image: redis
-    network_mode: bridge
+    networks:
+      integrationtest:
+        aliases:
+          - redis
 
-  # --------------------------------------------
-  # DISABLED CONTAINERS - UNCOMMENT TO USE THESE
-  # --------------------------------------------
-
-  ##
-  # Use elasticpress plugin and elasticsearch for quicker WP_Queries in WordPress
-  ##
-
-  # elasticsearch:
-  #   image: elasticsearch
-  #   volumes:
-  #      Make elasticsearch persistent
-  #     - /usr/share/elasticsearch/data
-
-  ##
-  # nodejs container which installs and builds all frontend assets in all all themes with package.json
-  ##
-
-  # webpack-builder:
-  #   image: devgeniem/node-assets-builder
-  #   volumes:
-  #     - .:/var/www/project
-  #   command: find /var/www/project/web/app/themes/ -mindepth 1 -maxdepth 1 -type d -exec node_install_and_build_webpack {} \;
-  #   network_mode: bridge
-
-  ##
-  # Container for analyzing xdebug profiling
-  # For Example: use yoursite.test/?XDEBUG_PROFILE to profile the front page
-  ##
-
-    # Uncomment to enable Xdebug profiling
-  # webgrind:
-  #   image: devgeniem/webgrind
-  #   ports:
-  #     - 80
-  #   volumes:
-  #     - xdebug:/tmp/xdebug
-  #   environment:
-  #     VIRTUAL_HOST: webgrind.asiakas.test
-  #   network_mode: bridge
-
-# Uncomment to enable Xdebug profiling
-# volumes:
-#   xdebug:
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+    networks:
+      integrationtest:
+        aliases:
+          - selenium
+    extra_hosts:
+      - 'asiakas.test:172.18.0.5'

@@ -4,7 +4,7 @@
         "commonjs": true,
         "es6": true
     },
-    "extends": "wordpress",
+    "extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
     "rules": {
         "yoda": [2, "never"],
         "prefer-const": ["warn", {

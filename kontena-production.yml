@@ -101,8 +101,8 @@ services:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
       service: redis
 
- web:
-    image: devgeniem/client-asiakas:latest
+  web:
+    image: gcr.io/geniem-production/client-asiakas:latest
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
       service: web
@@ -115,7 +115,10 @@ services:
       SMTP_PORT: 587
       SMTP_USER: hannu.kumpula@geniem.com
       PHP_SESSION_REDIS_DB: 0
-      NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 15m
+      NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 404 15m
+      NGINX_CACHE_USE_STALE: 'error timeout invalid_header updating http_500 http_503 http_403 http_404 http_429'
+      NGINX_CACHE_CONTROL: '"max-age=900, stale-while-revalidate=86400, stale-if-error=21600"'
+      NGINX_FASTCGI_TIMEOUT: 60
       SERVER_NAME: asiakas.production.geniem.io
       CRON_URL: https://asiakas.production.geniem.io/run-cron
       WP_HOME: https://asiakas.production.geniem.io

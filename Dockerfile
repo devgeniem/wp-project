@@ -1,7 +1,6 @@
 # This is for production docker image with new relic php daemon
-FROM devgeniem/ubuntu-docker-wordpress-newrelic:latest
-# Use following beta image for PHP 7.2
-#FROM devgeniem/ubuntu-docker-wordpress-newrelic:beta
+FROM devgeniem/ubuntu-docker-wordpress-newrelic:php73
+
 
 # Use these uid/gid in production by default and change them when needed
 ENV WEB_UID=10000 \
@@ -20,7 +19,6 @@ ENV WEB_UID=10000 \
 # this saves some time in the startup in production
 RUN addgroup --system --gid $WEB_GID $WEB_GROUP && \
     adduser --system --gid $WEB_GID --uid $WEB_UID $WEB_USER && \
-
     # Configure timezone for cron
     dpkg-reconfigure tzdata
 
