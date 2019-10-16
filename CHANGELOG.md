@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Unreleased]
 
 ### Changed
+- Cloud build fixes where `npm run build` is run instead of `./node_modules/webpack/bin/webpack.js`
 - Change cron url from `tasks.cron` to match the correct path in `scripts`.
 - Add `web/core`to gitignore.
 - Add lines to sass-lint.
