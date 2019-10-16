@@ -16,6 +16,9 @@ services:
       # Sync files into this path with sync container
       - .:/var/www/project:cached
 
+      # Exclude theme's node_modules from the sync for performance reasons
+      - /var/www/project/web/app/themes/THEMENAME/node_modules/
+
       # Uncomment to enable Xdebug profiling
       # - xdebug:/tmp/xdebug
 
@@ -27,6 +30,7 @@ services:
       # Don't use this in your code unless this is only option
       # We want to nearly identical codebase in production and development
       WP_ENV: development
+      # Set blog visibility not public in development
       WP_BLOG_PUBLIC: 0
 
       WEB_UID: 1000
@@ -52,11 +56,11 @@ services:
       BASIC_AUTH_PASSWORD_HASH: world
 
       # These will be mapped automatically in development to jwilder/nginx-proxy
-      VIRTUAL_HOST: asiakas.test
+      VIRTUAL_HOST: 'asiakas.test, *.asiakas.test'
       VIRTUAL_PORT: 8080
 
       # This creates https certificate automatically when using gdev
-      HTTPS_HOST: asiakas.test
+      HTTPS_HOST: '*.asiakas.test'
 
       # Set project WP_SITEURL & WP_HOME from SERVER_NAME too
       SERVER_NAME: asiakas.test
@@ -70,7 +74,7 @@ services:
       # If you want to profile this site turn it on and use ?XDEBUG_PROFILE get parameter or cookie
       XDEBUG_ENABLE_PROFILE: 0
       # Connect to host machine for remote xdebug. The IP address is alias for host machine 127.0.0.1 by gdev
-      XDEBUG_REMOTE_HOST: 10.254.254.254
+      XDEBUG_REMOTE_HOST: 172.17.0.1
       # Raise the Nginx fastcgi timeout so that we can have longer debug sessions
       # This also raises php_execution_time
       NGINX_FASTCGI_TIMEOUT: 600
@@ -87,6 +91,8 @@ services:
       # Google Maps API-Key
       GOOGLE_MAPS_APIKEY: ''
     network_mode: bridge
+    extra_hosts:
+        - 'asiakas.test:172.17.0.1'
 
   ##
   # Use basic Mariadb container for database

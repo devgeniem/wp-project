@@ -5,13 +5,13 @@
  * @package devgeniem/wp-project
  */
 
-$root_dir = dirname( __DIR__ );
+$root_dir    = dirname( __DIR__ );
 $webroot_dir = $root_dir . '/web';
 
 /**
  * Expose global env() function from oscarotero/env
  */
-Env::init( );
+Env::init();
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root
@@ -30,7 +30,7 @@ define( 'WP_ENV', strtolower( env( 'WP_ENV' ) ) ?: 'development' );
 
 /**
  * Set URLs for WP
- * SERVER_NAME is used because wordpress uses it by default in some contexts and we
+ * SERVER_NAME is used because WordPress uses it by default in some contexts and we
  * don't want to have million different variables to set.
  *
  * Deduct them from request parameters if developer didn't set the SERVER_NAME.
@@ -38,19 +38,22 @@ define( 'WP_ENV', strtolower( env( 'WP_ENV' ) ) ?: 'development' );
  * We can always just use nginx to redirect aliases to canonical url
  * This helps changing between dev->stage->production
  */
-if ( env( 'WP_HOME' ) and env( 'WP_SITEURL' ) ) {
+if ( env( 'WP_HOME' ) && env( 'WP_SITEURL' ) ) {
     define( 'WP_HOME', env( 'WP_HOME' ) );
     define( 'WP_SITEURL', env( 'WP_SITEURL' ) );
-} elseif ( env( 'SERVER_NAME' ) ) {
+}
+elseif ( env( 'SERVER_NAME' ) ) {
     // Use provided scheme when possible but use https as default fallback
     if ( defined( 'REQUEST_SCHEME' ) ) {
         define( 'WP_HOME', REQUEST_SCHEME . '://' . env( 'SERVER_NAME' ) );
         define( 'WP_SITEURL', REQUEST_SCHEME . '://' . env( 'SERVER_NAME' ) );
-    } else {
+    }
+    else {
         define( 'WP_HOME', 'https://' . env( 'SERVER_NAME' ) );
         define( 'WP_SITEURL', 'https://' . env( 'SERVER_NAME' ) );
     }
-} elseif ( defined( 'REQUEST_SCHEME' ) and defined( 'HTTP_HOST' ) ) {
+}
+elseif ( defined( 'REQUEST_SCHEME' ) && defined( 'HTTP_HOST' ) ) {
     define( 'WP_HOME', env( 'REQUEST_SCHEME' ) . '://' . env( 'HTTP_HOST' ) );
     define( 'WP_SITEURL', env( 'REQUEST_SCHEME' ) . '://' . env( 'HTTP_HOST' ) );
 }
@@ -87,7 +90,7 @@ $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 /**
  * Define Nginx fullpage cache folder
  */
-define('RT_WP_NGINX_HELPER_CACHE_PATH','/dev/cache/'); 
+define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/dev/cache/' );
 
 /**
  * Use redis for object cache
@@ -170,7 +173,7 @@ define( 'NEWSLETTER_LOG_DIR', dirname( ini_get( 'error_log' ) ) . '/newsletter/'
 define( 'PLL_COOKIE', false );
 
 // This setting allows Polylang functions to work correctly when used with wp-cli
-if ( defined( 'WP_CLI' ) and WP_CLI and ! defined( 'PLL_ADMIN' ) ) {
+if ( defined( 'WP_CLI' ) && WP_CLI && ! defined( 'PLL_ADMIN' ) ) {
     define( 'PLL_ADMIN', true );
 }
 

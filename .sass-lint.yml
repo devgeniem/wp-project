@@ -140,7 +140,12 @@ rules:
         - flex-flow
         - flex-direction
         - flex-wrap
+        - grid-template-columns
+        - grid-template-rows
+        - grid-column-gap
+        - grid-column-gap
         - justify-content
+        - justify-items
         - align-content
         - align-items
         - order
@@ -151,14 +156,14 @@ rules:
         - overflow-x
         - overflow-y
         - box-sizing
-        
+
         - width
         - min-width
         - max-width
         - height
         - min-height
         - max-height
-        
+
         - margin
         - margin-top
         - margin-right

@@ -3,7 +3,7 @@
     "always-semicolon": true,
     "color-case": "lower",
     "block-indent": "    ",
-    "color-shorthand": false,
+    "color-shorthand": true,
     "element-case": "lower",
     "eof-newline": true,
     "leading-zero": false,
@@ -139,7 +139,7 @@
             "tab-size",
             "hyphens",
             "unicode-bidi",
-            "text-shadow"            
+            "text-shadow"
         ],
         [
             "columns",
