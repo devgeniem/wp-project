@@ -43,8 +43,15 @@
     {
       "type": "git",
       "url": "git@github.com:devgeniem/nginx-helper.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:devgeniem/ext-advanced-custom-fields-pro.git"
+    },
+    {
+        "type": "git",
+        "url": "git@github.com:devgeniem/the-dustpress-theme.git"
     }
-
   ],
   "require": {
     "php": ">=7.0",
@@ -78,7 +85,9 @@
     "devgeniem/wp-redis-group-cache": "^2.0",
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
     "devgeniem/kontena-cluster-configs": "^1.3",
-    "devgeniem/wp-cron-runner": "*"
+    "devgeniem/wp-cron-runner": "*",
+    "devgeniem/ext-advanced-custom-fields-pro": "*",
+    "devgeniem/the-dustpress-theme": "dev-master"
   },
   "require-dev": {
     "rarst/wps": ">=1.0.0",
