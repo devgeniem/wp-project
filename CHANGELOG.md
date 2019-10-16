@@ -5,14 +5,43 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+- Change cron url from `tasks.cron` to match the correct path in `scripts`.
+- Add `web/core`to gitignore.
+- Add lines to sass-lint.
+- Change color shorthand rule from csscomb.json.
+- Change proper IP addresses to `docker-compose-ubuntu.yml`.
+- Change SEO collection version to ^2.0 in `composer.json`.
+- Add phpcs ignores to `db-config.php` and `db.php`.
+- Fix code style errors from `application.php`.
+
+## [0.9.3] - 2019-10-03
+- changed errorlog path for local
+
+## [0.9.2] - 2019-09-24
+- changed production image to use tag php73 and development to use php73xd2 (only build that is working with xdebug currently)
+
+## [0.9.1] - 2019-05-20
+
+### Changed
+
+- Change eslint configuration to extend the new [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) instead of the deprecated WordPress configuration package.
+
+### Fixed
+- Missing space in kontena-production.yml
+
+## [0.9.0] - 2019-05-20
+
 ### Added
 - Database dump file extensions to .dockerignore to prevent them from bloating the images.
+- Add `devgeniem/wp-disable-redis-object-cache-dropin` to disable Redis object caching on WP preview.
 
 ### Changed
 - Disabled basic auth for uploads directory even if it was on for the rest of the project.
 
 ### Fixed
 - Make the deny rule for author urls to be more exact to prevent mismatching locations.
+- Removed duplicate config from kontena-stage.yml
 
 ## [0.8.2] - 2019-03-14
 

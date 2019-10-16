@@ -58,6 +58,14 @@ steps:
     npm install
     ./node_modules/webpack/bin/webpack.js
 
+# OPTIONAL DB SEED
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gsutil cp gs://ci-build-stage/client-asiakas.sql seed.sql || exit 0
+
 # INTEGRATION TESTS
 - name: 'docker/compose:1.15.0'
   args: ['-f', 'docker-compose-gcloud.yml', 'run', 'web', '/bin/bash', '-c', './scripts/seed.sh; ./vendor/bin/codecept run --steps']
@@ -79,3 +87,6 @@ secrets:
   secretEnv:
     # encryted access token to kontena
     KONTENA_TOKEN: CiQA4j4haRTCAuU1Klk0GBbPucq2JjVzH1CMMUH+WluMy5N93XkSaQDqV+JInB3iIVhb/6L1fuX4MNzyZehyotAHrYQZHqykjDW5kdM7ndH70WdnjhlPMuPUczlP1qQ7K2s5A1gaPXfQnqC1/ILiu2DO0w0WTrGfjzXabAMxNTEoX1Q252vU7PdSsvUmvziyzg==
+options:
+  machineType: 'N1_HIGHCPU_8'
+timeout: 1200s

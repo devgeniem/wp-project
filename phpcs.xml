@@ -82,6 +82,9 @@
   <!-- This might be problematic when using wp actions/filters -->
   <rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma"/>
 
+  <!-- Disallow array() in favour of [] -->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
   <!--
     Ending tags '?>' can be really painful to debug.
     Just disallow them in the end of the file
