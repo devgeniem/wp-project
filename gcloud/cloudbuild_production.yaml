@@ -56,7 +56,7 @@ steps:
   - |
     cd ./web/app/themes/THEMENAME
     npm install
-    ./node_modules/webpack/bin/webpack.js
+    npm run build
 
 # OPTIONAL DB SEED
 - name: gcr.io/cloud-builders/gsutil
