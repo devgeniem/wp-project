@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.9.4] - 2019-10-17
+
+### Added
+- nginx fullpage cache headers for staging 60 sec and stale and erro 120 sec
+
+## [0.9.3] - 2019-10-03
+
 ### Changed
 - Cloud build fixes where `npm run build` is run instead of `./node_modules/webpack/bin/webpack.js`
 - Change cron url from `tasks.cron` to match the correct path in `scripts`.
@@ -15,8 +22,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Change SEO collection version to ^2.0 in `composer.json`.
 - Add phpcs ignores to `db-config.php` and `db.php`.
 - Fix code style errors from `application.php`.
-
-## [0.9.3] - 2019-10-03
 - changed errorlog path for local
 
 ## [0.9.2] - 2019-09-24
