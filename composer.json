@@ -48,8 +48,8 @@
   ],
   "require": {
     "php": ">=7.0",
-    "johnpbloch/wordpress": "^4.5.0",
-    "vlucas/phpdotenv": "^2.0.1",
+    "johnpbloch/wordpress": "^5.0",
+    "vlucas/phpdotenv": "^2.0",
     "oscarotero/env": "^1.0",
     "composer/installers": "v1.0.12",
 
@@ -62,8 +62,6 @@
     "devgeniem/wp-readonly-options": "^1.0",
     "devgeniem/wp-sanitize-accented-uploads": "^1.0",
     "roots/wp-password-bcrypt": "^1.0",
-
-    "robmorgan/phinx": "^0.5",
 
     "wpackagist-plugin/stream": "^3.0",
     "wpackagist-plugin/enhanced-media-library": "^2.0",
