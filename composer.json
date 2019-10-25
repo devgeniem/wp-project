@@ -56,6 +56,7 @@
     "koodimonni/composer-dropin-installer": "^1.0",
     "koodimonni-language/core-fi": "*",
 
+    "devgeniem/better-wp-db-error": "^1.0",
     "devgeniem/better-wp-install-dropin": "^1.0",
     "devgeniem/wp-core-blocker": "^1.0",
     "devgeniem/wp-define-more": "^1.0",
