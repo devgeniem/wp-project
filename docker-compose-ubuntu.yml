@@ -14,7 +14,7 @@ services:
       - redis
     volumes:
       # Sync files into this path with sync container
-      - .:/var/www/project:cached
+      - .:/var/www/project
 
       # Exclude theme's node_modules from the sync for performance reasons
       - /var/www/project/web/app/themes/THEMENAME/node_modules/
@@ -24,7 +24,9 @@ services:
 
       # In production uploads will be in /data/uploads/
       # This way let the container see them like in production
-      - ./.docker/uploads:/var/www/uploads:cached
+      - ./.docker/uploads:/var/www/uploads
+    env_file:
+      - .env
     environment:
       # Small variable to tell if we are in production,testing or development
       # Don't use this in your code unless this is only option
@@ -87,9 +89,6 @@ services:
       # Google Bucket dev settings
       GOOGLE_SERVICE_ACCOUNT_EMAIL: asiakas-dev@insert-account-email.com
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
-      # Google Maps API-Key
-      GOOGLE_MAPS_APIKEY: ''
     network_mode: bridge
     extra_hosts:
         - 'asiakas.test:172.17.0.1'

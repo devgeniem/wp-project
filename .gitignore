@@ -89,7 +89,7 @@ vendor/*
 !vendor/.gitkeep
 
 # Node Package Manager
-node_modules
+node_modules/**/*
 
 # Development stuff from devgeniem/wordpress-server
 .docker
@@ -106,6 +106,7 @@ node_modules
 nginx/environments/*/server/.htpasswd
 nginx/environments/*/server/basic-auth.conf
 nginx/environments/testing/http/https-server.conf
+nginx/environments/*/http/redirects.conf
 
 ## If switching branches locally from gh-pages branch
 _site

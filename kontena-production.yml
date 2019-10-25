@@ -16,9 +16,6 @@ variables:
     min_length: 40
     from:
       vault: ${STACK}-mysql-password
-      random_string: 40
-    to:
-      vault: ${STACK}-mysql-password
   nginx_port:
     type: integer
     from:
@@ -85,16 +82,6 @@ variables:
     type: string
     from:
       vault: ${STACK}-smtp_password
-      random_string: 30
-    to:
-      vault: ${STACK}-smtp_password
-  google_cloud_storage_access_key:
-    type: string
-    from:
-      vault: ${STACK}-google-cloud-storage-access-key
-      random_string: 30
-    to:
-      vault: ${STACK}-google-cloud-storage-access-key
 services:
   redis:
     extends:
@@ -126,8 +113,14 @@ services:
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.production.geniem.io,*.asiakas.production.geniem.io
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-production
       NR_APP_NAME: Kontena - Production - asiakas - WPMS
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google_cloud_storage_access_key}
       WP_BLOG_PUBLIC: 0
+    secrets:
+    - secret: client-asiakas-google-cloud-storage-access-key
+      name: GOOGLE_CLOUD_STORAGE_ACCESS_KEY
+      type: env
+    - secret: client-asiakas-google-maps-apikey
+      name: GOOGLE_MAPS_APIKEY
+      type: env
     logging:
       driver: gelf
       options:

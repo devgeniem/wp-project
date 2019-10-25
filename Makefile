@@ -47,6 +47,3 @@ test:
 	# Running sitespeed.io performance budget tests in docker...
 	docker run --rm --privileged --dns $(DNS_SERVER) -v $(shell pwd)/tests:/sitespeed.io sitespeedio/sitespeed.io --budget sitespeed-budget.json -b chrome -n 2 https://$(SERVER_NAME)
 
-beatify:
-	# Fixing codesniffer errors automatically with phpcbf in docker...
-	docker-compose run --rm style-test phpcbf --standard=phpcs.xml $(PHP_FILES)
