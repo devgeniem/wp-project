@@ -64,7 +64,6 @@
     "roots/wp-password-bcrypt": "^1.0",
 
     "wpackagist-plugin/stream": "^3.0",
-    "wpackagist-plugin/enhanced-media-library": "^2.0",
     "wpackagist-plugin/wp-stateless": "^2.0",
     "rtcamp/nginx-helper": "^2.0",
 

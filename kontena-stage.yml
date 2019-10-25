@@ -103,7 +103,13 @@ services:
       PHP_SESSION_REDIS_DB: 2
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 404 15m
       NGINX_CACHE_USE_STALE: 'error timeout invalid_header updating http_500 http_503 http_403 http_404 http_429'
-      NGINX_CACHE_CONTROL: '"max-age=60, stale-while-revalidate=120, stale-if-error=120"'
+      NGINX_CACHE_CONTROL: '"max-age=900, stale-while-revalidate=120, stale-if-error=1"'
+      NGINX_CACHE_DIRECTORY: "/tmp/nginx/fullpage"
+      NGINX_FASTCGI_TIMEOUT: 30
+      # Tell nginx to set parameters in CACHE_QUERYVARS as cacheable.
+      CACHE_MODE: whitelist
+      # As default we allow the search parameter and some google parameters.
+      CACHE_QUERYVARS: s,gclid,navref
       SERVER_NAME: asiakas.stage.geniem.io
       CRON_URL: https://asiakas.stage.geniem.io/run-cron
       WP_HOME: https://asiakas.stage.geniem.io

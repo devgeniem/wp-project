@@ -1,5 +1,8 @@
 ##
 # Use password for this environment
+#
+# If you need to disable basic authentication, comment these out instead of
+# deleting the files.
 ##
 auth_basic           "${WP_ENV} environment";
 auth_basic_user_file ${__DIR__}/.htpasswd;
