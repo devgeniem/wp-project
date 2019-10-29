@@ -75,7 +75,7 @@
 
     "devgeniem/acf-codifier": "^1.1",
     "devgeniem/wp-redis-object-cache-dropin": "^1.3.4",
-    "devgeniem/wp-redis-group-cache": "^2.0",
+    "devgeniem/wp-redis-group-cache": "^3.0",
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
     "devgeniem/kontena-cluster-configs": "^1.3",
     "devgeniem/wp-cron-runner": "*",
