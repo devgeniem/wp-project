@@ -100,12 +100,14 @@ services:
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
       service: redis
+    mem_limit: 2048m
 
   web:
     image: gcr.io/geniem-production/client-asiakas:latest
     extends:
       file: vendor/devgeniem/kontena-cluster-configs/production/wp-kontena.yml
       service: web
+    mem_limit: 2048m
     environment:
       SMTP_TLS: "on"
       SMTP_AUTH: "on"
