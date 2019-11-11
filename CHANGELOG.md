@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.9.6] - 2019-11-11
+
+### Added
+- 2Gb memorylimit for redis and web container for staging and production
+
 ## [0.9.5] - 2019-10-29
 
 ### Changed
