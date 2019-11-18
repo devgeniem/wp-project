@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+- Updated WordPress minimum version to 5.3
+- Updated Composer Installer minimum version to 1.7
+- Updated DustPress.js minimum version to 4.0
+- Changed wps plugin to use our own fork to fix the suppression of WP-CLI errors
+
 ## [0.9.6] - 2019-11-11
 
 ### Added
