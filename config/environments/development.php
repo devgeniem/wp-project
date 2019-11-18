@@ -5,9 +5,18 @@
  * @package devgeniem/wp-project
  */
 
+if ( defined( 'WP_CLI' ) ) {
+    define( 'WP_DEBUG', false );
+    define( 'WP_DEBUG_DISPLAY', false );
+    define( 'SCRIPT_DEBUG', false );
+}
+else {
+    define( 'WP_DEBUG', true );
+    define( 'WP_DEBUG_DISPLAY', true );
+    define( 'SCRIPT_DEBUG', true );
+}
+
 define( 'SAVEQUERIES', true );
-define( 'WP_DEBUG', true );
-define( 'SCRIPT_DEBUG', true );
 
 /**
  * We use onnimonni/signaler for https in local development
