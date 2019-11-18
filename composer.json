@@ -51,7 +51,7 @@
     "johnpbloch/wordpress": "^5.0",
     "vlucas/phpdotenv": "^2.0",
     "oscarotero/env": "^1.0",
-    "composer/installers": "v1.0.12",
+    "composer/installers": "^1.7",
 
     "koodimonni/composer-dropin-installer": "^1.0",
     "koodimonni-language/core-fi": "*",
