@@ -87,6 +87,7 @@ web/app/uploads/*
 # Libraries installed by Composer, Bower etc
 vendor/*
 !vendor/.gitkeep
+wp-content/*
 
 # Node Package Manager
 node_modules

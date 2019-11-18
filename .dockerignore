@@ -57,9 +57,8 @@ vendor/composer/installers
 vendor/johnpbloch/wordpress-core-installer
 vendor/koodimonni/composer-dropin-installer
 
-# Ignore dropin folders
-vendor/koodimonni-language
-vendor/devgeniem/better-wp-db-error
+# Ignore dropin-folders
+wp-content
 
 # Ignore Tests and meta files from composer packages
 vendor/*/*/Tests
