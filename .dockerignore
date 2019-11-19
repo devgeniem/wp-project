@@ -14,9 +14,7 @@ tests
 phpcs.xml
 
 # We don't need setup/test scripts anymore
-scripts/code-style.sh
 scripts/install.sh
-scripts/test.sh
 
 # No need to put other environments into production image
 config/environments/testing.php
@@ -68,7 +66,7 @@ vendor/*/*/composer.json
 vendor/*/*/phpunit.xml*
 
 # ignore node modules
-web/app/themes/*/node_modules
+**/node_modules
 
 # Default webgrind profile folder
 xdebug
