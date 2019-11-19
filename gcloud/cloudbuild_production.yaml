@@ -13,6 +13,17 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 
+# Decrypt .npmrc
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=gcloud/.npmrc_production.enc
+  - --plaintext-file=web/app/themes/THEMENAME/.npmrc
+  - --location=global
+  - --keyring=infra
+  - --key=github-key
+
 # GITHUB TO KNOWN_HOSTS
 - name: 'gcr.io/cloud-builders/git'
   entrypoint: 'bash'
