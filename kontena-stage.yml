@@ -16,9 +16,6 @@ variables:
     min_length: 40
     from:
       vault: ${STACK}-mysql-password
-      random_string: 40
-    to:
-      vault: ${STACK}-mysql-password
   nginx_port:
     type: integer
     from:
@@ -85,16 +82,6 @@ variables:
     type: string
     from:
       vault: ${STACK}-smtp_password
-      random_string: 30
-    to:
-      vault: ${STACK}-smtp_password
-  google_cloud_storage_access_key:
-    type: string
-    from:
-      vault: ${STACK}-google-cloud-storage-access-key
-      random_string: 30
-    to:
-      vault: ${STACK}-google-cloud-storage-access-key
 services:
   redis:
     extends:
@@ -118,7 +105,13 @@ services:
       PHP_SESSION_REDIS_DB: 2
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 301 302 404 15m
       NGINX_CACHE_USE_STALE: 'error timeout invalid_header updating http_500 http_503 http_403 http_404 http_429'
-      NGINX_CACHE_CONTROL: '"max-age=60, stale-while-revalidate=120, stale-if-error=120"'
+      NGINX_CACHE_CONTROL: '"max-age=900, stale-while-revalidate=120, stale-if-error=1"'
+      NGINX_CACHE_DIRECTORY: "/tmp/nginx/fullpage"
+      NGINX_FASTCGI_TIMEOUT: 30
+      # Tell nginx to set parameters in CACHE_QUERYVARS as cacheable.
+      CACHE_MODE: whitelist
+      # As default we allow the search parameter and some google parameters.
+      CACHE_QUERYVARS: s,gclid,navref
       SERVER_NAME: asiakas.stage.geniem.io
       CRON_URL: https://asiakas.stage.geniem.io/run-cron
       WP_HOME: https://asiakas.stage.geniem.io
@@ -126,6 +119,12 @@ services:
       KONTENA_LB_VIRTUAL_HOSTS: asiakas.stage.geniem.io,*.asiakas.stage.geniem.io
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-stage
       NR_APP_NAME: Kontena - Stage - asiakas - WPMS
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: ${google_cloud_storage_access_key}
       WP_BLOG_PUBLIC: 0
+    secrets:
+    - secret: client-asiakas-google-cloud-storage-access-key
+      name: GOOGLE_CLOUD_STORAGE_ACCESS_KEY
+      type: env
+    - secret: client-asiakas-google-maps-apikey
+      name: GOOGLE_MAPS_APIKEY
+      type: env
 

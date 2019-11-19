@@ -8,9 +8,8 @@ services:
 
   ##
   # Web Server which runs nginx+php
-  ## temporarily modified image with tag php73xd2 which allows xdebug to function.
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:php73xd2
+    image: devgeniem/ubuntu-docker-wordpress:php73
     ports:
       - 8080
     links:
@@ -40,17 +39,16 @@ services:
       WEB_GID: 1001
 
       # Set php to use redis for object cache & sessions
+      REDIS_HOST: redis
       PHP_SESSION_HANDLER: redis
       PHP_SESSION_REDIS_DB: 0
       PHP_ERROR_LOG: /dev/stderr
-      
+
       # This is the default theme name WordPress will use
       WP_DEFAULT_THEME: THEMENAME
 
-      # Use same caching solution as in production but only for a really small time
-      # Default value is 1 second
-      NGINX_REDIS_CACHE_TTL_DEFAULT: "1"
-      NGINX_REDIS_CACHE_TTL_MAX: "1"
+      # These are not actually used in gcloud
+      NGINX_REDIS_CACHE_TTL_DEFAULT: "200 15m"
 
       # These variables can be used in nginx templates like .htpasswd
       BASIC_AUTH_USER: hello
@@ -71,16 +69,10 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PWD: wordpress
       MYSQL_HOST: db
-      REDIS_HOST: redis
 
-      # Xdebug profiling is disabled because it slows down development
-      # If you want to profile this site turn it on and use ?XDEBUG_PROFILE get parameter or cookie
-      XDEBUG_ENABLE_PROFILE: 0
-      # Connect to host machine for remote xdebug. The IP address is alias for host machine 127.0.0.1 by gdev
-      XDEBUG_REMOTE_HOST: 10.254.254.254
       # Raise the Nginx fastcgi timeout so that we can have longer debug sessions
       # This also raises php_execution_time
-      NGINX_FASTCGI_TIMEOUT: 600
+      NGINX_FASTCGI_TIMEOUT: 30
 
       # Mail settings
       SMTP_FROM: no-reply@asiakas.test
@@ -90,10 +82,6 @@ services:
       # Google Bucket dev settings
       GOOGLE_SERVICE_ACCOUNT_EMAIL: asiakas-dev@insert-account-email.com
       GOOGLE_CLOUD_STORAGE_BUCKET_NAME: asiakas-dev
-      GOOGLE_CLOUD_STORAGE_ACCESS_KEY: '{"insert-access-key-json": true}'
-
-      # Google Maps API-Key
-      GOOGLE_MAPS_APIKEY: ''
 
     networks:
       integrationtest:
