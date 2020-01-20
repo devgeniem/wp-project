@@ -42,7 +42,10 @@ services:
       REDIS_HOST: redis
       PHP_SESSION_HANDLER: redis
       PHP_SESSION_REDIS_DB: 0
+
+      # Set error log path variables
       PHP_ERROR_LOG: /dev/stderr
+      NGINX_ERROR_LOG: /dev/stderr
 
       # This is the default theme name WordPress will use
       WP_DEFAULT_THEME: THEMENAME
