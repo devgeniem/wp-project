@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Allow insecure connection when using curl for the cron url.
 - Change file permissions to allow execution for the run-cron.sh.
 
+### Added
+- Correct error log path variables for PHP and NGINX for local environments and the Google Cloud build.
+
 ## [0.10.0] - 2019-11-19
 
 ### Changed
