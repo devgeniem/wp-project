@@ -48,7 +48,7 @@ steps:
 - name: 'devgeniem/composer-prestissimo'
   id: 'composer'
   waitFor: [ 'github-key', 'known-hosts', 'decrypt' ]
-  args: [ 'install', '--no-interaction' ]
+  args: [ 'install', '--no-interaction', '--ignore-platform-reqs', '--no-suggest', '--no-progress', '--optimize-autoloader' ]
   volumes:
   - name: 'ssh'
     path: /root/.ssh
