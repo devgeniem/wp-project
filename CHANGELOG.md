@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+- Optimized Google Cloud Build configurations to run things concurrently when possible.
+
 ## [0.11.0] - 2020-01-22
 
 ### Changed

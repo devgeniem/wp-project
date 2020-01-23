@@ -1,6 +1,7 @@
 steps:
 # GITHUB KEY
 - name: 'gcr.io/cloud-builders/gcloud'
+  id: 'github-key'
   args:
   - kms
   - decrypt
@@ -15,6 +16,7 @@ steps:
 
 # Decrypt .npmrc
 - name: 'gcr.io/cloud-builders/gcloud'
+  id: 'decrypt'
   args:
   - kms
   - decrypt
@@ -26,6 +28,7 @@ steps:
 
 # GITHUB TO KNOWN_HOSTS
 - name: 'gcr.io/cloud-builders/git'
+  id: 'known-hosts'
   entrypoint: 'bash'
   args:
   - '-c'
@@ -42,7 +45,9 @@ steps:
     path: /root/.ssh
 
 # COMPOSER
-- name: 'composer'
+- name: 'devgeniem/composer-prestissimo'
+  id: 'composer'
+  waitFor: [ 'github-key', 'known-hosts', 'decrypt' ]
   args: [ 'install', '--no-interaction' ]
   volumes:
   - name: 'ssh'
@@ -61,16 +66,19 @@ steps:
 
 # WEBPACK
 - name: 'gcr.io/cloud-builders/npm'
+  id: 'npm'
+  waitFor: [ 'github-key', 'known-hosts', 'decrypt' ]
   entrypoint: 'bash'
   args:
   - '-c'
   - |
     cd ./web/app/themes/THEMENAME
-    npm install
+    npm ci
     npm run build
 
 # OPTIONAL DB SEED
 - name: gcr.io/cloud-builders/gsutil
+  id: 'db-seed'
   entrypoint: 'bash'
   args:
   - '-c'
@@ -79,16 +87,20 @@ steps:
 
 # INTEGRATION TESTS
 - name: 'docker/compose:1.15.0'
+  id: 'integration-tests'
   args: ['-f', 'docker-compose-gcloud.yml', 'run', 'web', '/bin/bash', '-c', './scripts/seed.sh; ./vendor/bin/codecept run --steps']
 
 # BUILD AND PUSH IMAGE
 - name: 'gcr.io/cloud-builders/docker'
+  id: 'docker-build'
   args: [ 'build', '--pull', '-t', 'gcr.io/$PROJECT_ID/PROJECTNAME:latest', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
+  id: 'docker-push'
   args: [ 'push', 'gcr.io/$PROJECT_ID/PROJECTNAME:latest' ]
 
 # UPGRADE KONTENA STACK
 - name: 'kontena/cli'
+  id: 'kontena-upgrade'
   args: [ 'stack', 'upgrade', 'PROJECTNAME', 'kontena-production.yml' ]
   env: [ 'KONTENA_GRID=production', 'KONTENA_URL=https://kontena-master-production.geniem.com' ]
   secretEnv: [ 'KONTENA_TOKEN' ]
