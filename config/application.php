@@ -90,7 +90,7 @@ $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 /**
  * Define Nginx fullpage cache folder
  */
-define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/dev/cache/' );
+define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/tmp/nginx/fullpage/' );
 
 /**
  * Use redis for object cache
