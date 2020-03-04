@@ -4,9 +4,9 @@ services:
 
   ##
   # Web Server which runs nginx+php
-  ## temporarily modified image with tag php73xd2 which allows xdebug to function.
+  ##
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:php73xd2
+    image: devgeniem/ubuntu-docker-wordpress-development:php74
     ports:
       - 8080
     links:
