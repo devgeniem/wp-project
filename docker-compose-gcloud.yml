@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 networks:
   integrationtest:
@@ -9,7 +9,7 @@ services:
   ##
   # Web Server which runs nginx+php
   web:
-    image: devgeniem/ubuntu-docker-wordpress:php73
+    image: devgeniem/ubuntu-docker-wordpress:php74
     ports:
       - 8080
     links:

@@ -116,5 +116,8 @@ _site
 ## Ignore Docker Sync logs and files
 .docker-sync
 
+## Docker-Compose local override file
+docker-compose.override.yml
+
 ## Ignore a generated core-file. It probably has something to do with xdebug.
 web/core

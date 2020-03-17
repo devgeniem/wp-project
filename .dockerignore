@@ -26,6 +26,7 @@ image.tar
 .drone.yml
 .dockerignore
 docker-compose.yml
+docker-compose.override.yml
 Dockerfile
 
 # Ignore MySQL dumps
