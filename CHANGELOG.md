@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Docker-compose file version numbers to 3.4 to allow overriding them locally.
 - All images changed to use PHP 7.4 versions.
 
+### Changed
+- Allow image proxy to cache results
+- added WP stateless upload headers to application.php
+
 ## [0.11.0] - 2020-01-22
 
 ### Changed

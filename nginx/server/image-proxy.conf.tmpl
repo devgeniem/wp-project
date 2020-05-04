@@ -34,7 +34,7 @@ location ~ ^/uploads/ {
   proxy_hide_header    x-guploader-uploadid;
   proxy_hide_header    Authorization;
 
-  proxy_buffering         off;
+  proxy_buffering         on;
   proxy_intercept_errors  on;
 
   # Use proxy cache
@@ -42,6 +42,7 @@ location ~ ^/uploads/ {
   proxy_cache_lock on;
   proxy_cache_key "$uri"; # Ignore Parameters
   proxy_cache_bypass     $http_cache_purge;
+  proxy_max_temp_file_size 0;
 
   # https://github.com/FRiCKLE/ngx_cache_purge
   proxy_cache_purge on from 127.0.0.1;
