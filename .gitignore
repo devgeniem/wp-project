@@ -1,5 +1,6 @@
 # WP-CLI database dumps should not be tracked in git
 *.sql
+*.sql.gz
 
 # Ignore OSX file system junk
 .DS_Store
@@ -85,9 +86,10 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 
 # Libraries installed by Composer, Bower etc
-vendor/*
+vendor
 !vendor/.gitkeep
 wp-content/*
+composer.lock
 
 # Node Package Manager
 node_modules/**/*
