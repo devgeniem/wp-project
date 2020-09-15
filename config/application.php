@@ -3,6 +3,10 @@
  * This file contains WordPress config and replaces the usual wp-config.php
  *
  * @package devgeniem/wp-project
+ *
+ * phpcs:disable WordPress.WP.DiscouragedConstants.PLUGINDIRDeclarationFound
+ * phpcs:disable WordPress.WP.DiscouragedConstants.MUPLUGINDIRDeclarationFound
+ * phpcs:disable Generic.Strings.UnnecessaryStringConcat.Found
  */
 
 $root_dir    = dirname( __DIR__ );
@@ -90,7 +94,7 @@ $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 /**
  * Define Nginx fullpage cache folder
  */
-define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/tmp/nginx/fullpage/' );
+define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/tmp/nginx/fullpage/' );
 
 /**
  * Use redis for object cache
@@ -140,11 +144,11 @@ define( 'WP_UPLOADS_URL', env( 'WP_UPLOADS_URL' ) ?: WP_HOME . '/uploads' );
  * Skip this define if this env is the default value
  */
 // Skip Codesniffer rules on normally stupid string interpolation
-//@codingStandardsIgnoreStart
+// @codingStandardsIgnoreStart
 if ( env( 'WP_DEFAULT_THEME' ) && env( 'WP_DEFAULT_THEME' ) !== 'THEME' . 'NAME' ) {
     define( 'WP_DEFAULT_THEME', env( 'WP_DEFAULT_THEME' ) );
 }
-//@codingStandardsIgnoreEnd
+// @codingStandardsIgnoreEnd
 
 /**
  * Settings for packages in devgeniem/wp-safe-fast-and-clean-collection
