@@ -97,7 +97,7 @@ define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/tmp/nginx/fullpage/' );
  */
 define( 'WP_REDIS_CLIENT', env( 'WP_REDIS_CLIENT' ) );
 define( 'WP_REDIS_HOST', env( 'REDIS_HOST' ) ?: env( 'REDIS_PORT_6379_TCP_ADDR' ) );
-// Local enviroment uses REDIS_PORT=tcp://172.17.0.6:6379 and this fixes it.
+// Local environment uses REDIS_PORT=tcp://172.17.0.6:6379 and this fixes it.
 $redis_tmp_port = explode( ':', env( 'REDIS_PORT' ) );
 define( 'WP_REDIS_PORT', env( 'REDIS_PORT' ) ? intval( end( $redis_tmp_port ) ) : 6379 );
 unset( $redis_tmp_port );
@@ -155,7 +155,7 @@ define( 'WP_NO_ADMIN_AJAX_URL', '/ajax/' );
 /**
  * Only keep the last 5 revisions of a post. Having hundreds of revisions of
  * each post might cause sites to slow down, sometimes significantly due to a
- * massive, and usually unecessary bloating the wp_posts and wp_postmeta tables.
+ * massive, and usually unnecessary bloating the wp_posts and wp_postmeta tables.
  */
 define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 5 );
 
