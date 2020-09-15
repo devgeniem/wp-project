@@ -20,6 +20,9 @@
   "keywords": [
     "wordpress", "composer", "wp"
   ],
+  "scripts": {
+    "lint": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/ data/"
+  },
   "config": {
     "preferred-install": "dist"
   },
@@ -81,7 +84,8 @@
   },
   "require-dev": {
     "rarst/wps": "^1.2",
-    "codeception/codeception": "^3.0"
+    "codeception/codeception": "^3.0",
+    "devgeniem/geniem-rules-codesniffer": "^1.0"
   },
   "extra": {
     "installer-paths": {

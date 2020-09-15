@@ -1,6 +1,40 @@
 <?xml version="1.0"?>
-<ruleset name="Geniem">
+<ruleset name="Geniem"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
   <description>A custom set of rules to check styles for a Geniem WP projects</description>
+
+  <file>.</file>
+
+  <rule ref="./vendor/devgeniem/geniem-rules-codesniffer/Geniem/ruleset.xml"/>
+
+  <!-- Exclude Composer vendor directory. -->
+  <exclude-pattern>*/.git/*</exclude-pattern>
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+
+  <arg value="sp"/> <!-- Show sniff and progress -->
+  <arg name="basepath" value="."/><!-- Strip the file paths down to the relevant bit -->
+  <arg name="colors"/>
+  <arg name="extensions" value="php"/>
+  <arg name="parallel" value="50"/>
+
+  <!-- Don't check Plugins, we might not have option (or resources) to fix them -->
+  <exclude-pattern>*/mu-plugins/*</exclude-pattern>
+  <exclude-pattern>*/plugins/*</exclude-pattern>
+
+  <!-- db-error.php and object-cache.php, not ours. -->
+  <exclude-pattern>*/db-error.php</exclude-pattern>
+  <exclude-pattern>*/object-cache.php</exclude-pattern>
+
+  <!-- Tests might have unusual notations which we can't check -->
+  <exclude-pattern>*/tests/*</exclude-pattern>
+
+  <!-- Skip seed data -->
+  <exclude-pattern>*/data/*</exclude-pattern>
+
+  <!-- Skip phinx seeds/migrations -->
+  <exclude-pattern>db/seeds/</exclude-pattern>
+  <exclude-pattern>db/migrations/</exclude-pattern>
 
   <!-- Exclude wp core files -->
   <exclude-pattern>/wp/wp-admin/*</exclude-pattern>
@@ -19,136 +53,9 @@
   <!-- Exclude whoops debugger loaded by composer -->
   <exclude-pattern>/mu-plugins/wps/*.php</exclude-pattern>
 
-  <!-- Tests might have unusual notations which we can't check -->
-  <exclude-pattern>/tests/</exclude-pattern>
-
-  <!-- Skip seed data -->
-  <exclude-pattern>/data/</exclude-pattern>
-
-  <!-- Don't check composer dependencies -->
-  <exclude-pattern>/vendor/</exclude-pattern>
-
-  <!-- Skip phinx seeds/migrations -->
-  <exclude-pattern>db/seeds/</exclude-pattern>
-  <exclude-pattern>db/migrations/</exclude-pattern>
-
   <!--
     Skip our custom wordpress install.php drop-in.
     This contains sql queries from the basic wp example and for good reason.
   -->
   <exclude-pattern>app/install.php</exclude-pattern>
-
-  <!-- There MUST NOT be more than one statement per line. -->
-
-  <!--
-    The soft limit on line length MUST be 100 characters
-    automated style checkers MUST warn but MUST NOT error at the soft limit.
-  -->
-  <rule ref="Generic.Files.LineLength">
-    <properties>
-      <property name="lineLimit" value="120"/>
-      <property name="absoluteLineLimit" value="0"/>
-    </properties>
-  </rule>
-
-  <!-- All PHP files MUST use the Unix LF (linefeed) line ending. -->
-  <rule ref="Generic.Files.LineEndings">
-    <properties>
-      <property name="eolChar" value="\n"/>
-    </properties>
-  </rule>
-
-  <!-- Method arguments with default values MUST go at the end of the argument list. -->
-  <rule ref="PEAR.Functions.ValidDefaultValue"/>
-
-  <!-- This means almost always that developer used an ugly hotfix -->
-  <rule ref="Squiz.PHP.CommentedOutCode"/>
-
-  <!-- Don't allow random whitespacing into multiple lines-->
-  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
-
-  <!-- Don't put unused function parameters into function definition -->
-  <!-- This might be problematic when using wp actions/filters -->
-  <!-- This is mostly useful, We should give warning instead -->
-  <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
-
-  <!-- No TODO comments, open issues in github/gogs/gitlab instead -->
-  <rule ref="Generic.Commenting.Todo"/>
-
-  <!-- Don't allow oneliner ifs without brackets {} -->
-  <rule ref="Generic.ControlStructures.InlineControlStructure"/>
-
-  <!-- No spaces before comma in function calls -->
-  <!-- This might be problematic when using wp actions/filters -->
-  <rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma"/>
-
-  <!-- Disallow array() in favour of [] -->
-  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-
-  <!--
-    Ending tags '?>' can be really painful to debug.
-    Just disallow them in the end of the file
-  -->
-  <rule ref="PSR2.Files.ClosingTag.NotAllowed"/>
-
-  <!-- <?php tags and constants (true,false,null) need to be lowercase  -->
-  <rule ref="Generic.PHP.LowerCaseKeyword"/>
-  <rule ref="Generic.PHP.LowerCaseConstant"/>
-
-  <!-- Include WordPress Coding Standards with few exclusions -->
-  <rule ref="WordPress">
-    <!--
-    We may want a middle ground though. The best way to do this is add the
-    entire ruleset, then rule by rule, remove ones that don't suit a project. We
-    can do this by running `phpcs` with the '-s' flag, to see the names of the
-    different Sniffs, as their rules are broken. From here, we can opt to
-    exclude problematic sniffs like so.
-    -->
-
-    <!--
-      These are nice but don't have any idea of context
-      For example we have globals which are not user defined
-    -->
-    <exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
-    <exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized" />
-
-    <!-- Disabled the function restrictions of WP VIP because we need them. -->
-    <exclude name="WordPress.VIP.RestrictedFunctions" />
-
-    <!-- Use spaces instead of tabs -->
-    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-
-    <!-- When writing file comments, e.g. template comments, don't require a package tag -->
-    <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
-
-    <!--
-      This forces you to put '.' in oneline comments.
-      Maybe full sentences are better than comments with 1-2 words
-      But we don't want to make people stop using even small comments.
-    -->
-    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-
-    <!-- Welcome to the dark side -->
-    <exclude name="WordPress.PHP.YodaConditions" />
-
-    <!-- Does not comply with DustPress class naming conventions. -->
-    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
-    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
-
-    <!-- There are numerous cases where we want to override WP globals -->
-    <exclude name="WordPress.Variables.GlobalVariables" />
-    
-    <!-- Make else and catch blocks to start from new line -->
-    <rule ref="WordPress.ControlStructures.ElseCatchNewline" />
-
-    <!-- Exclude the rule that overrides the previously declared rule -->
-	  <exclude name="Squiz.ControlStructures.ControlSignature" />
-  </rule>
-
-  <!-- Allow dynamic indentation amounts when row starts with an object assignation arrow -->
-  <rule ref="WordPress.WhiteSpace.PrecisionAlignment">
-    <properties>
-      <property name="ignoreAlignmentTokens" type="array" value="T_OBJECT_OPERATOR"/>
-    </properties>
-  </rule>
 </ruleset>
