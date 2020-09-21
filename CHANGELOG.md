@@ -5,10 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
-### Changed
-- Optimized Google Cloud Build configurations to run things concurrently when possible.
-- Docker-compose file version numbers to 3.4 to allow overriding them locally.
-- All images changed to use PHP 7.4 versions.
+## [0.12.0] - 2020-07-21
+
+### Removed
+- Removed kontena related stuff.
+- Removed cloud build related stuff.
 
 ## [0.11.0] - 2020-01-22
 

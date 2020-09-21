@@ -38,10 +38,6 @@
     },
     {
       "type": "git",
-      "url": "git@github.com:devgeniem/kontena-cluster-configs.git"
-    },
-    {
-      "type": "git",
       "url": "git@github.com:devgeniem/nginx-helper.git"
     }
   ],
@@ -75,7 +71,6 @@
     "devgeniem/wp-redis-object-cache-dropin": "^1.0",
     "devgeniem/wp-redis-group-cache": "^3.0",
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
-    "devgeniem/kontena-cluster-configs": "^1.0",
     "devgeniem/wp-cron-runner": "^1.0",
     "devgeniem/wp-disable-redis-object-cache-dropin": "^1.0"
   },
