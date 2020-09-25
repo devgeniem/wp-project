@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+- Added package.json
+- Added lint script to composer
+
+### Changed
+- Updated eslint config
+
 ## [0.12.0] - 2020-07-21
 
 ### Removed
