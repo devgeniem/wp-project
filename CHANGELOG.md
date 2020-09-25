@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+- object-cache: `redis-cache`
+
+### Removed
+- object-cache: Removed redundant `wp-redis-object-cache-dropin` ja `wp-redis-group-cache`
+
 ## [0.12.0] - 2020-07-21
 
 ### Removed
