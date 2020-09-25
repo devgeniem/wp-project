@@ -91,5 +91,8 @@
       "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
     },
     "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "lint": "vendor/bin/phpcs --standard=Geniem web/app/ config/"
   }
 }
