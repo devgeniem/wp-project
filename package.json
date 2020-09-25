@@ -1,0 +1,30 @@
+{
+  "name": "wp-project",
+  "author": "Geniem",
+  "version": "1.0.0",
+  "description": "wp-project",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^5.15.2",
+    "@wordpress/eslint-plugin": "^2.4.0",
+    "husky": "^1.3.1",
+    "sass-lint": "^1.13.1",
+    "lint-staged": "^8.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.php": "vendor/bin/phpcs --standard=Geniem web/app/ config/",
+      "*.js": "eslint -c .eslintrc.json",
+      "*.scss": "sass-lint -c .sass-lint.yml -v -i 'node_modules/**/*.scss'"
+    }
+  },
+  "scripts": {
+    "lint-js": "eslint -c ./.eslintrc.json ./web/app/themes/**/assets",
+    "lint-scss": "sass-lint -c ./.sass-lint.yml -v"
+  }
+}
