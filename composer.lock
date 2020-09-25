@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b53391b8f1ca5837e82d3293b909a5a",
+    "content-hash": "5e31513a03be30d8957a3af2c9a224e6",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -613,6 +613,41 @@
                 "wp"
             ],
             "time": "2017-07-17T11:04:33+00:00"
+        },
+        {
+            "name": "devgeniem/wp-disable-redis-object-cache-dropin",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/wp-disable-redis-object-cache-dropin.git",
+                "reference": "940f01bedb3a180871f1f86126f132c961c35862"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/wp-disable-redis-object-cache-dropin/zipball/940f01bedb3a180871f1f86126f132c961c35862",
+                "reference": "940f01bedb3a180871f1f86126f132c961c35862",
+                "shasum": ""
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Siltala",
+                    "email": "ville.siltala@geniem.com",
+                    "homepage": "http://geniem.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress mu-plugin disabling Redis Object Cache for WordPress at various occasions.",
+            "keywords": [
+                "object-cache",
+                "redis",
+                "wordpress"
+            ],
+            "time": "2019-05-20T09:51:13+00:00"
         },
         {
             "name": "devgeniem/wp-readonly-options",
