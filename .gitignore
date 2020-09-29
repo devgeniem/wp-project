@@ -63,6 +63,7 @@ web/app/mu-plugins/*
 web/app/db-error.php
 web/app/install.php
 web/app/object-cache.php
+
 ##
 # WP Themes
 # - Don't track themes which have packages

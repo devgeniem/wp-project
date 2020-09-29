@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ### Changed
 - Updated eslint config
+- object-cache: `redis-cache`
+
+### Removed
+- object-cache: Removed redundant `wp-redis-object-cache-dropin` and `wp-redis-group-cache`
 
 ## [0.12.0] - 2020-07-21
 

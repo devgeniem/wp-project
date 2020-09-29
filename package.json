@@ -18,7 +18,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.php": "vendor/bin/phpcs --standard=Geniem web/app/ config/",
+      "*.php": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/",
       "*.js": "eslint -c .eslintrc.json",
       "*.scss": "sass-lint -c .sass-lint.yml -v -i 'node_modules/**/*.scss'"
     }
