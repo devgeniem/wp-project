@@ -41,11 +41,11 @@
     },
     {
       "type": "git",
-      "url": "git@github.com:devgeniem/kontena-cluster-configs.git"
+      "url": "git@github.com:devgeniem/nginx-helper.git"
     },
     {
-      "type": "git",
-      "url": "git@github.com:devgeniem/nginx-helper.git"
+        "type": "git",
+        "url": "git@github.com:devgeniem/ext-redis-cache.git"
     }
   ],
   "require": {
@@ -75,12 +75,10 @@
     "devgeniem/dustpress-js": "^4.0.0",
 
     "devgeniem/acf-codifier": "^1.0",
-    "devgeniem/wp-redis-object-cache-dropin": "^1.0",
-    "devgeniem/wp-redis-group-cache": "^3.0",
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
-    "devgeniem/kontena-cluster-configs": "^1.0",
     "devgeniem/wp-cron-runner": "^1.0",
-    "devgeniem/wp-disable-redis-object-cache-dropin": "^1.0"
+    "devgeniem/wp-disable-redis-object-cache-dropin": "^1.0",
+    "devgeniem/redis-cache": "^2.0"
   },
   "require-dev": {
     "rarst/wps": "^1.2",
@@ -94,7 +92,10 @@
       "web/app/themes/{$name}": ["type:wordpress-theme"]
     },
     "dropin-paths": {
-      "web/app/": ["type:wordpress-dropin"],
+      "web/app/": [
+        "package:devgeniem/redis-cache:includes/object-cache.php",
+        "type:wordpress-dropin"
+      ],
       "web/app/languages/": ["vendor:koodimonni-language"],
       "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
       "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]

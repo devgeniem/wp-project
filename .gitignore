@@ -64,6 +64,7 @@ web/app/mu-plugins/*
 web/app/db-error.php
 web/app/install.php
 web/app/object-cache.php
+
 ##
 # WP Themes
 # - Don't track themes which have packages
@@ -123,3 +124,6 @@ docker-compose.override.yml
 
 ## Ignore a generated core-file. It probably has something to do with xdebug.
 web/core
+
+# Devops
+devops/.infra_ip_cache
