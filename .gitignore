@@ -90,7 +90,6 @@ web/app/uploads/*
 vendor
 !vendor/.gitkeep
 wp-content/*
-composer.lock
 
 # Node Package Manager
 node_modules/**/*
