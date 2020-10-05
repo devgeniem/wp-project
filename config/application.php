@@ -3,6 +3,10 @@
  * This file contains WordPress config and replaces the usual wp-config.php
  *
  * @package devgeniem/wp-project
+ *
+ * phpcs:disable WordPress.WP.DiscouragedConstants.PLUGINDIRDeclarationFound
+ * phpcs:disable WordPress.WP.DiscouragedConstants.MUPLUGINDIRDeclarationFound
+ * phpcs:disable Generic.Strings.UnnecessaryStringConcat.Found
  */
 
 $root_dir    = dirname( __DIR__ );
@@ -90,14 +94,14 @@ $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 /**
  * Define Nginx fullpage cache folder
  */
-define( 'RT_WP_NGINX_HELPER_CACHE_PATH','/tmp/nginx/fullpage/' );
+define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/tmp/nginx/fullpage/' );
 
 /**
  * Use redis for object cache
  */
 define( 'WP_REDIS_CLIENT', env( 'WP_REDIS_CLIENT' ) );
 define( 'WP_REDIS_HOST', env( 'REDIS_HOST' ) ?: env( 'REDIS_PORT_6379_TCP_ADDR' ) );
-// Local enviroment uses REDIS_PORT=tcp://172.17.0.6:6379 and this fixes it.
+// Local environment uses REDIS_PORT=tcp://172.17.0.6:6379 and this fixes it.
 $redis_tmp_port = explode( ':', env( 'REDIS_PORT' ) );
 define( 'WP_REDIS_PORT', env( 'REDIS_PORT' ) ? intval( end( $redis_tmp_port ) ) : 6379 );
 unset( $redis_tmp_port );
@@ -140,11 +144,11 @@ define( 'WP_UPLOADS_URL', env( 'WP_UPLOADS_URL' ) ?: WP_HOME . '/uploads' );
  * Skip this define if this env is the default value
  */
 // Skip Codesniffer rules on normally stupid string interpolation
-//@codingStandardsIgnoreStart
+// @codingStandardsIgnoreStart
 if ( env( 'WP_DEFAULT_THEME' ) && env( 'WP_DEFAULT_THEME' ) !== 'THEME' . 'NAME' ) {
     define( 'WP_DEFAULT_THEME', env( 'WP_DEFAULT_THEME' ) );
 }
-//@codingStandardsIgnoreEnd
+// @codingStandardsIgnoreEnd
 
 /**
  * Settings for packages in devgeniem/wp-safe-fast-and-clean-collection
@@ -155,7 +159,7 @@ define( 'WP_NO_ADMIN_AJAX_URL', '/ajax/' );
 /**
  * Only keep the last 5 revisions of a post. Having hundreds of revisions of
  * each post might cause sites to slow down, sometimes significantly due to a
- * massive, and usually unecessary bloating the wp_posts and wp_postmeta tables.
+ * massive, and usually unnecessary bloating the wp_posts and wp_postmeta tables.
  */
 define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 5 );
 

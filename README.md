@@ -52,7 +52,7 @@ We have preconfigured PhpStorm settings available in: https://github.com/devgeni
 ## Start local development
 This project includes example `docker-compose.yml` which you can use to develop locally. Ideally you would use [gdev](https://github.com/devgeniem/gdev).
 
-Propably the easiest way to start is to run:
+Probably the easiest way to start is to run:
 
 ```
 $ make init
