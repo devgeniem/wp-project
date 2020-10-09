@@ -107,7 +107,16 @@ define( 'WP_REDIS_PORT', env( 'REDIS_PORT' ) ? intval( end( $redis_tmp_port ) ) 
 unset( $redis_tmp_port );
 
 define( 'WP_REDIS_PASSWORD', env( 'REDIS_PASSWORD' ) ?: '' );
-define( 'WP_REDIS_DATABASE', env( 'WP_REDIS_DATABASE' ) ?: '0' );
+
+# Most configs use REDIS_DATABASE instead of WP_REDIS_DATABASE.
+# Keep WP_REDIS_DATABASE support for legacy reasons.
+if ( ! empty( env( 'REDIS_DATABASE' ) ) ) {
+    define( 'WP_REDIS_DATABASE', env( 'REDIS_DATABASE' ) );
+}
+else {
+    define( 'WP_REDIS_DATABASE', env( 'WP_REDIS_DATABASE' ) ?: '0' );
+}
+
 define( 'WP_CACHE_KEY_SALT', env( 'WP_CACHE_KEY_SALT' ) ?: '' );
 
 /**
