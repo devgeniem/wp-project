@@ -1,6 +1,6 @@
 <?php
 /**
- * Production enviroment config
+ * Production environment config
  *
  * @package devgeniem/wp-project
  */
