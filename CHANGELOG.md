@@ -8,14 +8,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 - Added package.json
 - Added lint script to composer
+- Added roave/security-advisories to composer dev-dependencies
 
 ### Changed
 - Updated eslint config
 - object-cache: `redis-cache`
 - README.md improvements
+- Package updates, ready for Composer v2
 
 ### Removed
 - object-cache: Removed redundant `wp-redis-object-cache-dropin` and `wp-redis-group-cache`
+- Removed duplicate composer.json scripts section
 
 ## [0.12.0] - 2020-07-21
 
