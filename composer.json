@@ -81,6 +81,7 @@
     "devgeniem/redis-cache": "^2.0"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-master",
     "rarst/wps": "^1.2",
     "codeception/codeception": "^3.0",
     "devgeniem/geniem-rules-codesniffer": "^1.0"
@@ -101,8 +102,5 @@
       "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
     },
     "wordpress-install-dir": "web/wp"
-  },
-  "scripts": {
-    "lint": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/"
   }
 }
