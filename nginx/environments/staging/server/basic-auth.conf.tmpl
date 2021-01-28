@@ -6,3 +6,10 @@
 ##
 auth_basic           "${WP_ENV} environment";
 auth_basic_user_file ${__DIR__}/.htpasswd;
+
+# Disable basic auth for uploads.
+# This same code is also on nginx/server/image-proxy.conf but sometimes the files get loaded in wrong order.
+location ~ ^/uploads/ {
+  auth_basic off;
+  allow all;
+}
