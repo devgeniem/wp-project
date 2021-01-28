@@ -16,8 +16,26 @@ It means that containers startup scripts will replace all instances of `${ENV}` 
 
 ### Supported envs in templates
 Currently it supports these env:
-
-List removed by Juhani. New list will come later.
+```
+$PORT
+$WEB_ROOT
+$WEB_USER
+$WEB_GROUP
+$NGINX_ACCESS_LOG
+$NGINX_ERROR_LOG
+$NGINX_ERROR_LEVEL
+$NGINX_INCLUDE_DIR
+$NGINX_MAX_BODY_SIZE
+$NGINX_FASTCGI_TIMEOUT
+$WP_ENV
+$REDIS_HOST
+$REDIS_PORT
+$REDIS_DATABASE
+$REDIS_PASSWORD
+$NGINX_REDIS_CACHE_TTL_MAX
+$NGINX_FASTCGI_CACHE_VALID
+$NGINX_REDIS_CACHE_PREFIX
+```
 
 And a magic variable `$__DIR__` which will have the absolute path of the directory of your `tmpl` file.
 
