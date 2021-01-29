@@ -24,12 +24,14 @@
     "lint": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/ data/"
   },
   "config": {
+    "dropin-installer": "copy",
     "preferred-install": "dist"
   },
   "repositories": [
     {
       "type": "composer",
-      "url": "https://wpackagist.org"
+      "url": "https://wpackagist.org",
+      "only": [ "wpackagist-plugin/*", "wpackagist-theme/*" ]
     },
     {
       "type": "composer",
@@ -42,10 +44,6 @@
     {
       "type": "git",
       "url": "git@github.com:devgeniem/nginx-helper.git"
-    },
-    {
-        "type": "git",
-        "url": "git@github.com:devgeniem/ext-redis-cache.git"
     }
   ],
   "require": {
@@ -78,7 +76,7 @@
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
     "devgeniem/wp-cron-runner": "^1.0",
     "devgeniem/wp-disable-redis-object-cache-dropin": "^1.0",
-    "devgeniem/redis-cache": "^2.0"
+    "wpackagist-plugin/redis-cache": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
@@ -88,13 +86,13 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin","rarst/wps"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "rarst/wps"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}": ["type:wordpress-theme"]
     },
     "dropin-paths": {
       "web/app/": [
-        "package:devgeniem/redis-cache:includes/object-cache.php",
+        "package:wpackagist-plugin/redis-cache:includes/object-cache.php",
         "type:wordpress-dropin"
       ],
       "web/app/languages/": ["vendor:koodimonni-language"],
