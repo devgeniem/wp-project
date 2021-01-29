@@ -16,7 +16,10 @@
 # Linter VendorPrefix, option "identifier_list"
 
 files:
-  include: '**/*.scss'
+  include: './web/app/themes/**/assets/**/*.scss'
+  ignore:
+    - './web/wp/**/*.scss'
+    - './web/app/themes/**/node_modules/**/*.scss'
 options:
   formatter: stylish
   merge-default-rules: false
@@ -101,7 +104,7 @@ rules:
     - 2
     - additional-identifiers: []
       excluded-identifiers: []
-  placeholder-in-extend: 1
+  placeholder-in-extend: 0
   placeholder-name-format:
     - 2
     - convention: hyphenatedlowercase
