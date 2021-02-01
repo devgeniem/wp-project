@@ -9,3 +9,9 @@ insert_final_newline = true
 max_line_length = 120
 tab_width = 4
 trim_trailing_whitespace = true
+
+[*.dust]
+max_line_length = 300
+
+[{*.yml,*.yaml}]
+indent_size = 2

@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Added package.json
 - Added lint script to composer
 - Added roave/security-advisories to composer dev-dependencies
+- Added `.eslintignore`
 - Added devgeniem/wp-geniem-project-bells-and-whistles (mu-plugin)
 
 ### Changed
@@ -16,6 +17,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - object-cache: `redis-cache`
 - README.md improvements
 - Package updates, ready for Composer v2
+- Modified `.editorconfig` with dust and yaml specific changes
+- Modified `.sass-lint.yml` to allow [placeholder-in-extend](https://github.com/sasstools/sass-lint/blob/develop/docs/rules/placeholder-in-extend.md)
+- Modified `.sass-lint.yml` to include all `web/app/themes` asset folders
+- Modified `.sass-lint.yml` to ignore `node_modules` under `web/app/themes` and everything under `web/wp`
 
 ### Removed
 - object-cache: Removed redundant `wp-redis-object-cache-dropin` and `wp-redis-group-cache`
