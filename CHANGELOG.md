@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.11.0] - 2019-11-19
+### Changed
+- Changed `WP_STATELESS_MEDIA_MODE` to `cdn`. This helps to prevent sync, upload and performance problems with wp-stateless.
+
 ### Added
 - Added package.json
 - Added lint script to composer
