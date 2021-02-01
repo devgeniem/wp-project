@@ -78,7 +78,8 @@
     "devgeniem/wp-stateless-bucket-link-filter": "^1.0",
     "devgeniem/wp-cron-runner": "^1.0",
     "devgeniem/wp-disable-redis-object-cache-dropin": "^1.0",
-    "devgeniem/redis-cache": "^2.0"
+    "devgeniem/redis-cache": "^2.0",
+    "devgeniem/wp-geniem-project-bells-and-whistles": "^1.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",

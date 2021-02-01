@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Added lint script to composer
 - Added roave/security-advisories to composer dev-dependencies
 - Added `.eslintignore`
+- Added devgeniem/wp-geniem-project-bells-and-whistles (mu-plugin)
 
 ### Changed
 - Updated eslint config
