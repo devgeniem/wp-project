@@ -208,7 +208,7 @@ if ( file_exists( $env_config ) ) {
  * Setup WP Stateless to upload all the files into the Google Bucket.
  */
 define( 'WP_STATELESS_MEDIA_BUCKET', env( 'GOOGLE_CLOUD_STORAGE_BUCKET_NAME' ) );
-define( 'WP_STATELESS_MEDIA_MODE', 'stateless' );
+define( 'WP_STATELESS_MEDIA_MODE', 'cdn' );
 define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
