@@ -7,5 +7,13 @@ upstream google_bucket {
     keepalive 2;
 }
 
+# Uncomment below if you want to use separate expire times to various file types (also uncomment expires directive in server/image-proxy.conf.tmpl)
+
+#map $sent_http_content_type $expires {
+#    default         off;
+#    application/pdf off;
+#    ~image/         max;
+# }
+
 # Use cache for images from Google Bucket
 proxy_cache_path /tmp/nginx/pagespeed/images/ levels=1:2 keys_zone=google_cache:100m max_size=512m inactive=168h use_temp_path=on;
