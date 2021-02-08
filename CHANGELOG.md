@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.13.1] - 2021-02-08
+### Fixed
+- Fixed image proxy to cache requests to container 
+
+### Added
+- added commented lines to image proxy configuration to control cache better on situations that needed them
+
+
 ## [0.13.0] - 2021-02-01
 ### Changed
 - Changed `WP_STATELESS_MEDIA_MODE` to `cdn`. This helps to prevent sync, upload and performance problems with wp-stateless.

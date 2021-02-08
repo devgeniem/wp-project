@@ -62,8 +62,8 @@ location ~ ^/uploads/ {
   # Comment the line below if you use map for expire times
   expires     max;
 
-  # uncomment and change values to preferred to manually control cache times
-  #add_header 'Cache-Control' "max-age=900, stale-while-revalidate=86400, stale-if-error=86400";
+  # uncomment and change values to preferred to manually control cache times, comment expires out if using this
+  #add_header 'Cache-Control' "max-age=315360000, stale-while-revalidate=86400, stale-if-error=86400, proxy-revalidate, must-revalidate, no-cache";
 
   add_header  X-Cache $upstream_cache_status;
 
