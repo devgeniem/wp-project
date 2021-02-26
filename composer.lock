@@ -293,21 +293,24 @@
         },
         {
             "name": "devgeniem/dustpress",
-            "version": "1.30.0",
+            "version": "1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/dustpress.git",
-                "reference": "216dbfbd64fe09b912126859cbb0dc80613007fe"
+                "reference": "bdc9a14fe1969f1625342407e7ae676be77a6d79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/216dbfbd64fe09b912126859cbb0dc80613007fe",
-                "reference": "216dbfbd64fe09b912126859cbb0dc80613007fe",
+                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/bdc9a14fe1969f1625342407e7ae676be77a6d79",
+                "reference": "bdc9a14fe1969f1625342407e7ae676be77a6d79",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": ">=7.1"
+            },
+            "conflict": {
+                "devgeniem/dustpress-debugger": "<1.6.0"
             },
             "type": "library",
             "autoload": {
@@ -350,22 +353,22 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/dustpress/issues",
-                "source": "https://github.com/devgeniem/dustpress/tree/1.30.0"
+                "source": "https://github.com/devgeniem/dustpress/tree/1.31.0"
             },
-            "time": "2021-01-21T14:04:28+00:00"
+            "time": "2021-02-25T11:53:49+00:00"
         },
         {
             "name": "devgeniem/dustpress-debugger",
-            "version": "1.5.4",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/dustpress-debugger.git",
-                "reference": "c0744bb4ef4f09575dcb484fd35ca076b65a537b"
+                "reference": "d5205ba49250a1fdd08bf4e050f6b63505ea746c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/dustpress-debugger/zipball/c0744bb4ef4f09575dcb484fd35ca076b65a537b",
-                "reference": "c0744bb4ef4f09575dcb484fd35ca076b65a537b",
+                "url": "https://api.github.com/repos/devgeniem/dustpress-debugger/zipball/d5205ba49250a1fdd08bf4e050f6b63505ea746c",
+                "reference": "d5205ba49250a1fdd08bf4e050f6b63505ea746c",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +405,11 @@
                 "theme",
                 "wordpress"
             ],
-            "time": "2020-09-14T13:35:19+00:00"
+            "support": {
+                "issues": "https://github.com/devgeniem/dustpress-debugger/issues",
+                "source": "https://github.com/devgeniem/dustpress-debugger/tree/1.7.0"
+            },
+            "time": "2021-02-26T14:34:47+00:00"
         },
         {
             "name": "devgeniem/dustpress-js",
