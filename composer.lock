@@ -607,16 +607,16 @@
         },
         {
             "name": "devgeniem/wp-geniem-project-bells-and-whistles",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-geniem-project-bells-and-whistles.git",
-                "reference": "656f5b938062082ff0835e55f6261f16509c4af6"
+                "reference": "15e45a25d9afa14b655a37ed0c40762b1dae3384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-geniem-project-bells-and-whistles/zipball/656f5b938062082ff0835e55f6261f16509c4af6",
-                "reference": "656f5b938062082ff0835e55f6261f16509c4af6",
+                "url": "https://api.github.com/repos/devgeniem/wp-geniem-project-bells-and-whistles/zipball/15e45a25d9afa14b655a37ed0c40762b1dae3384",
+                "reference": "15e45a25d9afa14b655a37ed0c40762b1dae3384",
                 "shasum": ""
             },
             "require": {
@@ -649,9 +649,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/wp-geniem-project-bells-and-whistles/issues",
-                "source": "https://github.com/devgeniem/wp-geniem-project-bells-and-whistles/tree/1.4.0"
+                "source": "https://github.com/devgeniem/wp-geniem-project-bells-and-whistles/tree/1.5.0"
             },
-            "time": "2020-02-13T13:14:51+00:00"
+            "time": "2021-02-22T09:33:07+00:00"
         },
         {
             "name": "devgeniem/wp-readonly-options",
