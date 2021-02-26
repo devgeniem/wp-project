@@ -247,6 +247,10 @@
                 "wordpress",
                 "wp"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/better-wp-db-error/issues",
+                "source": "https://github.com/devgeniem/better-wp-db-error/tree/1.0.0"
+            },
             "time": "2017-01-24T08:10:42+00:00"
         },
         {
@@ -289,6 +293,10 @@
                 "wordpress",
                 "wp"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/better-wp-install-dropin/issues",
+                "source": "https://github.com/devgeniem/better-wp-install-dropin/tree/1.1"
+            },
             "time": "2016-10-25T09:02:05+00:00"
         },
         {
@@ -459,6 +467,10 @@
                 "theme",
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/dustpress-js/issues",
+                "source": "https://github.com/devgeniem/dustpress-js/tree/4.4.0"
+            },
             "time": "2020-07-02T09:42:42+00:00"
         },
         {
@@ -491,6 +503,9 @@
                 }
             ],
             "description": "Disables WP from contacting wp.org servers and disables users from installing anything in wp-admin.",
+            "support": {
+                "source": "https://github.com/devgeniem/wp-core-blocker/tree/1.0.0"
+            },
             "time": "2019-09-01T08:59:41+00:00"
         },
         {
@@ -568,6 +583,10 @@
                 "wordpress",
                 "wp"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/wp-define-more/issues",
+                "source": "https://github.com/devgeniem/wp-define-more/tree/master"
+            },
             "time": "2017-07-17T11:04:33+00:00"
         },
         {
@@ -603,6 +622,10 @@
                 "redis",
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/wp-disable-redis-object-cache-dropin/issues",
+                "source": "https://github.com/devgeniem/wp-disable-redis-object-cache-dropin/tree/1.0.0"
+            },
             "time": "2019-05-20T09:51:13+00:00"
         },
         {
@@ -693,6 +716,10 @@
                 "wordpress",
                 "wp"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/wp-readonly-options/issues",
+                "source": "https://github.com/devgeniem/wp-readonly-options/tree/1.2.2"
+            },
             "time": "2019-11-14T08:21:37+00:00"
         },
         {
@@ -736,6 +763,10 @@
                 "wordpress",
                 "wp"
             ],
+            "support": {
+                "issues": "https://github.com/devgeniem/wp-sanitize-accented-uploads/issues",
+                "source": "https://github.com/devgeniem/wp-sanitize-accented-uploads/tree/master"
+            },
             "time": "2017-01-14T18:15:09+00:00"
         },
         {
@@ -767,24 +798,28 @@
             ],
             "description": "Enables filtering WP Stateless bucket link via a PHP constant.",
             "homepage": "http://github.com/devgeniem/wp-stateless-bucket-link-filter",
+            "support": {
+                "issues": "https://github.com/devgeniem/wp-stateless-bucket-link-filter/issues",
+                "source": "https://github.com/devgeniem/wp-stateless-bucket-link-filter"
+            },
             "time": "2017-10-13T06:21:49+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.5.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930"
+                "reference": "784b3440c9a11c3b65b988cc441db332ab0e6c49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/0973abd5c01ecce0b60bc1c81a6dd072827de930",
-                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/784b3440c9a11c3b65b988cc441db332ab0e6c49",
+                "reference": "784b3440c9a11c3b65b988cc441db332ab0e6c49",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.5.1",
+                "johnpbloch/wordpress-core": "5.6.2",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -806,20 +841,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-09-01T19:07:41+00:00"
+            "support": {
+                "forum": "http://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "http://core.trac.wordpress.org/",
+                "source": "http://core.trac.wordpress.org/browser",
+                "wiki": "http://codex.wordpress.org/"
+            },
+            "time": "2021-02-22T15:30:37+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.5.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349"
+                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/fa5bcb1579eae33baef6c04355f8d6657e5bd349",
-                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
+                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
                 "shasum": ""
             },
             "require": {
@@ -827,7 +869,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.5.1"
+                "wordpress/core-implementation": "5.6.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -847,7 +889,14 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-09-01T19:07:35+00:00"
+            "support": {
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
+            "time": "2021-02-22T15:30:31+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -897,14 +946,18 @@
             "keywords": [
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
+                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/master"
+            },
             "time": "2020-04-16T21:44:57+00:00"
         },
         {
             "name": "koodimonni-language/core-fi",
-            "version": "5.5.1",
+            "version": "5.6.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.5.1/fi.zip"
+                "url": "https://downloads.wordpress.org/translation/core/5.6.2/fi.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -960,6 +1013,10 @@
                 }
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
+            "support": {
+                "issues": "https://github.com/Koodimonni/Composer-Dropin-Installer/issues",
+                "source": "https://github.com/Koodimonni/Composer-Dropin-Installer/tree/master"
+            },
             "time": "2020-08-17T07:41:05+00:00"
         },
         {
@@ -1003,6 +1060,11 @@
             "keywords": [
                 "env"
             ],
+            "support": {
+                "email": "oom@oscarotero.com",
+                "issues": "https://github.com/oscarotero/env/issues",
+                "source": "https://github.com/oscarotero/env/tree/v1.2.0"
+            },
             "time": "2019-04-03T18:28:43+00:00"
         },
         {
@@ -1060,6 +1122,11 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
+            "support": {
+                "forum": "https://discourse.roots.io/",
+                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
+            },
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
@@ -1189,16 +1256,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "e1d57f62db3db00d9139078cbedf262280701479"
+                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/e1d57f62db3db00d9139078cbedf262280701479",
-                "reference": "e1d57f62db3db00d9139078cbedf262280701479",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/b786088918a884258c9e3e27405c6a4cf2ee246e",
+                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e",
                 "shasum": ""
             },
             "require": {
@@ -1208,7 +1275,7 @@
             "require-dev": {
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7.27"
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -1247,6 +1314,10 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.7"
+            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -1257,7 +1328,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-14T17:54:18+00:00"
+            "time": "2021-01-20T14:39:13+00:00"
         },
         {
             "name": "wpackagist-plugin/redis-cache",
@@ -1279,15 +1350,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.5.1",
+            "version": "3.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.5.1"
+                "reference": "tags/3.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/stream.3.6.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
