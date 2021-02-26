@@ -156,16 +156,16 @@
         },
         {
             "name": "devgeniem/acf-codifier",
-            "version": "1.35.1",
+            "version": "1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/acf-codifier.git",
-                "reference": "b0257fb55ae675804a68d8cab1b76b131c6358a2"
+                "reference": "a952194080c4d2eb3ab1768e6ca0f072b02cb393"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/b0257fb55ae675804a68d8cab1b76b131c6358a2",
-                "reference": "b0257fb55ae675804a68d8cab1b76b131c6358a2",
+                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/a952194080c4d2eb3ab1768e6ca0f072b02cb393",
+                "reference": "a952194080c4d2eb3ab1768e6ca0f072b02cb393",
                 "shasum": ""
             },
             "require": {
@@ -202,9 +202,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/acf-codifier/issues",
-                "source": "https://github.com/devgeniem/acf-codifier/tree/1.35.1"
+                "source": "https://github.com/devgeniem/acf-codifier/tree/1.36.0"
             },
-            "time": "2021-01-27T10:12:30+00:00"
+            "time": "2021-02-24T07:30:35+00:00"
         },
         {
             "name": "devgeniem/better-wp-db-error",
