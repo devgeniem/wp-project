@@ -21,7 +21,9 @@
     "wordpress", "composer", "wp"
   ],
   "scripts": {
-    "lint": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/ data/"
+      "lint": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/ -s --warning-severity=0",
+      "lint-all": "vendor/bin/phpcs --standard=phpcs.xml web/app/ config/",
+      "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml --basepath=. ./web/app/ ./config/"
   },
   "config": {
     "dropin-installer": "copy",
