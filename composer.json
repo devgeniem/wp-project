@@ -82,8 +82,10 @@
   "require-dev": {
     "roave/security-advisories": "dev-master",
     "rarst/wps": "^1.2",
-    "codeception/codeception": "^3.0",
-    "devgeniem/geniem-rules-codesniffer": "^1.0"
+    "codeception/codeception": "^4.1",
+    "devgeniem/geniem-rules-codesniffer": "^1.0",
+    "codeception/module-webdriver": "^1.2",
+    "codeception/module-asserts": "^1.3"
   },
   "extra": {
     "installer-paths": {
