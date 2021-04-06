@@ -26,6 +26,7 @@
       "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml --basepath=. ./web/app/ ./config/"
   },
   "config": {
+    "sort-packages": true,
     "dropin-installer": "copy",
     "preferred-install": "dist"
   },
@@ -41,16 +42,12 @@
     },
     {
       "type": "git",
-      "url": "git@github.com:devgeniem/wp-cron-runner.git"
-    },
-    {
-      "type": "git",
       "url": "git@github.com:devgeniem/nginx-helper.git"
     }
   ],
   "require": {
-    "php": ">=7.3",
-    "johnpbloch/wordpress": "^5.3.0",
+    "php": ">=7.3|>=8.0",
+    "johnpbloch/wordpress": "^5.7.0",
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
     "composer/installers": "^v1.7.0",
