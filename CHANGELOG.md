@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## Changed
+- Updated environment variables and documentation for Xdebug 3.
+
 ## [0.13.0] - 2021-02-01
 ### Changed
 - Changed `WP_STATELESS_MEDIA_MODE` to `cdn`. This helps to prevent sync, upload and performance problems with wp-stateless.

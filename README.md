@@ -57,6 +57,22 @@ $ make init
 
 This starts the local development environment, installs packages using composer, builds project assets and seeds the database.
 
+## Debugging and profiling
+
+### Xdebug
+For debugging and profiling we use **Xdebug 3**. To enable Xdebug features, change its mode in compose file's environment variable `XDEBUG_MODE`.
+```
+XDEBUG_MODE: off
+```
+For different mode values see: https://xdebug.org/docs/all_settings#mode. Once enabled, remote debugging uses port `9003` by default.
+
+You can also define the IDE session key in `${XDEBUG_IDE_KEY}`. By default it is a generic value: `DEBUG`. Set it in your browser extension and editor configurations.
+```
+XDEBUG_IDE_KEY: DEBUG
+```
+
+For all environment variables for Xdebug, see the base image's [Dockerfile](https://github.com/devgeniem/ubuntu-docker-wordpress-development/blob/master/ubuntu-php-7.4/Dockerfile)
+
 ## Testing
 
 You can run the php codesniffer, rspec and sitespeed tests by using the Makefile:
