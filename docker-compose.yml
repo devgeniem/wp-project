@@ -69,11 +69,16 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PWD: wordpress
 
-      # Xdebug profiling is disabled because it slows down development
-      # If you want to profile this site turn it on and use ?XDEBUG_PROFILE get parameter or cookie
-      XDEBUG_ENABLE_PROFILE: 0
+      # Change the mode for Xdebug to enable it's features. Xdebug is off by default.
+      # For accepted values, see: https://xdebug.org/docs/all_settings#mode
+      XDEBUG_MODE: off
       # Connect to host machine for remote xdebug. The IP address is alias for host machine 127.0.0.1 by gdev
-      XDEBUG_REMOTE_HOST: 10.254.254.254
+      XDEBUG_CLIENT_HOST: 10.254.254.254
+      # This is the recommended default port.
+      XDEBUG_CLIENT_PORT: 9003
+      # Set the IDE session key to use in your editor.
+      # To use this default, set it in the browser extension and in your editor's debug configurations.
+      XDEBUG_IDE_KEY: DEBUG
 
       # Use same caching solution as in production
       NGINX_REDIS_CACHE_TTL_DEFAULT: 200 15m

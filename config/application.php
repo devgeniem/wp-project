@@ -106,7 +106,7 @@ $redis_tmp_port = explode( ':', env( 'REDIS_PORT' ) );
 define( 'WP_REDIS_PORT', env( 'REDIS_PORT' ) ? intval( end( $redis_tmp_port ) ) : 6379 );
 unset( $redis_tmp_port );
 
-define( 'WP_REDIS_PASSWORD', env( 'REDIS_PASSWORD' ) ?: '' );
+define( 'WP_REDIS_PASSWORD', env( 'REDIS_PASSWORD' ) ?: null );
 
 // Most configs use REDIS_DATABASE instead of WP_REDIS_DATABASE.
 // Keep WP_REDIS_DATABASE support for legacy reasons.

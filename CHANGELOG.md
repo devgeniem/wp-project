@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 - added commented lines to image proxy configuration to control cache better on situations that needed them
 
+## Changed
+- Updated environment variables and documentation for Xdebug 3.
 
 ## [0.13.0] - 2021-02-01
 ### Changed
