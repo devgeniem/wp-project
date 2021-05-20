@@ -213,6 +213,7 @@ define( 'WP_STATELESS_MEDIA_BODY_REWRITE', 'false' );
 define( 'WP_STATELESS_MEDIA_SERVICE_ACCOUNT ', env( 'GOOGLE_SERVICE_ACCOUNT_EMAIL' ) );
 define( 'WP_STATELESS_MEDIA_JSON_KEY', env( 'GOOGLE_CLOUD_STORAGE_ACCESS_KEY' ) );
 define( 'WP_STATELESS_MEDIA_CACHE_BUSTING', 'true' );
+define( 'WP_STATELESS_MEDIA_CACHE_CONTROL', 'public, max-age=36000, must-revalidate' );
 
 // Replace the default bucket link and use the current domain. We serve uploads through a Nginx proxy cache.
 $scheme = defined( 'REQUEST_SCHEME' ) ? REQUEST_SCHEME : 'https';

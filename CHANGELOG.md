@@ -46,6 +46,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Removed kontena related stuff.
 - Removed cloud build related stuff.
 
+### Changed
+- Allow image proxy to cache results
+- added WP stateless upload headers to application.php
+
 ## [0.11.0] - 2020-01-22
 
 ### Changed
