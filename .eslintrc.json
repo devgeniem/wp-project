@@ -1,24 +1,71 @@
 {
     "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true
+      "browser": true,
+      "commonjs": true,
+      "node": true,
+      "es6": true,
+      "jquery": true
     },
-    "extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/esnext"
+    ],
     "rules": {
-        "yoda": [2, "never"],
-        "prefer-const": ["warn", {
-            "destructuring": "any",
-            "ignoreReadBeforeAssign": false
-        }],
-        "no-unused-vars": ["warn", {
-            "vars": "all",
-            "args": "after-used",
-            "ignoreRestSiblings": false
-        }]
+      "indent": [
+        "warn",
+        4
+      ],
+      "yoda": [
+        2,
+        "never"
+      ],
+      "quote-props": [
+        "warn",
+        "consistent"
+      ],
+      "prefer-const": [
+        "warn",
+        {
+          "destructuring": "any",
+          "ignoreReadBeforeAssign": false
+        }
+      ],
+      "no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": false
+        }
+      ],
+      "no-unused-expressions": [
+        "warn",
+        {
+          "allowTernary": true
+        }
+      ],
+      "max-len": [
+        "warn",
+        {
+          "code": 120,
+          "ignoreComments": true
+        }
+      ],
+      "padded-blocks": "off",
+      "brace-style": [
+        1,
+        "stroustrup"
+      ],
+      "valid-jsdoc": [
+        "warn"
+      ]
     },
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "globals": {
+      "dp": true,
+      "wp": true
     }
-}
+  }
+  

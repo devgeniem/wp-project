@@ -5,10 +5,46 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.13.1] - 2021-02-08
+### Fixed
+- Fixed image proxy to cache requests to container 
+
+### Added
+- added commented lines to image proxy configuration to control cache better on situations that needed them
+
+## Changed
+- Updated environment variables and documentation for Xdebug 3.
+
+## [0.13.0] - 2021-02-01
 ### Changed
-- Optimized Google Cloud Build configurations to run things concurrently when possible.
-- Docker-compose file version numbers to 3.4 to allow overriding them locally.
-- All images changed to use PHP 7.4 versions.
+- Changed `WP_STATELESS_MEDIA_MODE` to `cdn`. This helps to prevent sync, upload and performance problems with wp-stateless.
+
+### Added
+- Added package.json
+- Added lint script to composer
+- Added roave/security-advisories to composer dev-dependencies
+- Added `.eslintignore`
+- Added devgeniem/wp-geniem-project-bells-and-whistles (mu-plugin)
+
+### Changed
+- Updated eslint config
+- object-cache: `redis-cache`
+- README.md improvements
+- Package updates, ready for Composer v2
+- Modified `.editorconfig` with dust and yaml specific changes
+- Modified `.sass-lint.yml` to allow [placeholder-in-extend](https://github.com/sasstools/sass-lint/blob/develop/docs/rules/placeholder-in-extend.md)
+- Modified `.sass-lint.yml` to include all `web/app/themes` asset folders
+- Modified `.sass-lint.yml` to ignore `node_modules` under `web/app/themes` and everything under `web/wp`
+
+### Removed
+- object-cache: Removed redundant `wp-redis-object-cache-dropin` and `wp-redis-group-cache`
+- Removed duplicate composer.json scripts section
+
+## [0.12.0] - 2020-07-21
+
+### Removed
+- Removed kontena related stuff.
+- Removed cloud build related stuff.
 
 ### Changed
 - Allow image proxy to cache results

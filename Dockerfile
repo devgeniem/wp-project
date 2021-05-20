@@ -9,10 +9,7 @@ ENV WEB_UID=10000 \
     WEB_GROUP=web \
     # Change these in real environments
     BASIC_AUTH_USER=hello \
-    BASIC_AUTH_PASSWORD_HASH='{PLAIN}world' \
-    # New relic application name
-    # Rename this for production
-    NR_APP_NAME="WordPress Site"
+    BASIC_AUTH_PASSWORD=world
 
 # Skip dynamic user creation and
 # create user with ID WEB_UID/WEB_GID here for nginx/php-fpm
