@@ -14,7 +14,7 @@ All files ending with `.tmpl` will have their embedded enviromental variables re
 
 It means that containers startup scripts will replace all instances of `${ENV}` in all `*.tmpl` files under this folder.
 
-### Supported envs in templates
+### Supported envs in templates (TODO:lisää php74-stable envit)
 Currently it supports these env:
 ```
 $PORT
@@ -32,7 +32,6 @@ $REDIS_HOST
 $REDIS_PORT
 $REDIS_DATABASE
 $REDIS_PASSWORD
-$NGINX_REDIS_CACHE_TTL_MAX
 $NGINX_FASTCGI_CACHE_VALID
 $NGINX_REDIS_CACHE_PREFIX
 ```

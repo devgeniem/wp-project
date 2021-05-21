@@ -6,7 +6,7 @@ services:
   # Web Server which runs nginx+php
   ##
   web:
-    image: devgeniem/ubuntu-docker-wordpress-development:php74
+    image: devgeniem/ubuntu-docker-wordpress-development:php74-stable
     ports:
       - 8080
     links:
@@ -81,14 +81,15 @@ services:
       XDEBUG_IDE_KEY: DEBUG
 
       # Use same caching solution as in production
-      NGINX_REDIS_CACHE_TTL_DEFAULT: 200 15m
-      NGINX_CACHE_USE_STALE: 'error timeout invalid_header updating http_500 http_503 http_403 http_404 http_429'
-      NGINX_CACHE_CONTROL: '"max-age=900, stale-while-revalidate=120, stale-if-error=120"'
-      NGINX_CACHE_DIRECTORY: "/tmp/nginx/fullpage"
-      # Tell nginx to set parameters in CACHE_QUERYVARS as cacheable.
-      CACHE_MODE: whitelist
+      NGINX_FASTCGI_CACHE_VALID: 200 15m
+      NGINX_FASTCGI_CACHE_USE_STALE: 'error timeout invalid_header updating http_500 http_503 http_403 http_404 http_429'
+      NGINX_FASTCGI_CACHE_CONTROL: '"max-age=900, stale-while-revalidate=120, stale-if-error=120"'
+      NGINX_FASTCGI_CACHE_DIRECTORY: "/tmp/nginx/fullpage"
+      # Tell nginx to set parameters in NGINX_FASTCGI_CACHE_QUERYVARS as cacheable.
+      NGINX_FASTCGI_CACHE_MODE: whitelist
       # As default we allow the search parameter and some google parameters.
-      CACHE_QUERYVARS: s,gclid,navref
+      NGINX_FASTCGI_CACHE_QUERYVARS: s,gclid,navref
+      NGINX_FASTCGI_CACHE_QUERYVARS_IGNORE: utm_.*,gclid,fbclid
       # Raise the Nginx fastcgi timeout so that we can have longer debug sessions
       # This also raises php_execution_time
       NGINX_FASTCGI_TIMEOUT: 600

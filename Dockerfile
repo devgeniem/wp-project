@@ -1,5 +1,5 @@
 # This is for production docker image with new relic php daemon
-FROM devgeniem/ubuntu-docker-wordpress-newrelic:php74
+FROM devgeniem/ubuntu-docker-wordpress:php74-stable
 
 
 # Use these uid/gid in production by default and change them when needed
