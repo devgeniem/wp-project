@@ -2,60 +2,64 @@
 <ruleset name="Geniem"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
-  <description>A custom set of rules to check styles for a Geniem WP projects</description>
+    <description>A custom set of rules to check styles for a Geniem WP projects</description>
 
-  <file>.</file>
+    <file>.</file>
 
-  <rule ref="./vendor/devgeniem/geniem-rules-codesniffer/Geniem/ruleset.xml"/>
+    <rule ref="./vendor/devgeniem/geniem-rules-codesniffer/Geniem/ruleset.xml"/>
 
-  <!-- Exclude Composer vendor directory. -->
-  <exclude-pattern>*/.git/*</exclude-pattern>
-  <exclude-pattern>*/vendor/*</exclude-pattern>
+    <!-- Exclude Composer vendor directory. -->
+    <exclude-pattern>*/.git/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.scss</exclude-pattern>
 
-  <arg value="sp"/> <!-- Show sniff and progress -->
-  <arg name="basepath" value="."/><!-- Strip the file paths down to the relevant bit -->
-  <arg name="colors"/>
-  <arg name="extensions" value="php"/>
-  <arg name="parallel" value="50"/>
+    <arg value="sp"/> <!-- Show sniff and progress -->
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="50"/>
 
-  <!-- Don't check Plugins, we might not have option (or resources) to fix them -->
-  <exclude-pattern>*/mu-plugins/*</exclude-pattern>
-  <exclude-pattern>*/plugins/*</exclude-pattern>
+    <!-- Check code for cross-version PHP compatibility. -->
+    <config name="testVersion" value="7.4-"/>
 
-  <!-- db-error.php and object-cache.php, not ours. -->
-  <exclude-pattern>*/db-error.php</exclude-pattern>
-  <exclude-pattern>*/object-cache.php</exclude-pattern>
+    <!-- Don't check Plugins, we might not have option (or resources) to fix them -->
+    <exclude-pattern>*/mu-plugins/*</exclude-pattern>
+    <exclude-pattern>*/plugins/*</exclude-pattern>
 
-  <!-- Tests might have unusual notations which we can't check -->
-  <exclude-pattern>*/tests/*</exclude-pattern>
+    <!-- db-error.php and object-cache.php, not ours. -->
+    <exclude-pattern>*/db-error.php</exclude-pattern>
+    <exclude-pattern>*/object-cache.php</exclude-pattern>
 
-  <!-- Skip seed data -->
-  <exclude-pattern>*/data/*</exclude-pattern>
+    <!-- Tests might have unusual notations which we can't check -->
+    <exclude-pattern>*/tests/*</exclude-pattern>
 
-  <!-- Skip phinx seeds/migrations -->
-  <exclude-pattern>db/seeds/</exclude-pattern>
-  <exclude-pattern>db/migrations/</exclude-pattern>
+    <!-- Skip seed data -->
+    <exclude-pattern>*/data/*</exclude-pattern>
 
-  <!-- Exclude wp core files -->
-  <exclude-pattern>/wp/wp-admin/*</exclude-pattern>
-  <exclude-pattern>/wp/wp-includes/*</exclude-pattern>
-  <exclude-pattern>/wp/wp-*.php</exclude-pattern>
-  <exclude-pattern>/wp/index.php</exclude-pattern>
-  <exclude-pattern>/wp/xmlrpc.php</exclude-pattern>
-  <exclude-pattern>/wp/</exclude-pattern>
+    <!-- Skip phinx seeds/migrations -->
+    <exclude-pattern>db/seeds/</exclude-pattern>
+    <exclude-pattern>db/migrations/</exclude-pattern>
 
-  <!-- This is from roots/bedrock and keep it as is -->
-  <exclude-pattern>/mu-plugins/bedrock-autoloader.php</exclude-pattern>
+    <!-- Exclude wp core files -->
+    <exclude-pattern>/wp/wp-admin/*</exclude-pattern>
+    <exclude-pattern>/wp/wp-includes/*</exclude-pattern>
+    <exclude-pattern>/wp/wp-*.php</exclude-pattern>
+    <exclude-pattern>/wp/index.php</exclude-pattern>
+    <exclude-pattern>/wp/xmlrpc.php</exclude-pattern>
+    <exclude-pattern>/wp/</exclude-pattern>
 
-  <!-- Exclude object cache -->
-  <exclude-pattern>/app/object-cache.php</exclude-pattern>
+    <!-- This is from roots/bedrock and keep it as is -->
+    <exclude-pattern>/mu-plugins/bedrock-autoloader.php</exclude-pattern>
 
-  <!-- Exclude whoops debugger loaded by composer -->
-  <exclude-pattern>/mu-plugins/wps/*.php</exclude-pattern>
+    <!-- Exclude object cache -->
+    <exclude-pattern>/app/object-cache.php</exclude-pattern>
 
-  <!--
-    Skip our custom wordpress install.php drop-in.
-    This contains sql queries from the basic wp example and for good reason.
-  -->
-  <exclude-pattern>app/install.php</exclude-pattern>
+    <!-- Exclude whoops debugger loaded by composer -->
+    <exclude-pattern>/mu-plugins/wps/*.php</exclude-pattern>
+
+    <!--
+      Skip our custom wordpress install.php drop-in.
+      This contains sql queries from the basic wp example and for good reason.
+    -->
+    <exclude-pattern>app/install.php</exclude-pattern>
 </ruleset>
