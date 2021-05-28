@@ -52,7 +52,7 @@ services:
 
       # These variables can be used in nginx templates like .htpasswd
       BASIC_AUTH_USER: hello
-      BASIC_AUTH_PASSWORD_HASH: world
+      BASIC_AUTH_PASSWORD: world
 
       # These will be mapped automatically in development to jwilder/nginx-proxy
       VIRTUAL_HOST: asiakas.test

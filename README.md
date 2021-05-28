@@ -36,7 +36,7 @@ Use this as a local development environment with our docker-image
 6. Update this Readme as many times as you can.
     * Most important details are usually the details about data models, and their input/output.
     * Also add all 3rd-party dependencies here
-7. Replace `BASIC_AUTH_USER` and `BASIC_AUTH_PASSWORD_HASH` from `Dockerfile` with real credentials.
+7. Replace `BASIC_AUTH_USER` and `BASIC_AUTH_PASSWORD` from `Dockerfile` with real credentials.
     * You can find more info about formats here: http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html
     * For example, you can generate password hash with: `$ openssl passwd -crypt "password"`
 
